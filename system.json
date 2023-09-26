@@ -2,7 +2,26 @@
   "id": "stargatecoalition",
   "title": "Stargate Coalition System",
   "description": "Stargate Coalition System",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "compatibility":{
+		"minimum": 10,
+		"verified": 10,
+		"maximum": 10
+	},
+  "esmodules": [
+		"module/dnd4eBeta.js"
+	],
+	"styles": [
+		"styles/dnd4eBeta.css"
+	],
+  "authors": [
+		{
+			"name": "Robotix703",
+			"url": "https://github.com/Robotix703"
+		}
+	],
+  "gridDistance": 1,
+	"gridUnits": "sq",
   "url": "https://github.com/Robotix703/stargatecoalition",
   "manifest": "https://raw.githubusercontent.com/Robotix703/stargatecoalition/main/system.json",
   "download": "https://raw.githubusercontent.com/Robotix703/stargatecoalition/main/build/stargatecoalition.zip"
