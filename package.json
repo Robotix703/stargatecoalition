@@ -1,0 +1,15 @@
+{
+  "name": "stargatecoalition",
+  "version": "1.0.0",
+  "description": "Stargate Coalition System for FoundryVTT",
+  "main": "gulpfile.js",
+  "scripts": {
+    "build": "gulp build"
+  },
+  "author": "",
+  "license": "GNU",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-zip": "^5.1.0"
+  }
+}
