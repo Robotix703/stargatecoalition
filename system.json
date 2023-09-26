@@ -2,17 +2,17 @@
   "id": "stargatecoalition",
   "title": "Stargate Coalition System",
   "description": "Stargate Coalition System",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "compatibility":{
 		"minimum": 10,
 		"verified": 10,
 		"maximum": 10
 	},
   "esmodules": [
-		"module/dnd4eBeta.js"
+		"module/stargatecoalition.js"
 	],
 	"styles": [
-		"styles/dnd4eBeta.css"
+		"styles/stargatecoalition.css"
 	],
   "authors": [
 		{
