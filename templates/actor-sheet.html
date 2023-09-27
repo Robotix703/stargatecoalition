@@ -38,8 +38,8 @@
             {{editor data.yournotepadhere target="data.yournotepadhere" button=true editable=editable engine="prosemirror"}}
 
             <select class="selectrace" name="data.race.value" data-type="String">
-                {{#select actor.data.race.value}}
-                    {{#each actor.data.races as |race key|}}
+                {{#select data.race.value}}
+                    {{#each system.races as |race key|}}
                     <option  value="{{key}}">{{race.label}}</option>
                     {{/each}}
                 {{/select}}
