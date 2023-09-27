@@ -25,6 +25,7 @@
         <a class="item" data-tab="description">Description</a>
         <a class="item" data-tab="items">Items</a>
         <a class="item" data-tab="attributes">Attributes</a>
+        <a class="item" data-tab="yourtabnamehere">Your Tab Name Here</a>
     </nav>
 
     {{!-- Sheet Body --}}
@@ -34,6 +35,18 @@
         <div class="tab description" data-group="primary" data-tab="description">
             {{editor biographyHTML target="system.biography" button=true editable=editable engine="prosemirror"}}
         </div>
+
+        <div class="ourrandomtexteditor">
+            {{editor content=data.yournotepadhere target="data.yournotepadhere" button=true owner=owner editable=editable}}
+        </div>
+
+        <select  class="selectrace"  name="data.race.value"  data-type="String">
+            {{#select actor.data.race.value}}
+                {{#each actor.data.races as |race key|}}
+                <option  value="{{key}}">{{race.label}}</option>
+                {{/each}}
+            {{/select}}
+        </select>
 
         {{!-- Owned Items Tab --}}
         <div class="tab items" data-group="primary" data-tab="items">
@@ -97,6 +110,15 @@
                 <span class="attribute-dtype">{{localize "SIMPLE.AttributeDtype"}}</span>
                 <a class="attribute-control" data-action="create" data-group="{{group}}"><i class="fas fa-plus"></i></a>
             </header>
+
+            <label class="attribute-label"> Strength: </label>
+            <input type="text" name="data.attributes.strength.value" value="{{data.attributes.strength.value}}" data-dtype="Number"/>
+            <input type="checkbox" name="data.attributes.strength.proficient" {{checked  actor.data.strength.proficient}}>
+        </div>
+
+        {{!-- Your Tab Name Here Tab --}}
+        <div class="tab yourtabnamehere" data-group="primary" data-tab="yourtabnamehere">
+        
         </div>
     </section>
 </form>
