@@ -25,7 +25,6 @@ export class SimpleActorSheet extends ActorSheet {
   /** @inheritdoc */
   async getData(options) {
     const context = await super.getData(options);
-    EntitySheetHelper.getAttributeData(context.data);
     context.shorthand = !!game.settings.get("stargatecoalition", "macroShorthand");
     context.systemData = context.data.system;
     context.dtypes = ATTRIBUTE_TYPES;
@@ -46,9 +45,6 @@ export class SimpleActorSheet extends ActorSheet {
     if ( !this.isEditable ) return;
 
     // Attribute Management
-    html.find(".attributes").on("click", ".attribute-control", EntitySheetHelper.onClickAttributeControl.bind(this));
-    html.find(".groups").on("click", ".group-control", EntitySheetHelper.onClickAttributeGroupControl.bind(this));
-    html.find(".attributes").on("click", "a.attribute-roll", EntitySheetHelper.onAttributeRoll.bind(this));
 
     // Item Controls
     html.find(".item-control").click(this._onItemControl.bind(this));
