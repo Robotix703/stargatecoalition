@@ -10,7 +10,7 @@ export class SimpleItemSheet extends ItemSheet {
   /** @inheritdoc */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["worldbuilding", "sheet", "item"],
+      classes: ["stargatecoalition", "sheet", "item"],
       template: "systems/stargatecoalition/templates/item-sheet.html",
       width: 520,
       height: 480,
