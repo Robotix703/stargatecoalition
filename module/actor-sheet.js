@@ -28,6 +28,10 @@ export class SimpleActorSheet extends ActorSheet {
     context.shorthand = !!game.settings.get("stargatecoalition", "macroShorthand");
     context.systemData = context.data.system;
     context.dtypes = ATTRIBUTE_TYPES;
+    context.data.yournotepadhere = await TextEditor.enrichHTML(context.data.yournotepadhere, {
+      secrets: this.document.isOwner,
+      async: true
+    });
     context.biographyHTML = await TextEditor.enrichHTML(context.systemData.biography, {
       secrets: this.document.isOwner,
       async: true

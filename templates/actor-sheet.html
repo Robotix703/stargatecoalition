@@ -34,19 +34,17 @@
         {{!-- Biography Tab --}}
         <div class="tab description" data-group="primary" data-tab="description">
             {{editor biographyHTML target="system.biography" button=true editable=editable engine="prosemirror"}}
-        </div>
 
-        <div class="ourrandomtexteditor">
-            {{editor content=data.yournotepadhere target="data.yournotepadhere" button=true owner=owner editable=editable}}
-        </div>
+            {{editor data.yournotepadhere target="data.yournotepadhere" button=true editable=editable engine="prosemirror"}}
 
-        <select  class="selectrace"  name="data.race.value"  data-type="String">
-            {{#select actor.data.race.value}}
-                {{#each actor.data.races as |race key|}}
-                <option  value="{{key}}">{{race.label}}</option>
-                {{/each}}
-            {{/select}}
-        </select>
+            <select class="selectrace" name="data.race.value" data-type="String">
+                {{#select actor.data.race.value}}
+                    {{#each actor.data.races as |race key|}}
+                    <option  value="{{key}}">{{race.label}}</option>
+                    {{/each}}
+                {{/select}}
+            </select>
+        </div>
 
         {{!-- Owned Items Tab --}}
         <div class="tab items" data-group="primary" data-tab="items">
