@@ -14,7 +14,7 @@
 
             <div class="resource">
                 <!--XP-->
-                <div class="col">
+                <div>
                     <label for="system.xp.value" class="resource-label">XP</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="number" name="system.xp.value" value="{{systemData.xp.value}}"/>
@@ -22,10 +22,28 @@
                 </div>
                 
                 <!--Etourdissement-->
-                <div class="col">
+                <div>
                     <label for="system.stun.value" class="resource-label">Etourdissement</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="text" name="system.stun.value" value="{{systemData.stun.value}}" data-dtype="Number"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resource">
+                <!--Profession-->
+                <div>
+                    <label for="system.profession.value" class="resource-label">Profession</label>
+                    <div class="resource-content flexrow flex-center flex-between">
+                        <input name="profession" type="text" value="{{system.profession}}" placeholder="Profession" />
+                    </div>
+                </div>
+                
+                <!--Race-->
+                <div>
+                    <label for="system.race.value" class="resource-label">Race</label>
+                    <div class="resource-content flexrow flex-center flex-between">
+                        <input name="race" type="text" value="{{system.race}}" placeholder="Race" />
                     </div>
                 </div>
             </div>
