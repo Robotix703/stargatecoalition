@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [18.x]
 
     steps:
     - uses: actions/checkout@v3
@@ -26,3 +26,10 @@ jobs:
       run: |
         npm install
         gulp
+
+    - name: Archive zip
+        uses: actions/upload-artifact@v3
+        with:
+          name: stargatecoalition.zip
+          path: |
+            build/stargatecoalition.zip
