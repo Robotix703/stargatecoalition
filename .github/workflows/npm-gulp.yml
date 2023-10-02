@@ -28,8 +28,7 @@ jobs:
         gulp
 
     - name: Archive zip
-        uses: actions/upload-artifact@v3
-        with:
-          name: stargatecoalition.zip
-          path: |
-            build/stargatecoalition.zip
+      uses: actions/upload-artifact@v3
+      with:
+        name: stargatecoalition.zip
+        path: build/stargatecoalition.zip
