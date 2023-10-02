@@ -13,21 +13,19 @@
             </h1>
 
             <div class="resource">
-                <div class="row">
-                    <!--XP-->
-                    <div>
-                        <label for="system.xp.value" class="resource-label">XP</label>
-                        <div class="resource-content flexrow flex-center flex-between">
-                            <input type="number" name="system.xp.value" value="{{systemData.xp.value}}"/>
-                        </div>
+                <!--XP-->
+                <div class="col">
+                    <label for="system.xp.value" class="resource-label">XP</label>
+                    <div class="resource-content flexrow flex-center flex-between">
+                        <input type="number" name="system.xp.value" value="{{systemData.xp.value}}"/>
                     </div>
-                    
-                    <!--Etourdissement-->
-                    <div>
-                        <label for="system.stun.value" class="resource-label">Etourdissement</label>
-                        <div class="resource-content flexrow flex-center flex-between">
-                            <input type="text" name="system.stun.value" value="{{systemData.stun.value}}" data-dtype="Number"/>
-                        </div>
+                </div>
+                
+                <!--Etourdissement-->
+                <div class="col">
+                    <label for="system.stun.value" class="resource-label">Etourdissement</label>
+                    <div class="resource-content flexrow flex-center flex-between">
+                        <input type="text" name="system.stun.value" value="{{systemData.stun.value}}" data-dtype="Number"/>
                     </div>
                 </div>
             </div>
@@ -110,7 +108,6 @@
                 <span class="attribute-value">{{localize "SIMPLE.AttributeValue"}}</span>
                 <span class="attribute-label">{{localize "SIMPLE.AttributeLabel"}}</span>
                 <span class="attribute-dtype">{{localize "SIMPLE.AttributeDtype"}}</span>
-                <a class="attribute-control" data-action="create" data-group="{{group}}"><i class="fas fa-plus"></i></a>
             </header>
 
             <label class="attribute-label"> Force: </label>
