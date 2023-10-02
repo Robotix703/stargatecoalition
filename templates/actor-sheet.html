@@ -14,7 +14,7 @@
 
             <div class="resource">
                 <!--XP-->
-                <div>
+                <div class="ressource-element">
                     <label for="system.xp.value" class="resource-label">XP</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="number" name="system.xp.value" value="{{systemData.xp.value}}"/>
@@ -61,7 +61,9 @@
         {{!-- Description Tab --}}
         <div class="tab description" data-group="primary" data-tab="description">
             <label for="system.biographie" class="label">Biographie</label>
-            {{editor biographyHTML target="system.biographie" button=true editable=editable engine="prosemirror"}}
+            <div class="long-text">
+                {{editor biographyHTML target="system.biographie" button=true editable=editable engine="prosemirror"}}
+            </div>
         </div>
 
         {{!-- Attributes Tab --}}
@@ -77,10 +79,10 @@
 
                 <tr>
                   <td>Force</td>
-                  <td><input type="text" name="data.attributes.strength.value" value="{{data.attributes.strength.value}}" data-dtype="Number"/></td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>0</td>
+                  <td><input class="attribute-input" type="text" name="data.attributes.strength.value" value="{{data.attributes.strength.value}}" data-dtype="Number" placeholder="0"/></td>
+                  <td><input class="attribute-input" type="text" name="data.attributes.strength.modifier" value="{{data.attributes.strength.modifier}}" data-dtype="Number" placeholder="0"/></td>
+                  <td><input class="attribute-input" type="text" name="data.attributes.strength.tempModifier" value="{{data.attributes.strength.tempModifier}}" data-dtype="Number" placeholder="0"/></td>
+                  <td><input class="attribute-input" type="text" name="data.attributes.strength.tempValue" value="{{data.attributes.strength.tempValue}}" data-dtype="Number" placeholder="0"/></td>
                 </tr>
 
             </table> 

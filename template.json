@@ -21,7 +21,9 @@
 			  "value": 0,
 			  "min": 0,
 			  "label": "Force",
-			  "modifier": []
+			  "modifier": 0,
+			  "tempModifier": 0,
+			  "tempValue": 0
 			}
 		  }
 	  }
