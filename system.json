@@ -2,7 +2,7 @@
   "id": "stargatecoalition",
   "title": "Stargate Coalition System",
   "description": "Stargate Coalition System",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "compatibility":{
 		"minimum": 10,
 		"verified": 10,
@@ -35,8 +35,7 @@
 	],
 	"gridDistance": 5,
 	"gridUnits": "ft",
-	"primaryTokenAttribute": "health",
-	"secondaryTokenAttribute": "power",
+	"primaryTokenAttribute": "stun",
 	"url": "https://github.com/Robotix703/stargatecoalition",
 	"manifest": "https://raw.githubusercontent.com/Robotix703/stargatecoalition/main/system.json",
 	"download": "https://raw.githubusercontent.com/Robotix703/stargatecoalition/main/build/stargatecoalition.zip"
