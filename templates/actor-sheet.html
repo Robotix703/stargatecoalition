@@ -13,21 +13,20 @@
             </h1>
 
             <div class="resource">
-                
-                <div class="resource">
+                <div class="row">
+                    <!--XP-->
                     <div>
-                        <!--XP-->
                         <label for="system.xp.value" class="resource-label">XP</label>
                         <div class="resource-content flexrow flex-center flex-between">
                             <input type="number" name="system.xp.value" value="{{systemData.xp.value}}"/>
                         </div>
                     </div>
                     
+                    <!--Etourdissement-->
                     <div>
-                        <!--Etourdissement-->
                         <label for="system.stun.value" class="resource-label">Etourdissement</label>
                         <div class="resource-content flexrow flex-center flex-between">
-                        <input type="text" name="system.stun.value" value="{{systemData.stun.value}}" data-dtype="Number"/>
+                            <input type="text" name="system.stun.value" value="{{systemData.stun.value}}" data-dtype="Number"/>
                         </div>
                     </div>
                 </div>
@@ -47,6 +46,7 @@
 
         {{!-- Description Tab --}}
         <div class="tab description" data-group="primary" data-tab="description">
+            <label for="system.biographie" class="label">Biographie</label>
             {{editor biographyHTML target="system.biographie" button=true editable=editable engine="prosemirror"}}
         </div>
 
@@ -115,7 +115,6 @@
 
             <label class="attribute-label"> Force: </label>
             <input type="text" name="data.attributes.strength.value" value="{{data.attributes.strength.value}}" data-dtype="Number"/>
-            <input type="checkbox" name="data.attributes.strength.proficient" {{checked  actor.data.strength.proficient}}>
         </div>
     </section>
 </form>
