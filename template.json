@@ -1,42 +1,26 @@
 {
 	"Actor": {
 	  "types": ["character"],
-	  "htmlFields": ["biography", "yournotepadhere"],
+	  "htmlFields": ["biographie"],
 	  "character": {
-		"biography": "",
-		"yournotepadhere": "",
-		"race": {
-			"value": "",
-			"label": "Race"
-		},
-		"races": {
-			"dwarf": {
-			  "label": "Dwarf",
-			  "dtype": "String"
-			},
-			"elf": {
-			  "label": "Elf",
-			  "dtype": "String"
-			},
-			"gnome": {
-			  "label": "Gnome",
-			  "dtype": "String"
-			}
+		"nom": "",
+		"profession": "",
+		"race": "",
+		"divinite": "",
+		"biographie": "",
+		"xp": {
+			"value": 30,
+			"min": 0
 		},
 		"health": {
 		  "value": 10,
 		  "min": 0,
 		  "max": 10
 		},
-		"power": {
-		  "value": 5,
-		  "min": 0,
-		  "max": 5
-		},
 		"attributes": {
-			"strength": {
+			"force": {
 			  "value": 0,
-			  "label": "Strength",
+			  "label": "Force",
 			  "proficient": false,
 			  "modifier": []
 			}

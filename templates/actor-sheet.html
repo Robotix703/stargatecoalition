@@ -2,21 +2,18 @@
 
     {{!-- Sheet Header --}}
     <header class="sheet-header">
-        <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" height="100" width="100"/>
-        <img class="img" src="systems/stargatecoalition/icons/degats.svg" data-edit="img" title="degats" height="100" width="100"/>
+        <!--Portrait-->
+        <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.nom}}" height="100" width="100"/>
+        <!--img class="img" src="systems/stargatecoalition/icons/degats.svg" data-edit="img" title="degats" height="100" width="100"/-->
+
         <div class="header-fields">
+            <!--Nom-->
             <h1 class="charname">
-                <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
+                <input name="nom" type="text" value="{{data.nom}}" placeholder="Nom" />
             </h1>
+            <!--XP ; Etourdissement-->
             <div class="resource">
-                <input type="number" name="system.health.value" value="{{systemData.health.value}}"/>
-                <span> / </span>
-                <input type="number" name="system.health.max" value="{{systemData.health.max}}"/>
-            </div>
-            <div class="resource">
-                <input type="number" name="system.power.value" value="{{systemData.power.value}}"/>
-                <span> / </span>
-                <input type="number" name="system.power.max" value="{{systemData.power.max}}"/>
+                <input type="number" name="system.xp.value" value="{{systemData.xp.value}}"/>
             </div>
         </div>
     </header>
@@ -24,24 +21,16 @@
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
         <a class="item" data-tab="description">Description</a>
-        <a class="item" data-tab="items">Items</a>
-        <a class="item" data-tab="attributes">Attributes</a>
-        <a class="item" data-tab="yourtabnamehere">Your Tab Name Here</a>
+        <a class="item" data-tab="attributes">Compétences</a>
+        <a class="item" data-tab="items">Objets</a>
     </nav>
 
     {{!-- Sheet Body --}}
     <section class="sheet-body">
 
-        {{!-- Biography Tab --}}
+        {{!-- Description Tab --}}
         <div class="tab description" data-group="primary" data-tab="description">
-            {{editor biographyHTML target="system.biography" button=true editable=editable engine="prosemirror"}}
-
-            {{editor data.yournotepadhere target="data.yournotepadhere" button=true editable=editable engine="prosemirror"}}
-
-            <select class="selectrace" name="data.race.value" data-type="String">
-                <option value="toto">TOTO</option>
-                <option value="toto2">TOTO2</option>
-            </select>
+            {{editor biographyHTML target="system.biographie" button=true editable=editable engine="prosemirror"}}
         </div>
 
         {{!-- Owned Items Tab --}}
@@ -107,14 +96,9 @@
                 <a class="attribute-control" data-action="create" data-group="{{group}}"><i class="fas fa-plus"></i></a>
             </header>
 
-            <label class="attribute-label"> Strength: </label>
+            <label class="attribute-label"> Force: </label>
             <input type="text" name="data.attributes.strength.value" value="{{data.attributes.strength.value}}" data-dtype="Number"/>
             <input type="checkbox" name="data.attributes.strength.proficient" {{checked  actor.data.strength.proficient}}>
-        </div>
-
-        {{!-- Your Tab Name Here Tab --}}
-        <div class="tab yourtabnamehere" data-group="primary" data-tab="yourtabnamehere">
-        
         </div>
     </section>
 </form>
