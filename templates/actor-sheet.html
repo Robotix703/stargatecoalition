@@ -66,25 +66,24 @@
 
         {{!-- Attributes Tab --}}
         <div class="tab attributes" data-group="primary" data-tab="attributes">
-            <table>
+            <table class="attributes-table">
                 <tr>
-                  <th>Company</th>
-                  <th>Contact</th>
-                  <th>Country</th>
+                  <th>Nom</th>
+                  <th>Score</th>
+                  <th>Modif.</th>
+                  <th>Score temp.</th>
+                  <th>Modif. temp.</th>
                 </tr>
+
                 <tr>
-                  <td>Alfreds Futterkiste</td>
-                  <td>Maria Anders</td>
-                  <td>Germany</td>
+                  <td>Force</td>
+                  <td><input type="text" name="data.attributes.strength.value" value="{{data.attributes.strength.value}}" data-dtype="Number"/></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
                 </tr>
-                <tr>
-                  <td>Centro comercial Moctezuma</td>
-                  <td>Francisco Chang</td>
-                  <td>Mexico</td>
-                </tr>
+
             </table> 
-            <label class="attribute-label"> Force: </label>
-            <input type="text" name="data.attributes.strength.value" value="{{data.attributes.strength.value}}" data-dtype="Number"/>
         </div>
 
         {{!-- Owned Items Tab --}}
