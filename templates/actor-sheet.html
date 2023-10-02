@@ -4,7 +4,6 @@
     <header class="sheet-header">
         <!--Portrait-->
         <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.nom}}" height="100" width="100"/>
-        <!--img class="img" src="systems/stargatecoalition/icons/degats.svg" data-edit="img" title="degats" height="100" width="100"/-->
 
         <div class="header-fields">
             <!--Nom-->
@@ -22,7 +21,7 @@
                 </div>
                 
                 <!--Etourdissement-->
-                <div>
+                <div class="ressource-element">
                     <label for="system.stun.value" class="resource-label">Etourdissement</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="text" name="system.stun.value" value="{{systemData.stun.value}}" data-dtype="Number"/>
@@ -30,7 +29,7 @@
                 </div>
 
                 <!--Profession-->
-                <div>
+                <div class="ressource-element">
                     <label for="system.profession.value" class="resource-label">Profession</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input name="profession" type="text" value="{{system.profession}}" placeholder="Profession" />
@@ -38,7 +37,7 @@
                 </div>
                 
                 <!--Race-->
-                <div>
+                <div class="ressource-element">
                     <label for="system.race.value" class="resource-label">Race</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input name="race" type="text" value="{{system.race}}" placeholder="Race" />
@@ -64,6 +63,11 @@
             <div class="long-text">
                 {{editor biographyHTML target="system.biographie" button=true editable=editable engine="prosemirror"}}
             </div>
+
+            <!--Damages-->
+            <div>
+                <img class="img" src="systems/stargatecoalition/icons/degats.svg" data-edit="img" title="degats" height="300" width="200"/>
+            </div>
         </div>
 
         {{!-- Attributes Tab --}}
@@ -79,12 +83,19 @@
 
                 <tr>
                   <td>Force</td>
-                  <td><input class="attribute-input" type="text" name="data.attributes.strength.value" value="{{data.attributes.strength.value}}" data-dtype="Number" placeholder="0"/></td>
-                  <td><input class="attribute-input" type="text" name="data.attributes.strength.modifier" value="{{data.attributes.strength.modifier}}" data-dtype="Number" placeholder="0"/></td>
-                  <td><input class="attribute-input" type="text" name="data.attributes.strength.tempModifier" value="{{data.attributes.strength.tempModifier}}" data-dtype="Number" placeholder="0"/></td>
-                  <td><input class="attribute-input" type="text" name="data.attributes.strength.tempValue" value="{{data.attributes.strength.tempValue}}" data-dtype="Number" placeholder="0"/></td>
+                  <td><input class="attribute-input flex-center" type="text" name="data.attributes.strength.value" value="{{data.attributes.strength.value}}" data-dtype="Number" placeholder="0"/></td>
+                  <td><input class="attribute-input flex-center" type="text" name="data.attributes.strength.modifier" value="{{data.attributes.strength.modifier}}" data-dtype="Number" placeholder="0"/></td>
+                  <td><input class="attribute-input flex-center" type="text" name="data.attributes.strength.tempModifier" value="{{data.attributes.strength.tempModifier}}" data-dtype="Number" placeholder="0"/></td>
+                  <td><input class="attribute-input flex-center" type="text" name="data.attributes.strength.tempValue" value="{{data.attributes.strength.tempValue}}" data-dtype="Number" placeholder="0"/></td>
                 </tr>
 
+                <tr>
+                    <td>Dexterité</td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.dexterite.value" value="{{data.attributes.dexterite.value}}" data-dtype="Number" placeholder="0"/></td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.dexterite.modifier" value="{{data.attributes.dexterite.modifier}}" data-dtype="Number" placeholder="0"/></td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.dexterite.tempModifier" value="{{data.attributes.dexterite.tempModifier}}" data-dtype="Number" placeholder="0"/></td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.dexterite.tempValue" value="{{data.attributes.dexterite.tempValue}}" data-dtype="Number" placeholder="0"/></td>
+                  </tr>
             </table> 
         </div>
 

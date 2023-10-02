@@ -24,7 +24,15 @@
 			  "modifier": 0,
 			  "tempModifier": 0,
 			  "tempValue": 0
-			}
+			},
+			"dexterite": {
+				"value": 0,
+				"min": 0,
+				"label": "Dexterité",
+				"modifier": 0,
+				"tempModifier": 0,
+				"tempValue": 0
+			  }
 		  }
 	  }
 	},
