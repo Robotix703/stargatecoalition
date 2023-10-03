@@ -13,7 +13,7 @@
 
             <div class="resource">
                 <!--XP-->
-                <div class="ressource-element">
+                <div class="ressource-element" style="width: 50px;">
                     <label for="system.xp.value" class="resource-label">XP</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="number" name="system.xp.value" value="{{systemData.xp.value}}"/>
@@ -21,7 +21,7 @@
                 </div>
                 
                 <!--Etourdissement-->
-                <div class="ressource-element">
+                <div class="ressource-element" style="width: 50px;">
                     <label for="system.stun.value" class="resource-label">Etourdissement</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="text" name="system.stun.value" value="{{systemData.stun.value}}" data-dtype="Number"/>
@@ -29,7 +29,7 @@
                 </div>
 
                 <!--Profession-->
-                <div class="ressource-element">
+                <div class="ressource-element" style="width: 100px;">
                     <label for="system.profession.value" class="resource-label">Profession</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input name="profession" type="text" value="{{system.profession}}" placeholder="Profession" />
@@ -37,7 +37,7 @@
                 </div>
                 
                 <!--Race-->
-                <div class="ressource-element">
+                <div class="ressource-element" style="width: 100px;">
                     <label for="system.race.value" class="resource-label">Race</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input name="race" type="text" value="{{system.race}}" placeholder="Race" />
@@ -59,14 +59,17 @@
 
         {{!-- Description Tab --}}
         <div class="tab description" data-group="primary" data-tab="description">
-            <label for="system.biographie" class="label">Biographie</label>
-            <div class="long-text">
-                {{editor biographyHTML target="system.biographie" button=true editable=editable engine="prosemirror"}}
-            </div>
-
             <!--Damages-->
             <div>
-                <img class="img" src="systems/stargatecoalition/icons/degats.svg" data-edit="img" title="degats" height="300" width="200"/>
+                <img class="img" src="systems/stargatecoalition/icons/degats.svg" title="degats" height="400" width="300"/>
+            </div>
+
+            <!--Biographie-->
+            <div>
+                <label for="system.biographie" class="label">Biographie</label>
+                <div class="long-text">
+                    {{editor biographyHTML target="system.biographie" button=true editable=editable engine="prosemirror"}}
+                </div>
             </div>
         </div>
 
@@ -95,7 +98,15 @@
                     <td><input class="attribute-input flex-center" type="text" name="data.attributes.dexterite.modifier" value="{{data.attributes.dexterite.modifier}}" data-dtype="Number" placeholder="0"/></td>
                     <td><input class="attribute-input flex-center" type="text" name="data.attributes.dexterite.tempModifier" value="{{data.attributes.dexterite.tempModifier}}" data-dtype="Number" placeholder="0"/></td>
                     <td><input class="attribute-input flex-center" type="text" name="data.attributes.dexterite.tempValue" value="{{data.attributes.dexterite.tempValue}}" data-dtype="Number" placeholder="0"/></td>
-                  </tr>
+                </tr>
+
+                <tr>
+                    <td>Constitution</td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.constitution.value" value="{{data.attributes.constitution.value}}" data-dtype="Number" placeholder="0"/></td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.constitution.modifier" value="{{data.attributes.constitution.modifier}}" data-dtype="Number" placeholder="0"/></td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.constitution.tempModifier" value="{{data.attributes.constitution.tempModifier}}" data-dtype="Number" placeholder="0"/></td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.constitution.tempValue" value="{{data.attributes.constitution.tempValue}}" data-dtype="Number" placeholder="0"/></td>
+                </tr>
             </table> 
         </div>
 

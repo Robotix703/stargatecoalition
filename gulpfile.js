@@ -23,6 +23,5 @@ function compileLESS() {
 /* ----------------------------------------- */
 
 exports.default = gulp.series(
-	compileLESS,
-  	createZip
+	compileLESS
 );
