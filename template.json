@@ -81,7 +81,15 @@
 				"tempModifier": 0,
 				"tempValue": 0
 			}
-		  }
+		},
+		"health": {
+			"head": {
+				"value": 0,
+				"min": 0,
+				"max": 6,
+				"label": "Tête"
+			}
+		}
 	  }
 	},
 	"Item": {

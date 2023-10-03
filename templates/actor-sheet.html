@@ -13,7 +13,7 @@
 
             <div class="resource">
                 <!--XP-->
-                <div class="ressource-element" style="width: 100px;">
+                <div class="ressource-element" style="width: 80px;">
                     <label for="system.xp.value" class="resource-label">XP</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="number" name="system.xp.value" value="{{systemData.xp.value}}"/>
@@ -21,7 +21,7 @@
                 </div>
                 
                 <!--Etourdissement-->
-                <div class="ressource-element" style="width: 100px;">
+                <div class="ressource-element" style="width: 80px;">
                     <label for="system.stun.value" class="resource-label">Etourdissement</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="text" name="system.stun.value" value="{{systemData.stun.value}}" data-dtype="Number"/>
@@ -60,8 +60,22 @@
         {{!-- Description Tab --}}
         <div class="tab description" data-group="primary" data-tab="description">
             <!--Damages-->
-            <div>
+            <div style="display: table;">
                 <img class="img" src="systems/stargatecoalition/icons/degats.svg" title="degats" height="400" width="300"/>
+
+                <table class="health-table">
+                    <tr>
+                      <th>Numéro</th>
+                      <th>Partie du corps</th>
+                      <th>Dégâts</th>
+                    </tr>
+    
+                    <tr>
+                      <td>2</td>
+                      <td>{{data.health.head.label}}</td>
+                      <td><input class="attribute-input flex-center" type="text" name="data.health.head.label" value="{{data.health.head.value}}" data-dtype="Number" placeholder="0"/></td>
+                    </tr>
+                </table> 
             </div>
 
             <!--Biographie-->
