@@ -37,7 +37,7 @@
                 </div>
                 
                 <!--Race-->
-                <div class="ressource-element" style="width: 50px;">
+                <div class="ressource-element" style="width: 150px;">
                     <label for="system.race.value" class="resource-label">Race</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input name="race" type="text" value="{{system.race}}" placeholder="Race" />
@@ -74,13 +74,13 @@
                     <tr>
                       <td>2</td>
                       <td>{{data.health.head.label}}</td>
-                      <td><input class="attribute-input flex-center" type="text" name="system.health.head.label" value="{{system.health.head.value}}" data-dtype="Number" placeholder="0"/></td>
+                      <td><input class="attribute-input flex-center" type="text" name="system.health.head.label" value="{{systemData.health.head.value}}" data-dtype="Number" placeholder="0"/></td>
                     </tr>
                 </table> 
             </div>
 
             <!--Biographie-->
-            <div style="width: 100%; height: 100%;">
+            <div style="width: 100%; height: 300px;">
                 <label for="system.biographie" class="label">Biographie</label>
                 {{editor biographyHTML target="system.biographie" button=true editable=editable engine="prosemirror"}}
             </div>

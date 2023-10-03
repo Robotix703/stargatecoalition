@@ -45,6 +45,7 @@ export class SimpleActorSheet extends ActorSheet {
     if ( !this.isEditable ) return;
 
     // Attribute Management
+    html.find(".attributes").on("click", "a.attribute-roll", EntitySheetHelper.onAttributeRoll.bind(this));
 
     // Item Controls
     html.find(".item-control").click(this._onItemControl.bind(this));
