@@ -13,7 +13,7 @@
 
             <div class="resource">
                 <!--XP-->
-                <div class="ressource-element" style="width: 50px;">
+                <div class="ressource-element" style="width: 100px;">
                     <label for="system.xp.value" class="resource-label">XP</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="number" name="system.xp.value" value="{{systemData.xp.value}}"/>
@@ -21,7 +21,7 @@
                 </div>
                 
                 <!--Etourdissement-->
-                <div class="ressource-element" style="width: 50px;">
+                <div class="ressource-element" style="width: 100px;">
                     <label for="system.stun.value" class="resource-label">Etourdissement</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="text" name="system.stun.value" value="{{systemData.stun.value}}" data-dtype="Number"/>
@@ -29,7 +29,7 @@
                 </div>
 
                 <!--Profession-->
-                <div class="ressource-element" style="width: 100px;">
+                <div class="ressource-element" style="width: 200px;">
                     <label for="system.profession.value" class="resource-label">Profession</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input name="profession" type="text" value="{{system.profession}}" placeholder="Profession" />
@@ -37,7 +37,7 @@
                 </div>
                 
                 <!--Race-->
-                <div class="ressource-element" style="width: 100px;">
+                <div class="ressource-element" style="width: 200px;">
                     <label for="system.race.value" class="resource-label">Race</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input name="race" type="text" value="{{system.race}}" placeholder="Race" />
@@ -106,6 +106,46 @@
                     <td><input class="attribute-input flex-center" type="text" name="data.attributes.constitution.modifier" value="{{data.attributes.constitution.modifier}}" data-dtype="Number" placeholder="0"/></td>
                     <td><input class="attribute-input flex-center" type="text" name="data.attributes.constitution.tempModifier" value="{{data.attributes.constitution.tempModifier}}" data-dtype="Number" placeholder="0"/></td>
                     <td><input class="attribute-input flex-center" type="text" name="data.attributes.constitution.tempValue" value="{{data.attributes.constitution.tempValue}}" data-dtype="Number" placeholder="0"/></td>
+                </tr>
+
+                <tr>
+                    <td>Astuce</td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.astuce.value" value="{{data.attributes.astuce.value}}" data-dtype="Number" placeholder="0"/></td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.astuce.modifier" value="{{data.attributes.astuce.modifier}}" data-dtype="Number" placeholder="0"/></td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.astuce.tempModifier" value="{{data.attributes.astuce.tempModifier}}" data-dtype="Number" placeholder="0"/></td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.astuce.tempValue" value="{{data.attributes.astuce.tempValue}}" data-dtype="Number" placeholder="0"/></td>
+                </tr>
+
+                <tr>
+                    <td>Intelligence</td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.intelligence.value" value="{{data.attributes.intelligence.value}}" data-dtype="Number" placeholder="0"/></td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.intelligence.modifier" value="{{data.attributes.intelligence.modifier}}" data-dtype="Number" placeholder="0"/></td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.intelligence.tempModifier" value="{{data.attributes.intelligence.tempModifier}}" data-dtype="Number" placeholder="0"/></td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.intelligence.tempValue" value="{{data.attributes.intelligence.tempValue}}" data-dtype="Number" placeholder="0"/></td>
+                </tr>
+
+                <tr>
+                    <td>Perception</td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.perception.value" value="{{data.attributes.perception.value}}" data-dtype="Number" placeholder="0"/></td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.perception.modifier" value="{{data.attributes.perception.modifier}}" data-dtype="Number" placeholder="0"/></td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.perception.tempModifier" value="{{data.attributes.perception.tempModifier}}" data-dtype="Number" placeholder="0"/></td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.perception.tempValue" value="{{data.attributes.perception.tempValue}}" data-dtype="Number" placeholder="0"/></td>
+                </tr>
+
+                <tr>
+                    <td>Volonté</td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.volonte.value" value="{{data.attributes.volonte.value}}" data-dtype="Number" placeholder="0"/></td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.volonte.modifier" value="{{data.attributes.volonte.modifier}}" data-dtype="Number" placeholder="0"/></td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.volonte.tempModifier" value="{{data.attributes.volonte.tempModifier}}" data-dtype="Number" placeholder="0"/></td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.volonte.tempValue" value="{{data.attributes.volonte.tempValue}}" data-dtype="Number" placeholder="{{systemData.volonte.value}}"/></td>
+                </tr>
+
+                <tr>
+                    <td>Charisme</td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.charisme.value" value="{{data.attributes.charisme.value}}" data-dtype="Number" placeholder="0"/></td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.charisme.modifier" value="{{data.attributes.charisme.modifier}}" data-dtype="Number" placeholder="0"/></td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.charisme.tempModifier" value="{{data.attributes.charisme.tempModifier}}" data-dtype="Number" placeholder="0"/></td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.charisme.tempValue" value="{{data.attributes.charisme.tempValue}}" data-dtype="Number" placeholder="{{systemData.charisme.value}}"/></td>
                 </tr>
             </table> 
         </div>

@@ -40,6 +40,46 @@
 				"modifier": 0,
 				"tempModifier": 0,
 				"tempValue": 0
+			},
+			"astuce": {
+				"value": 10,
+				"min": 0,
+				"label": "Astuce",
+				"modifier": 0,
+				"tempModifier": 0,
+				"tempValue": 0
+			},
+			"intelligence": {
+				"value": 10,
+				"min": 0,
+				"label": "Intelligence",
+				"modifier": 0,
+				"tempModifier": 0,
+				"tempValue": 0
+			},
+			"perception": {
+				"value": 10,
+				"min": 0,
+				"label": "Perception",
+				"modifier": 0,
+				"tempModifier": 0,
+				"tempValue": 0
+			},
+			"volonte": {
+				"value": 10,
+				"min": 0,
+				"label": "Volonté",
+				"modifier": 0,
+				"tempModifier": 0,
+				"tempValue": 0
+			},
+			"charisme": {
+				"value": 10,
+				"min": 0,
+				"label": "Charisme",
+				"modifier": 0,
+				"tempModifier": 0,
+				"tempValue": 0
 			}
 		  }
 	  }
