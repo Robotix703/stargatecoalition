@@ -2,9 +2,8 @@ const gulp = require('gulp');
 const zip = require('gulp-zip');
 const less = require('gulp-less');
 
-function createZip() {
+function copyForZip() {
 	return gulp.src(['**/*', '!build', '!node_modules', '!./gulpfile.js', '!LICENSE', '!package.json', '!package-lock.json', '!.gitignore'])
-		.pipe(zip('stargatecoalition.zip'))
 		.pipe(gulp.dest('build'))
 }
 
@@ -23,5 +22,6 @@ function compileLESS() {
 /* ----------------------------------------- */
 
 exports.default = gulp.series(
-	compileLESS
+	compileLESS,
+	copyForZip
 );
