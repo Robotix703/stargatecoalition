@@ -29,7 +29,7 @@
                 </div>
 
                 <!--Profession-->
-                <div class="ressource-element" style="width: 200px;">
+                <div class="ressource-element" >
                     <label for="system.profession.value" class="resource-label">Profession</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input name="profession" type="text" value="{{system.profession}}" placeholder="Profession" />
@@ -37,7 +37,7 @@
                 </div>
                 
                 <!--Race-->
-                <div class="ressource-element" style="width: 200px;">
+                <div class="ressource-element" >
                     <label for="system.race.value" class="resource-label">Race</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input name="race" type="text" value="{{system.race}}" placeholder="Race" />
@@ -79,7 +79,7 @@
             </div>
 
             <!--Biographie-->
-            <div>
+            <div style="width: 100%;">
                 <label for="system.biographie" class="label">Biographie</label>
                 <div class="long-text">
                     {{editor biographyHTML target="system.biographie" button=true editable=editable engine="prosemirror"}}
