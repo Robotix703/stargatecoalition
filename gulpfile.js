@@ -3,7 +3,7 @@ const zip = require('gulp-zip');
 const less = require('gulp-less');
 
 function copyForZip() {
-	return gulp.src(['**/*', '!build', '!node_modules', '!./gulpfile.js', '!LICENSE', '!package.json', '!package-lock.json', '!.gitignore'])
+	return gulp.src(['**/*', '!build/*', '!build', '!node_modules', '!./gulpfile.js', '!LICENSE', '!package.json', '!package-lock.json', '!.gitignore'])
 		.pipe(gulp.dest('build'))
 }
 
