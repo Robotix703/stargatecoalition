@@ -21,7 +21,7 @@
                 </div>
                 
                 <!--Etourdissement-->
-                <div class="ressource-element" style="width: 80px;">
+                <div class="ressource-element" style="width: 100px;">
                     <label for="system.stun.value" class="resource-label">Etourdissement</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="text" name="system.stun.value" value="{{systemData.stun.value}}" data-dtype="Number"/>
@@ -29,7 +29,7 @@
                 </div>
 
                 <!--Profession-->
-                <div class="ressource-element" >
+                <div class="ressource-element" style="width: 150px;">
                     <label for="system.profession.value" class="resource-label">Profession</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input name="profession" type="text" value="{{system.profession}}" placeholder="Profession" />
@@ -60,7 +60,7 @@
         {{!-- Description Tab --}}
         <div class="tab description" data-group="primary" data-tab="description">
             <!--Damages-->
-            <div style="display: table;">
+            <div style="display: flex;">
                 <img class="img" src="systems/stargatecoalition/icons/degats.svg" title="degats" height="400" width="300"/>
 
                 <table class="health-table">
@@ -85,6 +85,8 @@
                     {{editor biographyHTML target="system.biographie" button=true editable=editable engine="prosemirror"}}
                 </div>
             </div>
+
+            <a class="attribute-roll" data-label="{{data.attributes.strength.label}}" data-roll="{{data.attributes.strength.value}}"><i class="fas fa-dice-d20"></i></a>
         </div>
 
         {{!-- Attributes Tab --}}
@@ -151,7 +153,7 @@
                     <td><input class="attribute-input flex-center" type="text" name="data.attributes.volonte.value" value="{{data.attributes.volonte.value}}" data-dtype="Number" placeholder="0"/></td>
                     <td><input class="attribute-input flex-center" type="text" name="data.attributes.volonte.modifier" value="{{data.attributes.volonte.modifier}}" data-dtype="Number" placeholder="0"/></td>
                     <td><input class="attribute-input flex-center" type="text" name="data.attributes.volonte.tempModifier" value="{{data.attributes.volonte.tempModifier}}" data-dtype="Number" placeholder="0"/></td>
-                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.volonte.tempValue" value="{{data.attributes.volonte.tempValue}}" data-dtype="Number" placeholder="{{systemData.volonte.value}}"/></td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.volonte.tempValue" value="{{data.attributes.volonte.tempValue}}" data-dtype="Number" placeholder="{{systemData.attributes.volonte.value}}"/></td>
                 </tr>
 
                 <tr>
@@ -159,7 +161,7 @@
                     <td><input class="attribute-input flex-center" type="text" name="data.attributes.charisme.value" value="{{data.attributes.charisme.value}}" data-dtype="Number" placeholder="0"/></td>
                     <td><input class="attribute-input flex-center" type="text" name="data.attributes.charisme.modifier" value="{{data.attributes.charisme.modifier}}" data-dtype="Number" placeholder="0"/></td>
                     <td><input class="attribute-input flex-center" type="text" name="data.attributes.charisme.tempModifier" value="{{data.attributes.charisme.tempModifier}}" data-dtype="Number" placeholder="0"/></td>
-                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.charisme.tempValue" value="{{data.attributes.charisme.tempValue}}" data-dtype="Number" placeholder="{{systemData.charisme.value}}"/></td>
+                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.charisme.tempValue" value="{{data.attributes.charisme.tempValue}}" data-dtype="Number" placeholder="{{systemData.attributes.charisme.value}}"/></td>
                 </tr>
             </table> 
         </div>
