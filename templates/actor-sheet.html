@@ -29,7 +29,7 @@
                 </div>
 
                 <!--Profession-->
-                <div class="ressource-element" style="width: 150px;">
+                <div class="ressource-element" style="width: 200px;">
                     <label for="system.profession.value" class="resource-label">Profession</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input name="profession" type="text" value="{{system.profession}}" placeholder="Profession" />
@@ -50,7 +50,8 @@
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
         <a class="item" data-tab="description">Description</a>
-        <a class="item" data-tab="attributes">Compétences</a>
+        <a class="item" data-tab="attributes">Caractéristiques</a>
+        <a class="item" data-tab="competences">Compétences</a>
         <a class="item" data-tab="items">Objets</a>
     </nav>
 
@@ -81,9 +82,7 @@
             <!--Biographie-->
             <div style="width: 100%;">
                 <label for="system.biographie" class="label">Biographie</label>
-                <div class="long-text">
-                    {{editor biographyHTML target="system.biographie" button=true editable=editable engine="prosemirror"}}
-                </div>
+                {{editor biographyHTML target="system.biographie" button=true editable=editable engine="prosemirror"}}
             </div>
 
             <a class="attribute-roll" data-label="{{data.attributes.strength.label}}" data-roll="{{data.attributes.strength.value}}"><i class="fas fa-dice-d20"></i></a>
@@ -162,6 +161,27 @@
                     <td><input class="attribute-input flex-center" type="text" name="data.attributes.charisme.modifier" value="{{data.attributes.charisme.modifier}}" data-dtype="Number" placeholder="0"/></td>
                     <td><input class="attribute-input flex-center" type="text" name="data.attributes.charisme.tempModifier" value="{{data.attributes.charisme.tempModifier}}" data-dtype="Number" placeholder="0"/></td>
                     <td><input class="attribute-input flex-center" type="text" name="data.attributes.charisme.tempValue" value="{{data.attributes.charisme.tempValue}}" data-dtype="Number" placeholder="{{systemData.attributes.charisme.value}}"/></td>
+                </tr>
+            </table> 
+        </div>
+
+        {{!-- Competences Tab --}}
+        <div class="tab competences" data-group="primary" data-tab="competences">
+            <table class="attributes-table">
+                <tr>
+                  <th>Nom</th>
+                  <th>Score</th>
+                  <th>Modif.</th>
+                  <th>Score temp.</th>
+                  <th>Modif. temp.</th>
+                </tr>
+
+                <tr>
+                  <td>Force</td>
+                  <td><input class="attribute-input flex-center" type="text" name="data.attributes.strength.value" value="{{data.attributes.strength.value}}" data-dtype="Number" placeholder="0"/></td>
+                  <td><input class="attribute-input flex-center" type="text" name="data.attributes.strength.modifier" value="{{data.attributes.strength.modifier}}" data-dtype="Number" placeholder="0"/></td>
+                  <td><input class="attribute-input flex-center" type="text" name="data.attributes.strength.tempModifier" value="{{data.attributes.strength.tempModifier}}" data-dtype="Number" placeholder="0"/></td>
+                  <td><input class="attribute-input flex-center" type="text" name="data.attributes.strength.tempValue" value="{{data.attributes.strength.tempValue}}" data-dtype="Number" placeholder="0"/></td>
                 </tr>
             </table> 
         </div>

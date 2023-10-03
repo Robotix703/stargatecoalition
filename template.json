@@ -7,7 +7,7 @@
 		"profession": "",
 		"race": "",
 		"divinite": "",
-		"biographie": "",
+		"biographie": "TOTO",
 		"xp": {
 			"value": 30,
 			"min": 0

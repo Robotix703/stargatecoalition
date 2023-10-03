@@ -12,6 +12,8 @@ export class SimpleActorSheet extends ActorSheet {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["stargatecoalition", "sheet", "actor"],
       template: "systems/stargatecoalition/templates/actor-sheet.html",
+      width: 700,
+      height: 700,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
       scrollY: [".biographie", ".items", ".attributes"],
       dragDrop: [{dragSelector: ".item-list .item", dropSelector: null}]
