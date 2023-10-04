@@ -175,7 +175,7 @@ export class EntitySheetHelper {
 
     // Use the actor for rollData so that formulas are always in reference to the parent actor.
     const rollData = this.actor.getRollData();
-    let formula = button.closest(".attribute").querySelector(".attribute-value")?.value;
+    let formula = button?.getAttribute("data-formula");
 
     // If there's a formula, attempt to roll it.
     if ( formula ) {
