@@ -170,7 +170,7 @@ export class EntitySheetHelper {
   static onAttributeRoll(event) {
     event.preventDefault();
     const button = event.currentTarget;
-    const label = button.closest(".attribute").querySelector(".attribute-label")?.value;
+    const label = button.closest(".attribute-input").querySelector(".attribute-label")?.value;
     const chatLabel = label ?? button.parentElement.querySelector(".attribute-key").value;
     const shorthand = game.settings.get("stargatecoalition", "macroShorthand");
 

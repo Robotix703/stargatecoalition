@@ -74,13 +74,67 @@
                     <tr>
                         <td>2</td>
                         <td>{{systemData.health.head.label}}</td>
-                        <td><input type="number" name="system.health.head.value" value="{{systemData.health.head.value}}"/></td>
+                        <td><input class="attribute-input flex-center" type="number" name="system.health.head.value" value="{{systemData.health.head.value}}"/></td>
                     </tr>
 
                     <tr>
                         <td>3</td>
                         <td>{{systemData.health.guidingHand.label}}</td>
-                        <td><input type="number" name="system.health.guidingHand.value" value="{{systemData.health.guidingHand.value}}"/></td>
+                        <td><input class="attribute-input flex-center" type="number" name="system.health.guidingHand.value" value="{{systemData.health.guidingHand.value}}"/></td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td>{{systemData.health.rightArm.label}}</td>
+                        <td><input class="attribute-input flex-center" type="number" name="system.health.rightArm.value" value="{{systemData.health.rightArm.value}}"/></td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td>{{systemData.health.leftHand.label}}</td>
+                        <td><input class="attribute-input flex-center" type="number" name="system.health.leftHand.value" value="{{systemData.health.leftHand.value}}"/></td>
+                    </tr>
+
+                    <tr>
+                        <td>6</td>
+                        <td>{{systemData.health.leftArm.label}}</td>
+                        <td><input class="attribute-input flex-center" type="number" name="system.health.leftArm.value" value="{{systemData.health.leftArm.value}}"/></td>
+                    </tr>
+
+                    <tr>
+                        <td>7</td>
+                        <td>{{systemData.health.rightLeg.label}}</td>
+                        <td><input class="attribute-input flex-center" type="number" name="system.health.rightLeg.value" value="{{systemData.health.rightLeg.value}}"/></td>
+                    </tr>
+
+                    <tr>
+                        <td>8</td>
+                        <td>{{systemData.health.leftLeg.label}}</td>
+                        <td><input class="attribute-input flex-center" type="number" name="system.health.leftLeg.value" value="{{systemData.health.leftLeg.value}}"/></td>
+                    </tr>
+
+                    <tr>
+                        <td>9</td>
+                        <td>{{systemData.health.leftBelly.label}}</td>
+                        <td><input class="attribute-input flex-center" type="number" name="system.health.leftBelly.value" value="{{systemData.health.leftBelly.value}}"/></td>
+                    </tr>
+
+                    <tr>
+                        <td>10</td>
+                        <td>{{systemData.health.rightBelly.label}}</td>
+                        <td><input class="attribute-input flex-center" type="number" name="system.health.rightBelly.value" value="{{systemData.health.rightBelly.value}}"/></td>
+                    </tr>
+
+                    <tr>
+                        <td>11</td>
+                        <td>{{systemData.health.rightChest.label}}</td>
+                        <td><input class="attribute-input flex-center" type="number" name="system.health.rightChest.value" value="{{systemData.health.rightChest.value}}"/></td>
+                    </tr>
+
+                    <tr>
+                        <td>12</td>
+                        <td>{{systemData.health.heart.label}}</td>
+                        <td><input class="attribute-input flex-center" type="number" name="system.health.heart.value" value="{{systemData.health.heart.value}}"/></td>
                     </tr>
                 </table> 
             </div>
@@ -106,67 +160,67 @@
                 <tr>
                   <td>Force</td>
                   <td><input class="attribute-input flex-center" type="number" name="system.characteristics.strength.value" value="{{systemData.characteristics.strength.value}}"/></td>
-                  <td><input class="attribute-input flex-center" type="number" name="systemData.characteristics.strength.modifier" value="{{systemData.characteristics.strength.modifier}}" data-dtype="Number" /></td>
-                  <td><input class="attribute-input flex-center" type="number" name="systemData.characteristics.strength.tempModifier" value="{{systemData.characteristics.strength.tempModifier}}" data-dtype="Number" /></td>
-                  <td><input class="attribute-input flex-center" type="number" name="systemData.characteristics.strength.tempValue" value="{{systemData.characteristics.strength.tempValue}}" data-dtype="Number" /></td>
-                  <td><button class="attribute-roll" data-label="{{systemData.characteristics.strength.label}}" data-roll="{{systemData.characteristics.strength.value}}"><i class="fas fa-dice-d20"></i></button></td>
+                  <td><input class="attribute-input flex-center" type="number" name="system.characteristics.strength.modifier" value="{{systemData.characteristics.strength.modifier}}"/></td>
+                  <td><input class="attribute-input flex-center" type="number" name="system.characteristics.strength.tempModifier" value="{{systemData.characteristics.strength.tempModifier}}"/></td>
+                  <td><input class="attribute-input flex-center" type="number" name="system.characteristics.strength.tempValue" value="{{systemData.characteristics.strength.tempValue}}"/></td>
+                  <td><button class="attribute-roll" data-label="Force" data-roll="{{systemData.characteristics.strength.value}}"><i class="fas fa-dice-d20"></i></button></td>
                 </tr>
 
-                <!--tr>
+                <tr>
                     <td>Dexterité</td>
-                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.dexterite.value" value="{{data.attributes.dexterite.value}}" data-dtype="Number" /></td>
-                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.dexterite.modifier" value="{{data.attributes.dexterite.modifier}}" data-dtype="Number" /></td>
-                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.dexterite.tempModifier" value="{{data.attributes.dexterite.tempModifier}}" data-dtype="Number" /></td>
-                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.dexterite.tempValue" value="{{data.attributes.dexterite.tempValue}}" data-dtype="Number" /></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.characteristics.dexterite.value" value="{{systemData.characteristics.dexterite.value}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.characteristics.dexterite.modifier" value="{{systemData.characteristics.dexterite.modifier}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.characteristics.dexterite.tempModifier" value="{{systemData.characteristics.dexterite.tempModifier}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.characteristics.dexterite.tempValue" value="{{systemData.characteristics.dexterite.tempValue}}"/></td>
                 </tr>
 
                 <tr>
                     <td>Constitution</td>
-                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.constitution.value" value="{{data.attributes.constitution.value}}" data-dtype="Number" /></td>
-                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.constitution.modifier" value="{{data.attributes.constitution.modifier}}" data-dtype="Number" /></td>
-                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.constitution.tempModifier" value="{{data.attributes.constitution.tempModifier}}" data-dtype="Number" /></td>
-                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.constitution.tempValue" value="{{data.attributes.constitution.tempValue}}" data-dtype="Number" /></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.characteristics.constitution.value" value="{{systemData.characteristics.constitution.value}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.characteristics.constitution.modifier" value="{{systemData.characteristics.constitution.modifier}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.characteristics.constitution.tempModifier" value="{{systemData.characteristics.constitution.tempModifier}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.characteristics.constitution.tempValue" value="{{systemData.characteristics.constitution.tempValue}}"/></td>
                 </tr>
 
                 <tr>
                     <td>Astuce</td>
-                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.astuce.value" value="{{data.attributes.astuce.value}}" data-dtype="Number" /></td>
-                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.astuce.modifier" value="{{data.attributes.astuce.modifier}}" data-dtype="Number" /></td>
-                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.astuce.tempModifier" value="{{data.attributes.astuce.tempModifier}}" data-dtype="Number" /></td>
-                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.astuce.tempValue" value="{{data.attributes.astuce.tempValue}}" data-dtype="Number" /></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.characteristics.astuce.value" value="{{systemData.characteristics.astuce.value}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.characteristics.astuce.modifier" value="{{systemData.characteristics.astuce.modifier}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.characteristics.astuce.tempModifier" value="{{systemData.characteristics.astuce.tempModifier}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.characteristics.astuce.tempValue" value="{{systemData.characteristics.astuce.tempValue}}"/></td>
                 </tr>
 
                 <tr>
                     <td>Intelligence</td>
-                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.intelligence.value" value="{{data.attributes.intelligence.value}}" data-dtype="Number" /></td>
-                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.intelligence.modifier" value="{{data.attributes.intelligence.modifier}}" data-dtype="Number" /></td>
-                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.intelligence.tempModifier" value="{{data.attributes.intelligence.tempModifier}}" data-dtype="Number" /></td>
-                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.intelligence.tempValue" value="{{data.attributes.intelligence.tempValue}}" data-dtype="Number" /></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.characteristics.intelligence.value" value="{{systemData.characteristics.intelligence.value}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.characteristics.intelligence.modifier" value="{{systemData.characteristics.intelligence.modifier}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.characteristics.intelligence.tempModifier" value="{{systemData.characteristics.intelligence.tempModifier}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.characteristics.intelligence.tempValue" value="{{systemData.characteristics.intelligence.tempValue}}"/></td>
                 </tr>
 
                 <tr>
                     <td>Perception</td>
-                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.perception.value" value="{{data.attributes.perception.value}}" data-dtype="Number" /></td>
-                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.perception.modifier" value="{{data.attributes.perception.modifier}}" data-dtype="Number" /></td>
-                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.perception.tempModifier" value="{{data.attributes.perception.tempModifier}}" data-dtype="Number" /></td>
-                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.perception.tempValue" value="{{data.attributes.perception.tempValue}}" data-dtype="Number" /></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.characteristics.perception.value" value="{{systemData.characteristics.perception.value}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.characteristics.perception.modifier" value="{{systemData.characteristics.perception.modifier}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.characteristics.perception.tempModifier" value="{{systemData.characteristics.perception.tempModifier}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.characteristics.perception.tempValue" value="{{systemData.characteristics.perception.tempValue}}"/></td>
                 </tr>
 
                 <tr>
                     <td>Volonté</td>
-                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.volonte.value" value="{{data.attributes.volonte.value}}" data-dtype="Number" /></td>
-                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.volonte.modifier" value="{{data.attributes.volonte.modifier}}" data-dtype="Number" /></td>
-                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.volonte.tempModifier" value="{{data.attributes.volonte.tempModifier}}" data-dtype="Number" /></td>
-                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.volonte.tempValue" value="{{systemData.attributes.volonte.tempValue}}" data-dtype="Number" placeholder="{{systemData.attributes.volonte.value}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.characteristics.volonte.value" value="{{systemData.characteristics.volonte.value}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.characteristics.volonte.modifier" value="{{systemData.characteristics.volonte.modifier}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.characteristics.volonte.tempModifier" value="{{systemData.characteristics.volonte.tempModifier}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.characteristics.volonte.tempValue" value="{{systemData.characteristics.volonte.tempValue}}" /></td>
                 </tr>
 
                 <tr>
                     <td>Charisme</td>
-                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.charisme.value" value="{{data.attributes.charisme.value}}" data-dtype="Number" /></td>
-                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.charisme.modifier" value="{{data.attributes.charisme.modifier}}" data-dtype="Number" /></td>
-                    <td><input class="attribute-input flex-center" type="text" name="data.attributes.charisme.tempModifier" value="{{data.attributes.charisme.tempModifier}}" data-dtype="Number" /></td>
-                    <td><input class="attribute-input flex-center" type="number" name="data.attributes.charisme.tempValue" value="{{systemData.attributes.charisme.tempValue}}" placeholder="{{systemData.attributes.charisme.value}}"/></td>
-                </tr-->
+                    <td><input class="attribute-input flex-center" type="number" name="system.characteristics.charisme.value" value="{{systemData.characteristics.charisme.value}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.characteristics.charisme.modifier" value="{{systemData.characteristics.charisme.modifier}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.characteristics.charisme.tempModifier" value="{{systemData.characteristics.charisme.tempModifier}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.characteristics.charisme.tempValue" value="{{systemData.characteristics.charisme.tempValue}}"/></td>
+                </tr>
             </table> 
         </div>
 
@@ -174,11 +228,19 @@
         <div class="tab skills" data-group="primary" data-tab="skills">
             <table class="attributes-table">
                 <tr>
-                  <th>Nom</th>
-                  <th>Score</th>
-                  <th>Modif.</th>
-                  <th>Score temp.</th>
-                  <th>Modif. temp.</th>
+                    <th>Nom</th>
+                    <th>Caract.</th>
+                    <th>Total</th>
+                    <th>Points</th>
+                    <th>Modif. temp.</th>
+                </tr>
+
+                <tr>
+                    <td>Armes de contact</td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.contactWeapon.caract" value="{{systemData.skills.contactWeapon.caract}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.contactWeapon.total" value="{{systemData.skills.contactWeapon.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.contactWeapon.points" value="{{systemData.skills.contactWeapon.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.contactWeapon.temp" value="{{systemData.skills.contactWeapon.temp}}"/></td>
                 </tr>
             </table> 
         </div>
