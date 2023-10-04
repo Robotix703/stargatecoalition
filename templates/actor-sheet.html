@@ -32,7 +32,7 @@
                 <div class="ressource-element" style="width: 150px;">
                     <label for="system.profession.value" class="resource-label">Profession</label>
                     <div class="resource-content flexrow flex-center flex-between">
-                        <input name="profession" type="text" value="{{system.profession}}" placeholder="Profession" />
+                        <input type="text" name="system.profession.value" value="{{systemData.profession.value}}" placeholder="Profession" />
                     </div>
                 </div>
                 
@@ -40,7 +40,7 @@
                 <div class="ressource-element" style="width: 150px;">
                     <label for="system.race.value" class="resource-label">Race</label>
                     <div class="resource-content flexrow flex-center flex-between">
-                        <input name="race" type="text" value="{{system.race}}" placeholder="Race" />
+                        <input type="text" name="system.race.value" value="{{systemData.race.value}}" placeholder="Race" />
                     </div>
                 </div>
             </div>
@@ -51,7 +51,7 @@
     <nav class="sheet-tabs tabs" data-group="primary">
         <a class="item" data-tab="description">Description</a>
         <a class="item" data-tab="attributes">Caractéristiques</a>
-        <a class="item" data-tab="competences">Compétences</a>
+        <a class="item" data-tab="skills">Compétences</a>
         <a class="item" data-tab="items">Objets</a>
     </nav>
 
@@ -73,19 +73,19 @@
     
                     <tr>
                       <td>2</td>
-                      <td>{{data.health.head.label}}</td>
-                      <td><input class="attribute-input flex-center" type="text" name="system.health.head.label" value="{{systemData.health.head.value}}" data-dtype="Number" placeholder="0"/></td>
+                      <td>{{system.health.head.label}}</td>
+                      <td><input class="attribute-input flex-center" type="number" name="system.health.head.label" value="{{systemData.health.head.value}}" data-dtype="Number"/></td>
                     </tr>
                 </table> 
             </div>
+
+            <a class="attribute-roll" data-label="{{data.attributes.strength.label}}" data-roll="{{data.attributes.strength.value}}"><i class="fas fa-dice-d20"></i></a>
 
             <!--Biographie-->
             <div style="width: 100%; height: 300px;">
                 <label for="system.biographie" class="label">Biographie</label>
                 {{editor biographyHTML target="system.biographie" button=true editable=editable engine="prosemirror"}}
             </div>
-
-            <a class="attribute-roll" data-label="{{data.attributes.strength.label}}" data-roll="{{data.attributes.strength.value}}"><i class="fas fa-dice-d20"></i></a>
         </div>
 
         {{!-- Attributes Tab --}}
@@ -165,8 +165,8 @@
             </table> 
         </div>
 
-        {{!-- Competences Tab --}}
-        <div class="tab competences" data-group="primary" data-tab="competences">
+        {{!-- Skills Tab --}}
+        <div class="tab skills" data-group="primary" data-tab="skills">
             <table class="attributes-table">
                 <tr>
                   <th>Nom</th>

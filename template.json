@@ -7,7 +7,7 @@
 		"profession": "",
 		"race": "",
 		"divinite": "",
-		"biographie": "TOTO",
+		"biographie": "",
 		"xp": {
 			"value": 30,
 			"min": 0
@@ -88,6 +88,292 @@
 				"min": 0,
 				"max": 6,
 				"label": "Tête"
+			},
+			"guidingHand": {
+				"value": 0,
+				"min": 0,
+				"max": 6,
+				"label": "Main directrice"
+			},
+			"rightArm": {
+				"value": 0,
+				"min": 0,
+				"max": 6,
+				"label": "Bras droit"
+			},
+			"leftHand": {
+				"value": 0,
+				"min": 0,
+				"max": 6,
+				"label": "Main gauche"
+			},
+			"leftArm": {
+				"value": 0,
+				"min": 0,
+				"max": 6,
+				"label": "Bras gauche"
+			},
+			"rightLeg": {
+				"value": 0,
+				"min": 0,
+				"max": 6,
+				"label": "Jambe droite"
+			},
+			"leftLeg": {
+				"value": 0,
+				"min": 0,
+				"max": 6,
+				"label": "Jambe gauche"
+			},
+			"leftBelly": {
+				"value": 0,
+				"min": 0,
+				"max": 6,
+				"label": "Ventre gauche"
+			},
+			"rightBelly": {
+				"value": 0,
+				"min": 0,
+				"max": 6,
+				"label": "Ventre droit"
+			},
+			"rightChest": {
+				"value": 0,
+				"min": 0,
+				"max": 6,
+				"label": "Torse droit"
+			},
+			"heart": {
+				"value": 0,
+				"min": 0,
+				"max": 6,
+				"label": "Coeur"
+			}
+		},
+		"skills": {
+			"contactWeapon": {
+				"caract": "Force",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Armes de contact"
+			},
+			"unarmedCombat": {
+				"caract": "Force",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Combat à mains nues"
+			},
+			"swimming": {
+				"caract": "Force",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Natation"
+			},
+			"jumpAndClimb": {
+				"caract": "Force",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Saut et escalade"
+			},
+			"rangedWeapon": {
+				"caract": "Dexterite",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Armes à distance"
+			},
+			"dodge": {
+				"caract": "Dexterite",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Esquive"
+			},
+			"acrobatics": {
+				"caract": "Dexterite",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Equilibre et Acrobaties"
+			},
+			"stealth": {
+				"caract": "Dexterite",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Furtivité"
+			},
+			"vigor": {
+				"caract": "Constitution",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Vigeur"
+			},
+			"endurance": {
+				"caract": "Constitution",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Endurance"
+			},
+			"recovery": {
+				"caract": "Constitution",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Récupération"
+			},
+			"immunity": {
+				"caract": "Constitution",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Immunité"
+			},
+			"piloting": {
+				"caract": "Astuce",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Pilotage"
+			},
+			"sabotage": {
+				"caract": "Astuce",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Sabotage"
+			},
+			"strategy": {
+				"caract": "Astuce",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Stratégie militaire"
+			},
+			"survival": {
+				"caract": "Astuce",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Survie"
+			},
+			"archeology": {
+				"caract": "Intelligence",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Archéologie & Langages"
+			},
+			"science": {
+				"caract": "Intelligence",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Connaissances Scientifiques"
+			},
+			"medical": {
+				"caract": "Intelligence",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Medical"
+			},
+			"technologie": {
+				"caract": "Intelligence",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Technologie"
+			},
+			"smell": {
+				"caract": "Perception",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Odorat"
+			},
+			"hearing": {
+				"caract": "Perception",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Ouïe"
+			},
+			"touch": {
+				"caract": "Perception",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Toucher"
+			},
+			"view": {
+				"caract": "Perception",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Vue"
+			},
+			"concentration": {
+				"caract": "Volonte",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Concentration"
+			},
+			"empathy": {
+				"caract": "Volonte",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Empathie"
+			},
+			"strongMinded": {
+				"caract": "Volonte",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Force mentale"
+			},
+			"mentalToughness": {
+				"caract": "Volonte",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Résistance mentale"
+			},
+			"bluff": {
+				"caract": "Charisme",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Bluff"
+			},
+			"intimidation": {
+				"caract": "Charisme",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Intimidation"
+			},
+			"leadership": {
+				"caract": "Charisme",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Leadership"
+			},
+			"negotiation ": {
+				"caract": "Charisme",
+				"total": 6,
+				"points": 0,
+				"temp": 0,
+				"label": "Négociation & Persuasion"
 			}
 		}
 	  }
