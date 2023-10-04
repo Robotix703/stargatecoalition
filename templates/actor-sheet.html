@@ -66,33 +66,21 @@
 
                 <table class="health-table">
                     <tr>
-                      <th>Numéro</th>
-                      <th>Partie du corps</th>
-                      <th>Dégâts</th>
+                        <th>Numéro</th>
+                        <th>Partie du corps</th>
+                        <th>Dégâts</th>
                     </tr>
     
                     <tr>
-                      <td>2</td>
-                      <td>{{system.health.head.label}}</td>
-                      <td><input class="attribute-input flex-center" type="number" name="system.health.head.label" value="{{systemData.health.head.value}}"/></td>
+                        <td>2</td>
+                        <td>{{systemData.health.head.label}}</td>
+                        <td><input class="attribute-input flex-center" type="number" name="systemData.health.head.value" value="{{systemData.health.head.value}}"/></td>
                     </tr>
 
                     <tr>
                         <td>3</td>
-                        <td>{{data.attributes.strength.label}}</td>
-                        <td><input class="attribute-input flex-center" type="number" name="system.health.head.label" value="{{systemData.health.head.value}}"/></td>
-                    </tr>
-
-                    <tr>
-                        <td>4</td>
-                        <td>{{system.attributes.strength.label}}</td>
-                        <td><input class="attribute-input flex-center" type="number" name="system.health.head.label" value="{{systemData.health.head.value}}"/></td>
-                    </tr>
-
-                    <tr>
-                        <td>5</td>
-                        <td>{{systemData.xp.value}}</td>
-                        <td><input class="attribute-input flex-center" type="number" name="system.health.head.label" value="{{systemData.health.head.value}}"/></td>
+                        <td>{{systemData.health.guidingHand.label}}</td>
+                        <td><input class="attribute-input flex-center" type="number" name="systemData.health.guidingHand.value" value="{{systemData.health.guidingHand.value}}"/></td>
                     </tr>
                 </table> 
             </div>
@@ -117,14 +105,14 @@
 
                 <tr>
                   <td>Force</td>
-                  <td><input class="attribute-input flex-center" type="text" name="data.attributes.strength.value" value="{{data.attributes.strength.value}}" data-dtype="Number" /></td>
-                  <td><input class="attribute-input flex-center" type="text" name="data.attributes.strength.modifier" value="{{data.attributes.strength.modifier}}" data-dtype="Number" /></td>
-                  <td><input class="attribute-input flex-center" type="text" name="data.attributes.strength.tempModifier" value="{{data.attributes.strength.tempModifier}}" data-dtype="Number" /></td>
-                  <td><input class="attribute-input flex-center" type="text" name="data.attributes.strength.tempValue" value="{{data.attributes.strength.tempValue}}" data-dtype="Number" /></td>
-                  <td><button class="attribute-roll" data-label="{{data.attributes.strength.label}}" data-roll="{{data.attributes.strength.value}}"><i class="fas fa-dice-d20"></i></button></td>
+                  <td><input class="attribute-input flex-center" type="number" name="systemData.characteristics.strength.value" value="{{systemData.characteristics.strength.value}}"/></td>
+                  <td><input class="attribute-input flex-center" type="number" name="systemData.characteristics.strength.modifier" value="{{systemData.characteristics.strength.modifier}}" data-dtype="Number" /></td>
+                  <td><input class="attribute-input flex-center" type="number" name="systemData.characteristics.strength.tempModifier" value="{{systemData.characteristics.strength.tempModifier}}" data-dtype="Number" /></td>
+                  <td><input class="attribute-input flex-center" type="number" name="systemData.characteristics.strength.tempValue" value="{{systemData.characteristics.strength.tempValue}}" data-dtype="Number" /></td>
+                  <td><button class="attribute-roll" data-label="{{systemData.characteristics.strength.label}}" data-roll="{{systemData.characteristics.strength.value}}"><i class="fas fa-dice-d20"></i></button></td>
                 </tr>
 
-                <tr>
+                <!--tr>
                     <td>Dexterité</td>
                     <td><input class="attribute-input flex-center" type="text" name="data.attributes.dexterite.value" value="{{data.attributes.dexterite.value}}" data-dtype="Number" /></td>
                     <td><input class="attribute-input flex-center" type="text" name="data.attributes.dexterite.modifier" value="{{data.attributes.dexterite.modifier}}" data-dtype="Number" /></td>
@@ -178,7 +166,7 @@
                     <td><input class="attribute-input flex-center" type="text" name="data.attributes.charisme.modifier" value="{{data.attributes.charisme.modifier}}" data-dtype="Number" /></td>
                     <td><input class="attribute-input flex-center" type="text" name="data.attributes.charisme.tempModifier" value="{{data.attributes.charisme.tempModifier}}" data-dtype="Number" /></td>
                     <td><input class="attribute-input flex-center" type="number" name="data.attributes.charisme.tempValue" value="{{systemData.attributes.charisme.tempValue}}" placeholder="{{systemData.attributes.charisme.value}}"/></td>
-                </tr>
+                </tr-->
             </table> 
         </div>
 
@@ -192,68 +180,12 @@
                   <th>Score temp.</th>
                   <th>Modif. temp.</th>
                 </tr>
-
-                <tr>
-                  <td>Force</td>
-                  <td><input class="attribute-input flex-center" type="text" name="data.attributes.strength.value" value="{{data.attributes.strength.value}}" data-dtype="Number" placeholder="0"/></td>
-                  <td><input class="attribute-input flex-center" type="text" name="data.attributes.strength.modifier" value="{{data.attributes.strength.modifier}}" data-dtype="Number" placeholder="0"/></td>
-                  <td><input class="attribute-input flex-center" type="text" name="data.attributes.strength.tempModifier" value="{{data.attributes.strength.tempModifier}}" data-dtype="Number" placeholder="0"/></td>
-                  <td><input class="attribute-input flex-center" type="text" name="data.attributes.strength.tempValue" value="{{data.attributes.strength.tempValue}}" data-dtype="Number" placeholder="0"/></td>
-                </tr>
             </table> 
         </div>
 
         {{!-- Owned Items Tab --}}
         <div class="tab items" data-group="primary" data-tab="items">
-            <ol class="item-list">
-                {{#each data.items as |item id|}}
-                <li class="item flexrow" data-item-id="{{item._id}}">
-                    <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
-                    <h4 class="item-name">{{item.name}}</h4>
-                    {{!-- Iterate through all attributes on the item and output buttons for any that are formula. --}}
-                    <div class="item-buttons">
-                        {{#each item.system.attributes as |itemAttr key|}}
-                        {{#if itemAttr.dtype}}
-                            {{#if itemAttr.isFormula}}
-                                {{!-- Use the items.name.key format for shorthand. --}}
-                                {{#if ../../shorthand}}
-                                <button class="item-button rollable" data-roll="@items.{{slugify item.name}}.{{key}}" data-label="{{ itemAttr.label }}"
-                                    title="{{itemAttr.value}}">{{itemAttr.label}}</button>
-                                {{!-- Use the items.name.attributes.key.value format otherwise. --}}
-                                {{else}}
-                                <button class="item-button rollable"
-                                    data-roll="@items.{{slugify item.name}}.attributes.{{key}}.value" data-label="{{ itemAttr.label }}"
-                                    title="{{itemAttr.value}}">{{itemAttr.label}}</button>
-                                {{/if}}
-                            {{/if}}
-                        {{else}}
-                            {{#each itemAttr as |itemGroupedAttr groupedKey|}}
-                                {{#if itemGroupedAttr.isFormula}}
-                                    {{!-- Use the items.name.key format for shorthand. --}}
-                                    {{#if ../../../shorthand}}
-                                    <button class="item-button rollable" data-roll="@items.{{slugify item.name}}.{{key}}.{{groupedKey}}" data-label="{{ itemGroupedAttr.label }}"
-                                        title="{{itemGroupedAttr.value}}">{{itemGroupedAttr.label}}</button>
-                                    {{!-- Use the items.name.attributes.key.value format otherwise. --}}
-                                    {{else}}
-                                    <button class="item-button rollable"
-                                        data-roll="@items.{{slugify item.name}}.attributes.{{key}}.{{groupedKey}}.value" data-label="{{ itemGroupedAttr.label }}"
-                                        title="{{itemGroupedAttr.value}}">{{itemGroupedAttr.label}}</button>
-                                    {{/if}}
-                                {{/if}}
-                            {{/each}}
-                        {{/if}}
-                        {{/each}}
-                    </div>
-                    <div class="item-controls">
-                        <a class="item-control" title="{{ localize "SIMPLE.ItemEdit" }}" data-action="edit"><i class="fas fa-edit"></i></a>
-                        <a class="item-control" title="{{ localize "SIMPLE.ItemDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
-                    </div>
-                </li>
-                {{/each}}
-            </ol>
-            <p>
-                <a class="item-control" title="{{ localize "SIMPLE.ItemCreate" }}" data-action="create"><i class="fas fa-plus"></i> {{ localize "SIMPLE.ItemCreate" }}</a>
-            </p>
+
         </div>
     </section>
 </form>

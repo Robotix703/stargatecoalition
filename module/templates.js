@@ -8,8 +8,7 @@ export const preloadHandlebarsTemplates = async function() {
   // Define template paths to load
   const templatePaths = [
     // Attribute list partial.
-    "systems/stargatecoalition/templates/parts/sheet-attributes.html",
-    "systems/stargatecoalition/templates/parts/sheet-groups.html"
+    
   ];
 
   // Load the template parts
