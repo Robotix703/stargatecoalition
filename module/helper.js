@@ -170,8 +170,7 @@ export class EntitySheetHelper {
   static onAttributeRoll(event) {
     event.preventDefault();
     const button = event.currentTarget;
-    const label = button.closest(".attribute-input").querySelector(".attribute-label")?.value;
-    const chatLabel = label ?? button.parentElement.querySelector(".attribute-key").value;
+    const chatLabel = button?.getAttribute("data-label");
     const shorthand = game.settings.get("stargatecoalition", "macroShorthand");
 
     // Use the actor for rollData so that formulas are always in reference to the parent actor.
