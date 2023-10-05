@@ -196,6 +196,10 @@ export class EntitySheetHelper {
     }
   }
 
+  static onCaracteristicChange(event){
+    event.preventDefault();
+  }
+
   /* -------------------------------------------- */
 
   /**

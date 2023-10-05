@@ -46,6 +46,7 @@ export class SimpleActorSheet extends ActorSheet {
 
     // Attribute Management
     html.find(".attributes").on("click", "a.attribute-roll", EntitySheetHelper.onAttributeRoll.bind(this));
+    html.find(".attributes").on("change", "input.caracteristic-modifier", EntitySheetHelper.onCaracteristicChange.bind(this));
 
     // Item Controls
     html.find(".item-control").click(this._onItemControl.bind(this));
@@ -60,12 +61,6 @@ export class SimpleActorSheet extends ActorSheet {
       }, false);
     });
   }
-
-  computeModifier(value, modifier){
-    console.log(value);
-    modifier++;
-  }
-
   /* -------------------------------------------- */
 
   /**
