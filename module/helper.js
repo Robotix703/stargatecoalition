@@ -198,6 +198,10 @@ export class EntitySheetHelper {
 
   static onCaracteristicChange(event){
     event.preventDefault();
+    const input = event.currentTarget;
+    const value = input?.getAttribute("name");
+    const modifier = Math.floor(value/2) - 5;
+    input.closest("caracteristic-modifier");
   }
 
   /* -------------------------------------------- */

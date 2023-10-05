@@ -19,7 +19,7 @@
 		"characteristics": {
 			"force": {
 			  "value": 10,
-			  "min": 0,
+			  "min": 1,
 			  "label": "Force",
 			  "modifier": 0,
 			  "tempModifier": 0,
@@ -27,7 +27,7 @@
 			},
 			"dexterite": {
 				"value": 10,
-				"min": 0,
+				"min": 1,
 				"label": "Dexterité",
 				"modifier": 0,
 				"tempModifier": 0,
@@ -35,7 +35,7 @@
 			},
 			"constitution": {
 				"value": 10,
-				"min": 0,
+				"min": 1,
 				"label": "Constitution",
 				"modifier": 0,
 				"tempModifier": 0,
@@ -43,7 +43,7 @@
 			},
 			"astuce": {
 				"value": 10,
-				"min": 0,
+				"min": 1,
 				"label": "Astuce",
 				"modifier": 0,
 				"tempModifier": 0,
@@ -51,7 +51,7 @@
 			},
 			"intelligence": {
 				"value": 10,
-				"min": 0,
+				"min": 1,
 				"label": "Intelligence",
 				"modifier": 0,
 				"tempModifier": 0,
@@ -59,7 +59,7 @@
 			},
 			"perception": {
 				"value": 10,
-				"min": 0,
+				"min": 1,
 				"label": "Perception",
 				"modifier": 0,
 				"tempModifier": 0,
@@ -67,7 +67,7 @@
 			},
 			"volonte": {
 				"value": 10,
-				"min": 0,
+				"min": 1,
 				"label": "Volonté",
 				"modifier": 0,
 				"tempModifier": 0,
@@ -75,7 +75,7 @@
 			},
 			"charisme": {
 				"value": 10,
-				"min": 0,
+				"min": 1,
 				"label": "Charisme",
 				"modifier": 0,
 				"tempModifier": 0,
