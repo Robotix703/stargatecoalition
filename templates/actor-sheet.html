@@ -159,12 +159,11 @@
 
                 <tr>
                     <td>
-                        {{systemData.characteristics.force.label}}
-                        <a class="attribute-roll" data-label="{{systemData.characteristics.force.label}}" data-formula="2d6 + {{systemData.characteristics.force.modifier}} + {{systemData.characteristics.force.tempModifier}} + {{systemData.characteristics.force.tempValue}}">
-                            <i class="fas fa-dice-d20"></i>
+                        <a class="attribute-roll" data-label="{{systemData.characteristics.force.label}}" data-formula="2d10 + {{systemData.characteristics.force.modifier}} + {{systemData.characteristics.force.tempModifier}} + {{systemData.characteristics.force.tempValue}}">
+                            {{systemData.characteristics.force.label}}
                         </a>
                     </td>
-                    <td><input class="attribute-input flex-center" type="number" name="system.characteristics.force.value" value="{{systemData.characteristics.force.value}}"/></td>
+                    <td><input class="attribute-input flex-center" onchange="computeModifier(system.characteristics.force.value)" type="number" name="system.characteristics.force.value" value="{{systemData.characteristics.force.value}}"/></td>
                     <td><input class="attribute-input flex-center" type="number" name="system.characteristics.force.modifier" value="{{systemData.characteristics.force.modifier}}"/></td>
                     <td><input class="attribute-input flex-center" type="number" name="system.characteristics.force.tempModifier" value="{{systemData.characteristics.force.tempModifier}}"/></td>
                     <td><input class="attribute-input flex-center" type="number" name="system.characteristics.force.tempValue" value="{{systemData.characteristics.force.tempValue}}"/></td>

@@ -61,6 +61,11 @@ export class SimpleActorSheet extends ActorSheet {
     });
   }
 
+  computeModifier(value, modifier){
+    console.log(value);
+    modifier++;
+  }
+
   /* -------------------------------------------- */
 
   /**
