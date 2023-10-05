@@ -36,6 +36,10 @@ export class SimpleActorSheet extends ActorSheet {
       secrets: this.document.isOwner,
       async: true
     });
+    context.racialSpecificityHTML = await TextEditor.enrichHTML(context.systemData.racialSpecificity, {
+      secrets: this.document.isOwner,
+      async: true
+    });
     this.computeModifiers(context.data.system);
     this.computeSkills(context.data.system);
     return context;
@@ -61,6 +65,41 @@ export class SimpleActorSheet extends ActorSheet {
     data.skills.swimming.total = data.skills.swimming.points + data.skills.swimming.temp;
     data.skills.jumpAndClimb.total = data.skills.jumpAndClimb.points + data.skills.jumpAndClimb.temp;
 
+    data.skills.rangedWeapon.total = data.skills.rangedWeapon.points + data.skills.rangedWeapon.temp;
+    data.skills.dodge.total = data.skills.dodge.points + data.skills.dodge.temp;
+    data.skills.acrobatics.total = data.skills.acrobatics.points + data.skills.acrobatics.temp;
+    data.skills.stealth.total = data.skills.stealth.points + data.skills.stealth.temp;
+
+    data.skills.vigor.total = data.skills.vigor.points + data.skills.vigor.temp;
+    data.skills.endurance.total = data.skills.endurance.points + data.skills.endurance.temp;
+    data.skills.recovery.total = data.skills.recovery.points + data.skills.recovery.temp;
+    data.skills.immunity.total = data.skills.immunity.points + data.skills.immunity.temp;
+
+    data.skills.piloting.total = data.skills.piloting.points + data.skills.piloting.temp;
+    data.skills.sabotage.total = data.skills.sabotage.points + data.skills.sabotage.temp;
+    data.skills.strategy.total = data.skills.strategy.points + data.skills.strategy.temp;
+    data.skills.survival.total = data.skills.survival.points + data.skills.survival.temp;
+
+    data.skills.archeology.total = data.skills.archeology.points + data.skills.archeology.temp;
+    data.skills.science.total = data.skills.science.points + data.skills.science.temp;
+    data.skills.medical.total = data.skills.medical.points + data.skills.medical.temp;
+    data.skills.technologie.total = data.skills.technologie.points + data.skills.technologie.temp;
+
+    data.skills.smell.total = data.skills.smell.points + data.skills.smell.temp;
+    data.skills.hearing.total = data.skills.hearing.points + data.skills.hearing.temp;
+    data.skills.touch.total = data.skills.touch.points + data.skills.touch.temp;
+    data.skills.view.total = data.skills.view.points + data.skills.view.temp;
+
+    data.skills.concentration.total = data.skills.concentration.points + data.skills.concentration.temp;
+    data.skills.empathy.total = data.skills.empathy.points + data.skills.empathy.temp;
+    data.skills.strongMinded.total = data.skills.strongMinded.points + data.skills.strongMinded.temp;
+    data.skills.mentalToughness.total = data.skills.mentalToughness.points + data.skills.mentalToughness.temp;
+
+    data.skills.bluff.total = data.skills.bluff.points + data.skills.bluff.temp;
+    data.skills.intimidation.total = data.skills.intimidation.points + data.skills.intimidation.temp;
+    data.skills.leadership.total = data.skills.leadership.points + data.skills.leadership.temp;
+    data.skills.negotiation.total = data.skills.negotiation.points + data.skills.negotiation.temp;
+
     //Actual
     data.skillsLimits.force.actual = 
       data.skills.contactWeapon.points 
@@ -68,11 +107,67 @@ export class SimpleActorSheet extends ActorSheet {
       + data.skills.swimming.total
       + data.skills.jumpAndClimb.total;
 
+    data.skillsLimits.dexterite.actual = 
+      data.skills.rangedWeapon.points 
+      + data.skills.dodge.total
+      + data.skills.acrobatics.total
+      + data.skills.stealth.total;
+
+    data.skillsLimits.constitution.actual = 
+      data.skills.vigor.points 
+      + data.skills.endurance.total
+      + data.skills.recovery.total
+      + data.skills.immunity.total;
+
+    data.skillsLimits.astuce.actual = 
+      data.skills.piloting.points 
+      + data.skills.sabotage.total
+      + data.skills.strategy.total
+      + data.skills.survival.total;
+
+    data.skillsLimits.intelligence.actual = 
+      data.skills.archeology.points 
+      + data.skills.science.total
+      + data.skills.medical.total
+      + data.skills.technologie.total;
+
+    data.skillsLimits.perception.actual = 
+      data.skills.smell.points 
+      + data.skills.hearing.total
+      + data.skills.touch.total
+      + data.skills.view.total;
+
+    data.skillsLimits.volonte.actual = 
+      data.skills.concentration.points 
+      + data.skills.empathy.total
+      + data.skills.strongMinded.total
+      + data.skills.mentalToughness.total;
+
+    data.skillsLimits.charisme.actual = 
+      data.skills.bluff.points 
+      + data.skills.intimidation.total
+      + data.skills.leadership.total
+      + data.skills.negotiation.total;
+
     //max
     data.skillsLimits.force.max = data.characteristics.force.modifier * 1.5;
+    data.skillsLimits.dexterite.max = data.characteristics.dexterite.modifier * 1.5;
+    data.skillsLimits.constitution.max = data.characteristics.constitution.modifier * 1.5;
+    data.skillsLimits.astuce.max = data.characteristics.astuce.modifier * 1.5;
+    data.skillsLimits.intelligence.max = data.characteristics.intelligence.modifier * 1.5;
+    data.skillsLimits.perception.max = data.characteristics.perception.modifier * 1.5;
+    data.skillsLimits.volonte.max = data.characteristics.volonte.modifier * 1.5;
+    data.skillsLimits.charisme.max = data.characteristics.charisme.modifier * 1.5;
 
     //maxSet
     data.skillsLimits.force.maxSet = data.characteristics.force.modifier * 3;
+    data.skillsLimits.dexterite.maxSet = data.characteristics.dexterite.modifier * 3;
+    data.skillsLimits.constitution.maxSet = data.characteristics.constitution.modifier * 3;
+    data.skillsLimits.astuce.maxSet = data.characteristics.astuce.modifier * 3;
+    data.skillsLimits.intelligence.maxSet = data.characteristics.intelligence.modifier * 3;
+    data.skillsLimits.perception.maxSet = data.characteristics.perception.modifier * 3;
+    data.skillsLimits.volonte.maxSet = data.characteristics.volonte.modifier * 3;
+    data.skillsLimits.charisme.maxSet = data.characteristics.charisme.modifier * 3;
   }
 
   valueToModifier(value) {

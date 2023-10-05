@@ -13,13 +13,13 @@
 
             <div class="resource">
                 <!--XP-->
-                <div class="ressource-element" style="width: 60px;">
+                <div class="ressource-element" style="width: 80px;">
                     <label for="system.xp.value" class="resource-label">XP</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="number" name="system.xp.value" value="{{systemData.xp.value}}"/>
                     </div>
                 </div>
-                <div class="ressource-element" style="width: 60px;">
+                <div class="ressource-element" style="width: 80px;">
                     <label for="system.spendXP.value" class="resource-label">XP dep.</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="number" name="system.spendXP.value" value="{{systemData.spendXP.value}}"/>
@@ -35,17 +35,9 @@
                         <input type="number" name="system.stun.value" value="{{systemData.stun.value}}"/>
                     </div>
                 </div>
-
-                <!--Profession-->
-                <div class="ressource-element" style="width: 130px;">
-                    <label for="system.profession.value" class="resource-label">Profession</label>
-                    <div class="resource-content flexrow flex-center flex-between">
-                        <input type="text" name="system.profession.value" value="{{systemData.profession.value}}" placeholder="Profession" />
-                    </div>
-                </div>
                 
                 <!--Race-->
-                <div class="ressource-element" style="width: 130px;">
+                <div class="ressource-element" style="width: 150px;">
                     <label for="system.race.value" class="resource-label">Race</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="text" name="system.race.value" value="{{systemData.race.value}}" placeholder="Race" />
@@ -76,13 +68,20 @@
             </div>
 
             <!--Race-->
-            <div>
-
+            <div class="long-texte">
+                <h1 for="system.race.value" class="resource-label">Race</h1>
+                <div class="resource-content flexrow flex-center flex-between">
+                    <input type="text" name="system.race.value" value="{{systemData.race.value}}" placeholder="Race" />
+                </div>
+                {{editor racialSpecificityHTML target="system.racialSpecificity" button=true editable=editable engine="prosemirror"}}
             </div>
 
             <!--Profession-->
             <div>
-                
+                <label for="system.profession.value" class="resource-label">Profession</label>
+                <div class="resource-content flexrow flex-center flex-between">
+                    <input type="text" name="system.profession.value" value="{{systemData.profession.value}}" placeholder="Profession" />
+                </div>
             </div>
 
             <!--Notes-->
@@ -343,6 +342,426 @@
                     <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.jumpAndClimb.total" value="{{systemData.skills.jumpAndClimb.total}}"/></td>
                     <td><input class="attribute-input flex-center" type="number" name="system.skills.jumpAndClimb.points" value="{{systemData.skills.jumpAndClimb.points}}"/></td>
                     <td><input class="attribute-input flex-center" type="number" name="system.skills.jumpAndClimb.temp" value="{{systemData.skills.jumpAndClimb.temp}}"/></td>
+                </tr>
+            </table>
+
+            <!--Dexterity-->
+            <h1>{{systemData.characteristics.dexterite.label}} - {{systemData.skillsLimits.dexterite.actual}} / {{systemData.skillsLimits.dexterite.maxSet}} - MAX: {{systemData.skillsLimits.dexterite.max}}</h1>
+            <table class="skills-table">
+                <tr>
+                    <th>Nom</th>
+                    <th>Caract.</th>
+                    <th>Total</th>
+                    <th>Points</th>
+                    <th>Modif. temp.</th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.rangedWeapon.label}}" data-formula="2d10 + {{systemData.skills.rangedWeapon.total}}">
+                            {{systemData.skills.rangedWeapon.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.rangedWeapon.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.rangedWeapon.total" value="{{systemData.skills.rangedWeapon.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.rangedWeapon.points" value="{{systemData.skills.rangedWeapon.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.rangedWeapon.temp" value="{{systemData.skills.rangedWeapon.temp}}"/></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.dodge.label}}" data-formula="2d10 + {{systemData.skills.dodge.total}}">
+                            {{systemData.skills.dodge.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.dodge.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.dodge.total" value="{{systemData.skills.dodge.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.dodge.points" value="{{systemData.skills.dodge.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.dodge.temp" value="{{systemData.skills.dodge.temp}}"/></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.acrobatics.label}}" data-formula="2d10 + {{systemData.skills.acrobatics.total}}">
+                            {{systemData.skills.acrobatics.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.acrobatics.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.acrobatics.total" value="{{systemData.skills.acrobatics.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.acrobatics.points" value="{{systemData.skills.acrobatics.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.acrobatics.temp" value="{{systemData.skills.acrobatics.temp}}"/></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.stealth.label}}" data-formula="2d10 + {{systemData.skills.stealth.total}}">
+                            {{systemData.skills.stealth.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.stealth.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.stealth.total" value="{{systemData.skills.stealth.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.stealth.points" value="{{systemData.skills.stealth.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.stealth.temp" value="{{systemData.skills.stealth.temp}}"/></td>
+                </tr>
+            </table>
+
+            <!--Constitution-->
+            <h1>{{systemData.characteristics.constitution.label}} - {{systemData.skillsLimits.constitution.actual}} / {{systemData.skillsLimits.constitution.maxSet}} - MAX: {{systemData.skillsLimits.constitution.max}}</h1>
+            <table class="skills-table">
+                <tr>
+                    <th>Nom</th>
+                    <th>Caract.</th>
+                    <th>Total</th>
+                    <th>Points</th>
+                    <th>Modif. temp.</th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.vigor.label}}" data-formula="2d10 + {{systemData.skills.vigor.total}}">
+                            {{systemData.skills.vigor.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.vigor.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.vigor.total" value="{{systemData.skills.vigor.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.vigor.points" value="{{systemData.skills.vigor.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.vigor.temp" value="{{systemData.skills.vigor.temp}}"/></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.endurance.label}}" data-formula="2d10 + {{systemData.skills.endurance.total}}">
+                            {{systemData.skills.endurance.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.endurance.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.endurance.total" value="{{systemData.skills.endurance.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.endurance.points" value="{{systemData.skills.endurance.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.endurance.temp" value="{{systemData.skills.endurance.temp}}"/></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.recovery.label}}" data-formula="2d10 + {{systemData.skills.recovery.total}}">
+                            {{systemData.skills.recovery.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.recovery.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.recovery.total" value="{{systemData.skills.recovery.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.recovery.points" value="{{systemData.skills.recovery.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.recovery.temp" value="{{systemData.skills.recovery.temp}}"/></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.immunity.label}}" data-formula="2d10 + {{systemData.skills.immunity.total}}">
+                            {{systemData.skills.immunity.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.immunity.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.immunity.total" value="{{systemData.skills.immunity.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.immunity.points" value="{{systemData.skills.immunity.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.immunity.temp" value="{{systemData.skills.immunity.temp}}"/></td>
+                </tr>
+            </table>
+
+            <!--Astuce-->
+            <h1>{{systemData.characteristics.astuce.label}} - {{systemData.skillsLimits.astuce.actual}} / {{systemData.skillsLimits.astuce.maxSet}} - MAX: {{systemData.skillsLimits.astuce.max}}</h1>
+            <table class="skills-table">
+                <tr>
+                    <th>Nom</th>
+                    <th>Caract.</th>
+                    <th>Total</th>
+                    <th>Points</th>
+                    <th>Modif. temp.</th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.piloting.label}}" data-formula="2d10 + {{systemData.skills.piloting.total}}">
+                            {{systemData.skills.piloting.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.piloting.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.piloting.total" value="{{systemData.skills.piloting.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.piloting.points" value="{{systemData.skills.piloting.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.piloting.temp" value="{{systemData.skills.piloting.temp}}"/></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.sabotage.label}}" data-formula="2d10 + {{systemData.skills.sabotage.total}}">
+                            {{systemData.skills.sabotage.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.sabotage.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.sabotage.total" value="{{systemData.skills.sabotage.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.sabotage.points" value="{{systemData.skills.sabotage.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.sabotage.temp" value="{{systemData.skills.sabotage.temp}}"/></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.strategy.label}}" data-formula="2d10 + {{systemData.skills.strategy.total}}">
+                            {{systemData.skills.strategy.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.strategy.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.strategy.total" value="{{systemData.skills.strategy.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.strategy.points" value="{{systemData.skills.strategy.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.strategy.temp" value="{{systemData.skills.strategy.temp}}"/></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.survival.label}}" data-formula="2d10 + {{systemData.skills.survival.total}}">
+                            {{systemData.skills.survival.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.survival.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.survival.total" value="{{systemData.skills.survival.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.survival.points" value="{{systemData.skills.survival.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.survival.temp" value="{{systemData.skills.survival.temp}}"/></td>
+                </tr>
+            </table>
+
+            <!--Intelligence-->
+            <h1>{{systemData.characteristics.intelligence.label}} - {{systemData.skillsLimits.intelligence.actual}} / {{systemData.skillsLimits.intelligence.maxSet}} - MAX: {{systemData.skillsLimits.intelligence.max}}</h1>
+            <table class="skills-table">
+                <tr>
+                    <th>Nom</th>
+                    <th>Caract.</th>
+                    <th>Total</th>
+                    <th>Points</th>
+                    <th>Modif. temp.</th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.archeology.label}}" data-formula="2d10 + {{systemData.skills.archeology.total}}">
+                            {{systemData.skills.archeology.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.archeology.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.archeology.total" value="{{systemData.skills.archeology.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.archeology.points" value="{{systemData.skills.archeology.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.archeology.temp" value="{{systemData.skills.archeology.temp}}"/></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.science.label}}" data-formula="2d10 + {{systemData.skills.science.total}}">
+                            {{systemData.skills.science.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.science.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.science.total" value="{{systemData.skills.science.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.science.points" value="{{systemData.skills.science.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.science.temp" value="{{systemData.skills.science.temp}}"/></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.medical.label}}" data-formula="2d10 + {{systemData.skills.medical.total}}">
+                            {{systemData.skills.medical.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.medical.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.medical.total" value="{{systemData.skills.medical.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.medical.points" value="{{systemData.skills.medical.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.medical.temp" value="{{systemData.skills.medical.temp}}"/></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.technologie.label}}" data-formula="2d10 + {{systemData.skills.technologie.total}}">
+                            {{systemData.skills.technologie.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.technologie.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.technologie.total" value="{{systemData.skills.technologie.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.technologie.points" value="{{systemData.skills.technologie.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.technologie.temp" value="{{systemData.skills.technologie.temp}}"/></td>
+                </tr>
+            </table>
+
+            <!--Perception-->
+            <h1>{{systemData.characteristics.perception.label}} - {{systemData.skillsLimits.perception.actual}} / {{systemData.skillsLimits.perception.maxSet}} - MAX: {{systemData.skillsLimits.perception.max}}</h1>
+            <table class="skills-table">
+                <tr>
+                    <th>Nom</th>
+                    <th>Caract.</th>
+                    <th>Total</th>
+                    <th>Points</th>
+                    <th>Modif. temp.</th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.smell.label}}" data-formula="2d10 + {{systemData.skills.smell.total}}">
+                            {{systemData.skills.smell.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.smell.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.smell.total" value="{{systemData.skills.smell.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.smell.points" value="{{systemData.skills.smell.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.smell.temp" value="{{systemData.skills.smell.temp}}"/></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.hearing.label}}" data-formula="2d10 + {{systemData.skills.hearing.total}}">
+                            {{systemData.skills.hearing.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.hearing.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.hearing.total" value="{{systemData.skills.hearing.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.hearing.points" value="{{systemData.skills.hearing.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.hearing.temp" value="{{systemData.skills.hearing.temp}}"/></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.touch.label}}" data-formula="2d10 + {{systemData.skills.touch.total}}">
+                            {{systemData.skills.touch.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.touch.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.touch.total" value="{{systemData.skills.touch.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.touch.points" value="{{systemData.skills.touch.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.touch.temp" value="{{systemData.skills.touch.temp}}"/></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.view.label}}" data-formula="2d10 + {{systemData.skills.view.total}}">
+                            {{systemData.skills.view.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.view.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.view.total" value="{{systemData.skills.view.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.view.points" value="{{systemData.skills.view.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.view.temp" value="{{systemData.skills.view.temp}}"/></td>
+                </tr>
+            </table>
+
+            <!--Volonte-->
+            <h1>{{systemData.characteristics.volonte.label}} - {{systemData.skillsLimits.volonte.actual}} / {{systemData.skillsLimits.volonte.maxSet}} - MAX: {{systemData.skillsLimits.volonte.max}}</h1>
+            <table class="skills-table">
+                <tr>
+                    <th>Nom</th>
+                    <th>Caract.</th>
+                    <th>Total</th>
+                    <th>Points</th>
+                    <th>Modif. temp.</th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.concentration.label}}" data-formula="2d10 + {{systemData.skills.concentration.total}}">
+                            {{systemData.skills.concentration.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.concentration.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.concentration.total" value="{{systemData.skills.concentration.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.concentration.points" value="{{systemData.skills.concentration.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.concentration.temp" value="{{systemData.skills.concentration.temp}}"/></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.empathy.label}}" data-formula="2d10 + {{systemData.skills.empathy.total}}">
+                            {{systemData.skills.empathy.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.empathy.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.empathy.total" value="{{systemData.skills.empathy.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.empathy.points" value="{{systemData.skills.empathy.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.empathy.temp" value="{{systemData.skills.empathy.temp}}"/></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.strongMinded.label}}" data-formula="2d10 + {{systemData.skills.strongMinded.total}}">
+                            {{systemData.skills.strongMinded.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.strongMinded.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.strongMinded.total" value="{{systemData.skills.strongMinded.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.strongMinded.points" value="{{systemData.skills.strongMinded.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.strongMinded.temp" value="{{systemData.skills.strongMinded.temp}}"/></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.mentalToughness.label}}" data-formula="2d10 + {{systemData.skills.mentalToughness.total}}">
+                            {{systemData.skills.mentalToughness.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.mentalToughness.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.mentalToughness.total" value="{{systemData.skills.mentalToughness.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.mentalToughness.points" value="{{systemData.skills.mentalToughness.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.mentalToughness.temp" value="{{systemData.skills.mentalToughness.temp}}"/></td>
+                </tr>
+            </table>
+
+            <!--Charisme-->
+            <h1>{{systemData.characteristics.charisme.label}} - {{systemData.skillsLimits.charisme.actual}} / {{systemData.skillsLimits.charisme.maxSet}} - MAX: {{systemData.skillsLimits.charisme.max}}</h1>
+            <table class="skills-table">
+                <tr>
+                    <th>Nom</th>
+                    <th>Caract.</th>
+                    <th>Total</th>
+                    <th>Points</th>
+                    <th>Modif. temp.</th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.bluff.label}}" data-formula="2d10 + {{systemData.skills.bluff.total}}">
+                            {{systemData.skills.bluff.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.bluff.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.bluff.total" value="{{systemData.skills.bluff.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.bluff.points" value="{{systemData.skills.bluff.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.bluff.temp" value="{{systemData.skills.bluff.temp}}"/></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.intimidation.label}}" data-formula="2d10 + {{systemData.skills.intimidation.total}}">
+                            {{systemData.skills.intimidation.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.intimidation.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.intimidation.total" value="{{systemData.skills.intimidation.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.intimidation.points" value="{{systemData.skills.intimidation.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.intimidation.temp" value="{{systemData.skills.intimidation.temp}}"/></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.leadership.label}}" data-formula="2d10 + {{systemData.skills.leadership.total}}">
+                            {{systemData.skills.leadership.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.leadership.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.leadership.total" value="{{systemData.skills.leadership.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.leadership.points" value="{{systemData.skills.leadership.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.leadership.temp" value="{{systemData.skills.leadership.temp}}"/></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.negotiation.label}}" data-formula="2d10 + {{systemData.skills.negotiation.total}}">
+                            {{systemData.skills.negotiation.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.negotiation.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.negotiation.total" value="{{systemData.skills.negotiation.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.negotiation.points" value="{{systemData.skills.negotiation.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.negotiation.temp" value="{{systemData.skills.negotiation.temp}}"/></td>
                 </tr>
             </table>
         </div>

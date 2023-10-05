@@ -1,7 +1,7 @@
 {
 	"Actor": {
 	  "types": ["character"],
-	  "htmlFields": ["biographie", "notes"],
+	  "htmlFields": ["biographie", "notes", "racialSpecificity"],
 	  "character": {
 		"nom": "",
 		"profession": "",
@@ -383,6 +383,41 @@
 		},
 		"skillsLimits": {
 			"force": {
+				"max": 0,
+				"actual": 0,
+				"maxSet": 0
+			},
+			"dexterite": {
+				"max": 0,
+				"actual": 0,
+				"maxSet": 0
+			},
+			"constitution": {
+				"max": 0,
+				"actual": 0,
+				"maxSet": 0
+			},
+			"astuce": {
+				"max": 0,
+				"actual": 0,
+				"maxSet": 0
+			},
+			"intelligence": {
+				"max": 0,
+				"actual": 0,
+				"maxSet": 0
+			},
+			"perception": {
+				"max": 0,
+				"actual": 0,
+				"maxSet": 0
+			},
+			"volonte": {
+				"max": 0,
+				"actual": 0,
+				"maxSet": 0
+			},
+			"charisme": {
 				"max": 0,
 				"actual": 0,
 				"maxSet": 0
