@@ -1,13 +1,14 @@
 {
 	"Actor": {
 	  "types": ["character"],
-	  "htmlFields": ["biographie"],
+	  "htmlFields": ["biographie", "notes"],
 	  "character": {
 		"nom": "",
 		"profession": "",
 		"race": "",
 		"divinite": "",
 		"biographie": "",
+		"notes": "",
 		"xp": {
 			"value": 30,
 			"min": 0

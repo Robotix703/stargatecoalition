@@ -70,9 +70,25 @@
         {{!-- Description Tab --}}
         <div class="tab description" data-group="primary" data-tab="description">
             <!--Biographie-->
-            <div style="width: 100%; height: 300px;">
+            <div class="long-texte">
                 <h1 for="system.biographie">Biographie</h1>
                 {{editor biographyHTML target="system.biographie" button=true editable=editable engine="prosemirror"}}
+            </div>
+
+            <!--Race-->
+            <div>
+
+            </div>
+
+            <!--Profession-->
+            <div>
+                
+            </div>
+
+            <!--Notes-->
+            <div class="long-texte">
+                <h1 for="system.notes">Notes</h1>
+                {{editor notesHTML target="system.notes" button=true editable=editable engine="prosemirror"}}
             </div>
         </div>
 
@@ -270,6 +286,7 @@
 
         {{!-- Skills Tab --}}
         <div class="tab skills" data-group="primary" data-tab="skills">
+            <!--Force-->
             <h1>{{systemData.characteristics.force.label}} - {{systemData.skillsLimits.force.actual}} / {{systemData.skillsLimits.force.maxSet}} - MAX: {{systemData.skillsLimits.force.max}}</h1>
             <table class="skills-table">
                 <tr>
@@ -290,6 +307,42 @@
                     <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.contactWeapon.total" value="{{systemData.skills.contactWeapon.total}}"/></td>
                     <td><input class="attribute-input flex-center" type="number" name="system.skills.contactWeapon.points" value="{{systemData.skills.contactWeapon.points}}"/></td>
                     <td><input class="attribute-input flex-center" type="number" name="system.skills.contactWeapon.temp" value="{{systemData.skills.contactWeapon.temp}}"/></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.unarmedCombat.label}}" data-formula="2d10 + {{systemData.skills.unarmedCombat.total}}">
+                            {{systemData.skills.unarmedCombat.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.unarmedCombat.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.unarmedCombat.total" value="{{systemData.skills.unarmedCombat.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.unarmedCombat.points" value="{{systemData.skills.unarmedCombat.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.unarmedCombat.temp" value="{{systemData.skills.unarmedCombat.temp}}"/></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.swimming.label}}" data-formula="2d10 + {{systemData.skills.swimming.total}}">
+                            {{systemData.skills.swimming.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.swimming.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.swimming.total" value="{{systemData.skills.swimming.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.swimming.points" value="{{systemData.skills.swimming.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.swimming.temp" value="{{systemData.skills.swimming.temp}}"/></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.jumpAndClimb.label}}" data-formula="2d10 + {{systemData.skills.jumpAndClimb.total}}">
+                            {{systemData.skills.jumpAndClimb.label}}
+                        </a>
+                    </td>
+                    <td>{{systemData.skills.jumpAndClimb.caract}}</td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.jumpAndClimb.total" value="{{systemData.skills.jumpAndClimb.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.jumpAndClimb.points" value="{{systemData.skills.jumpAndClimb.points}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" name="system.skills.jumpAndClimb.temp" value="{{systemData.skills.jumpAndClimb.temp}}"/></td>
                 </tr>
             </table>
         </div>

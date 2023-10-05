@@ -13,7 +13,7 @@ export class SimpleActorSheet extends ActorSheet {
       classes: ["stargatecoalition", "sheet", "actor"],
       template: "systems/stargatecoalition/templates/actor-sheet.html",
       width: 700,
-      height: 700,
+      height: 750,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
       scrollY: [".biographie", ".items", ".attributes"],
       dragDrop: [{dragSelector: ".item-list .item", dropSelector: null}]
@@ -29,6 +29,10 @@ export class SimpleActorSheet extends ActorSheet {
     context.systemData = context.data.system;
     context.dtypes = ATTRIBUTE_TYPES;
     context.biographyHTML = await TextEditor.enrichHTML(context.systemData.biographie, {
+      secrets: this.document.isOwner,
+      async: true
+    });
+    context.notesHTML = await TextEditor.enrichHTML(context.systemData.notes, {
       secrets: this.document.isOwner,
       async: true
     });
@@ -51,9 +55,24 @@ export class SimpleActorSheet extends ActorSheet {
   }
 
   computeSkills(data){
+    //Total
     data.skills.contactWeapon.total = data.skills.contactWeapon.points + data.skills.contactWeapon.temp;
+    data.skills.unarmedCombat.total = data.skills.unarmedCombat.points + data.skills.unarmedCombat.temp;
+    data.skills.swimming.total = data.skills.swimming.points + data.skills.swimming.temp;
+    data.skills.jumpAndClimb.total = data.skills.jumpAndClimb.points + data.skills.jumpAndClimb.temp;
 
-    data.skillsLimits.force.actual = data.skills.contactWeapon.points;
+    //Actual
+    data.skillsLimits.force.actual = 
+      data.skills.contactWeapon.points 
+      + data.skills.unarmedCombat.total
+      + data.skills.swimming.total
+      + data.skills.jumpAndClimb.total;
+
+    //max
+    data.skillsLimits.force.max = data.characteristics.force.modifier * 1.5;
+
+    //maxSet
+    data.skillsLimits.force.maxSet = data.characteristics.force.modifier * 3;
   }
 
   valueToModifier(value) {
