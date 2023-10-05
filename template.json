@@ -12,6 +12,10 @@
 			"value": 30,
 			"min": 0
 		},
+		"spendXP": {
+			"value": 0,
+			"min": 0
+		},
 		"stun": {
 		  "value": 0,
 		  "min": 0

@@ -13,23 +13,31 @@
 
             <div class="resource">
                 <!--XP-->
-                <div class="ressource-element" style="width: 80px;">
+                <div class="ressource-element" style="width: 50px;">
                     <label for="system.xp.value" class="resource-label">XP</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="number" name="system.xp.value" value="{{systemData.xp.value}}"/>
                     </div>
                 </div>
+                <div class="ressource-element" style="width: 50px;">
+                    <label for="system.spendXP.value" class="resource-label">XP dep.</label>
+                    <div class="resource-content flexrow flex-center flex-between">
+                        <input type="number" name="system.spendXP.value" value="{{systemData.spendXP.value}}"/>
+                    </div>
+                </div>
                 
                 <!--Etourdissement-->
                 <div class="ressource-element" style="width: 100px;">
-                    <label for="system.stun.value" class="resource-label">Etourdissement</label>
+                    <a class="resource-roll">
+                        <label for="system.stun.value" class="resource-label">Etourdissement</label>
+                    </a>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="number" name="system.stun.value" value="{{systemData.stun.value}}"/>
                     </div>
                 </div>
 
                 <!--Profession-->
-                <div class="ressource-element" style="width: 150px;">
+                <div class="ressource-element" style="width: 130px;">
                     <label for="system.profession.value" class="resource-label">Profession</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="text" name="system.profession.value" value="{{systemData.profession.value}}" placeholder="Profession" />
@@ -37,7 +45,7 @@
                 </div>
                 
                 <!--Race-->
-                <div class="ressource-element" style="width: 150px;">
+                <div class="ressource-element" style="width: 130px;">
                     <label for="system.race.value" class="resource-label">Race</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="text" name="system.race.value" value="{{systemData.race.value}}" placeholder="Race" />
@@ -61,8 +69,9 @@
         {{!-- Description Tab --}}
         <div class="tab description" data-group="primary" data-tab="description">
             <!--Damages-->
+            <h1>Points de Vie</h1>
             <div style="display: flex;">
-                <img class="img" src="systems/stargatecoalition/icons/degats.svg" title="degats" height="400" width="300"/>
+                <img class="img" src="systems/stargatecoalition/icons/degats.svg" title="degats" height="420" width="320"/>
 
                 <table class="health-table">
                     <tr>
@@ -158,8 +167,8 @@
                 </tr>
 
                 <tr>
-                    <td class="flex-center">
-                        <a class="attribute-roll flex-center" data-label="{{systemData.characteristics.force.label}}" data-formula="2d10 + {{systemData.characteristics.force.modifier}} + {{systemData.characteristics.force.tempModifier}} + {{systemData.characteristics.force.tempValue}}">
+                    <td style="text-align: center;">
+                        <a class="attribute-roll" data-label="{{systemData.characteristics.force.label}}" data-formula="2d10 + {{systemData.characteristics.force.modifier}} + {{systemData.characteristics.force.tempModifier}} + {{systemData.characteristics.force.tempValue}}">
                             {{systemData.characteristics.force.label}}
                         </a>
                     </td>
@@ -240,7 +249,7 @@
 
                 <tr>
                     <td>{{systemData.skills.contactWeapon.label}}</td>
-                    <td><input class="attribute-input flex-center" type="texte" name="system.skills.contactWeapon.caract" value="{{systemData.skills.contactWeapon.caract}}"/></td>
+                    <td>{{systemData.skills.contactWeapon.caract}}</td>
                     <td><input class="attribute-input flex-center" type="number" name="system.skills.contactWeapon.total" value="{{systemData.skills.contactWeapon.total}}"/></td>
                     <td><input class="attribute-input flex-center" type="number" name="system.skills.contactWeapon.points" value="{{systemData.skills.contactWeapon.points}}"/></td>
                     <td><input class="attribute-input flex-center" type="number" name="system.skills.contactWeapon.temp" value="{{systemData.skills.contactWeapon.temp}}"/></td>

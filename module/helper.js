@@ -195,6 +195,10 @@ export class EntitySheetHelper {
       });
     }
   }
+
+  static onRessourceRoll(event) {
+    event.preventDefault();
+  }
   /* -------------------------------------------- */
 
   /**
