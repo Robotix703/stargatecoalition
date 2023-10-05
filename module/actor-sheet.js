@@ -32,10 +32,16 @@ export class SimpleActorSheet extends ActorSheet {
       secrets: this.document.isOwner,
       async: true
     });
+    computeModifiers(context.data.system);
     return context;
   }
 
   /* -------------------------------------------- */
+
+  computeModifiers(data){
+    const modifier = Math.floor(data.characteristics.force.value/2) - 5;
+    data.characteristics.force.modifier = modifier;
+  }
 
   /** @inheritdoc */
   activateListeners(html) {
@@ -46,7 +52,6 @@ export class SimpleActorSheet extends ActorSheet {
 
     // Attribute Management
     html.find(".attributes").on("click", "a.attribute-roll", EntitySheetHelper.onAttributeRoll.bind(this));
-    html.find(".attributes").on("change", "input.caracteristic-value", EntitySheetHelper.onCaracteristicChange.bind(this));
 
     // Item Controls
     html.find(".item-control").click(this._onItemControl.bind(this));
