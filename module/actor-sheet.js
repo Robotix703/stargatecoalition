@@ -39,8 +39,18 @@ export class SimpleActorSheet extends ActorSheet {
   /* -------------------------------------------- */
 
   computeModifiers(data){
-    const modifier = Math.floor(data.characteristics.force.value/2) - 5;
-    data.characteristics.force.modifier = modifier;
+    data.characteristics.force.modifier = this.valueToModifier(data.characteristics.force.value);
+    data.characteristics.dexterite.modifier = this.valueToModifier(data.characteristics.dexterite.value);
+    data.characteristics.constitution.modifier = this.valueToModifier(data.characteristics.constitution.value);
+    data.characteristics.astuce.modifier = this.valueToModifier(data.characteristics.astuce.value);
+    data.characteristics.intelligence.modifier = this.valueToModifier(data.characteristics.intelligence.value);
+    data.characteristics.perception.modifier = this.valueToModifier(data.characteristics.perception.value);
+    data.characteristics.volonte.modifier = this.valueToModifier(data.characteristics.volonte.value);
+    data.characteristics.charisme.modifier = this.valueToModifier(data.characteristics.charisme.value);
+  }
+
+  valueToModifier(value) {
+    return Math.floor(value/2) - 5
   }
 
   /** @inheritdoc */
