@@ -270,8 +270,8 @@
 
         {{!-- Skills Tab --}}
         <div class="tab skills" data-group="primary" data-tab="skills">
-            <h1>{{systemData.characteristics.force.label}} - {{systemData.skillsLimits.force.actual}} / {{systemData.skillsLimits.force.maxSet}} : MAX : {{systemData.skillsLimits.force.max}}</h1>
-            <table class="attributes-table">
+            <h1>{{systemData.characteristics.force.label}} - {{systemData.skillsLimits.force.actual}} / {{systemData.skillsLimits.force.maxSet}} - MAX: {{systemData.skillsLimits.force.max}}</h1>
+            <table class="skills-table">
                 <tr>
                     <th>Nom</th>
                     <th>Caract.</th>
@@ -281,9 +281,13 @@
                 </tr>
 
                 <tr>
-                    <td>{{systemData.skills.contactWeapon.label}}</td>
+                    <td>
+                        <a class="skill-roll" data-label="{{systemData.skills.contactWeapon.label}}" data-formula="2d10 + {{systemData.skills.contactWeapon.total}}">
+                            {{systemData.skills.contactWeapon.label}}
+                        </a>
+                    </td>
                     <td>{{systemData.skills.contactWeapon.caract}}</td>
-                    <td><input class="attribute-input flex-center" type="number" name="system.skills.contactWeapon.total" value="{{systemData.skills.contactWeapon.total}}"/></td>
+                    <td><input class="attribute-input flex-center" type="number" readonly="readonly" name="system.skills.contactWeapon.total" value="{{systemData.skills.contactWeapon.total}}"/></td>
                     <td><input class="attribute-input flex-center" type="number" name="system.skills.contactWeapon.points" value="{{systemData.skills.contactWeapon.points}}"/></td>
                     <td><input class="attribute-input flex-center" type="number" name="system.skills.contactWeapon.temp" value="{{systemData.skills.contactWeapon.temp}}"/></td>
                 </tr>

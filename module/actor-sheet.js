@@ -33,6 +33,7 @@ export class SimpleActorSheet extends ActorSheet {
       async: true
     });
     this.computeModifiers(context.data.system);
+    this.computeSkills(context.data.system);
     return context;
   }
 
@@ -49,6 +50,12 @@ export class SimpleActorSheet extends ActorSheet {
     data.characteristics.charisme.modifier = this.valueToModifier(data.characteristics.charisme.value);
   }
 
+  computeSkills(data){
+    data.skills.contactWeapon.total = data.skills.contactWeapon.points + data.skills.contactWeapon.temp;
+
+    data.skillsLimits.force.actual = data.skills.contactWeapon.points;
+  }
+
   valueToModifier(value) {
     return Math.floor(value/2) - 5
   }
@@ -63,6 +70,7 @@ export class SimpleActorSheet extends ActorSheet {
     // Attribute Management
     html.find(".attributes").on("click", "a.caracteristics-roll", EntitySheetHelper.onAttributeRoll.bind(this));
     html.find(".resource").on("click", "a.resource-roll", EntitySheetHelper.onRessourceRoll.bind(this));
+    html.find(".skills").on("click", "a.skill-roll", EntitySheetHelper.onSkillRoll.bind(this));
 
     // Item Controls
     html.find(".item-control").click(this._onItemControl.bind(this));
