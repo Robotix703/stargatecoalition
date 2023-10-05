@@ -32,7 +32,7 @@ export class SimpleActorSheet extends ActorSheet {
       secrets: this.document.isOwner,
       async: true
     });
-    computeModifiers(context.data.system);
+    this.computeModifiers(context.data.system);
     return context;
   }
 
