@@ -51,21 +51,12 @@ export class SimpleActorSheet extends ActorSheet {
     if ( !this.isEditable ) return;
 
     // Attribute Management
-    html.find(".attributes").on("click", "a.attribute-roll", EntitySheetHelper.onAttributeRoll.bind(this));
+    html.find(".attributes").on("click", "a.caracteristics-roll", EntitySheetHelper.onAttributeRoll.bind(this));
     html.find(".resource").on("click", "a.resource-roll", EntitySheetHelper.onRessourceRoll.bind(this));
 
     // Item Controls
     html.find(".item-control").click(this._onItemControl.bind(this));
     html.find(".items .rollable").on("click", this._onItemRoll.bind(this));
-
-    // Add draggable for Macro creation
-    html.find(".attributes a.attribute-roll").each((i, a) => {
-      a.setAttribute("draggable", true);
-      a.addEventListener("dragstart", ev => {
-        let dragData = ev.currentTarget.dataset;
-        ev.dataTransfer.setData('text/plain', JSON.stringify(dragData));
-      }, false);
-    });
   }
   /* -------------------------------------------- */
 

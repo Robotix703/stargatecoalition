@@ -13,13 +13,13 @@
 
             <div class="resource">
                 <!--XP-->
-                <div class="ressource-element" style="width: 50px;">
+                <div class="ressource-element" style="width: 60px;">
                     <label for="system.xp.value" class="resource-label">XP</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="number" name="system.xp.value" value="{{systemData.xp.value}}"/>
                     </div>
                 </div>
-                <div class="ressource-element" style="width: 50px;">
+                <div class="ressource-element" style="width: 60px;">
                     <label for="system.spendXP.value" class="resource-label">XP dep.</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="number" name="system.spendXP.value" value="{{systemData.spendXP.value}}"/>
@@ -28,7 +28,7 @@
                 
                 <!--Etourdissement-->
                 <div class="ressource-element" style="width: 100px;">
-                    <a class="resource-roll">
+                    <a class="resource-roll" data-label="Etourdissement" data-formula="2d6 + {{system.characteristics.volonte.modifier}} + {{system.characteristics.constitution.modifier}}">
                         <label for="system.stun.value" class="resource-label">Etourdissement</label>
                     </a>
                     <div class="resource-content flexrow flex-center flex-between">
@@ -167,8 +167,8 @@
                 </tr>
 
                 <tr>
-                    <td style="text-align: center;">
-                        <a class="attribute-roll" data-label="{{systemData.characteristics.force.label}}" data-formula="2d10 + {{systemData.characteristics.force.modifier}} + {{systemData.characteristics.force.tempModifier}} + {{systemData.characteristics.force.tempValue}}">
+                    <td>
+                        <a class="caracteristics-roll" data-label="{{systemData.characteristics.force.label}}" data-formula="2d10 + {{systemData.characteristics.force.modifier}} + {{systemData.characteristics.force.tempModifier}} + {{systemData.characteristics.force.tempValue}}">
                             {{systemData.characteristics.force.label}}
                         </a>
                     </td>

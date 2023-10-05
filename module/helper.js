@@ -198,6 +198,18 @@ export class EntitySheetHelper {
 
   static onRessourceRoll(event) {
     event.preventDefault();
+    const button = event.currentTarget;
+    const chatLabel = button?.getAttribute("data-label");
+
+    const rollData = this.actor.getRollData();
+    let formula = button?.getAttribute("data-formula");
+
+    let r = new Roll(formula, rollData);
+      return r.toMessage({
+        user: game.user.id,
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        flavor: `${chatLabel}`
+    });
   }
   /* -------------------------------------------- */
 
