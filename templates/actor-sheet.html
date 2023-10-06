@@ -28,7 +28,7 @@
                 
                 <!--Etourdissement-->
                 <div class="ressource-element" style="width: 100px;">
-                    <a class="resource-roll" data-label="Etourdissement" data-formula="2d6 + @characteristics.volonte.modifier + {{systemData.characteristics.constitution.modifier}}">
+                    <a class="resource-roll" data-label="Etourdissement" data-formula="2d6 + @characteristics.volonte.modifier + @characteristics.constitution.modifier">
                         <label for="system.stun.value" class="resource-label">Etourdissement</label>
                     </a>
                     <div class="resource-content flexrow flex-center flex-between">
@@ -203,7 +203,7 @@
 
                 <tr>
                     <td>
-                        <a class="caracteristics-roll" data-label="{{systemData.characteristics.force.label}}" data-formula="2d10 + {{systemData.characteristics.force.modifier}} + {{systemData.characteristics.force.tempModifier}} + {{systemData.characteristics.force.tempValue}}">
+                        <a class="caracteristics-roll" data-label="{{systemData.characteristics.force.label}}" data-formula="2d10 + @characteristics.force.modifier + @characteristics.force.tempModifier + @characteristics.force.tempValue">
                             {{systemData.characteristics.force.label}}
                         </a>
                     </td>
@@ -215,7 +215,7 @@
 
                 <tr>
                     <td>
-                        <a class="caracteristics-roll" data-label="{{systemData.characteristics.dexterite.label}}" data-formula="2d10 + {{systemData.characteristics.dexterite.modifier}} + {{systemData.characteristics.dexterite.tempModifier}} + {{systemData.characteristics.dexterite.tempValue}}">
+                        <a class="caracteristics-roll" data-label="{{systemData.characteristics.dexterite.label}}" data-formula="2d10 + @characteristics.dexterite.modifier + @characteristics.dexterite.tempModifier + @characteristics.dexterite.tempValue">
                             {{systemData.characteristics.dexterite.label}}
                         </a>
                     </td>
@@ -227,7 +227,7 @@
 
                 <tr>
                     <td>
-                        <a class="caracteristics-roll" data-label="{{systemData.characteristics.constitution.label}}" data-formula="2d10 + {{systemData.characteristics.constitution.modifier}} + {{systemData.characteristics.constitution.tempModifier}} + {{systemData.characteristics.constitution.tempValue}}">
+                        <a class="caracteristics-roll" data-label="{{systemData.characteristics.constitution.label}}" data-formula="2d10 + @characteristics.constitution.modifier + @characteristics.constitution.tempModifier + @characteristics.constitution.tempValue">
                             {{systemData.characteristics.constitution.label}}
                         </a>
                     </td>
@@ -239,7 +239,7 @@
 
                 <tr>
                     <td>
-                        <a class="caracteristics-roll" data-label="{{systemData.characteristics.astuce.label}}" data-formula="2d10 + {{systemData.characteristics.astuce.modifier}} + {{systemData.characteristics.astuce.tempModifier}} + {{systemData.characteristics.astuce.tempValue}}">
+                        <a class="caracteristics-roll" data-label="{{systemData.characteristics.astuce.label}}" data-formula="2d10 + @characteristics.astuce.modifier + @characteristics.astuce.tempModifier + @characteristics.astuce.tempValue">
                             {{systemData.characteristics.astuce.label}}
                         </a>
                     </td>
@@ -251,7 +251,7 @@
 
                 <tr>
                     <td>
-                        <a class="caracteristics-roll" data-label="{{systemData.characteristics.intelligence.label}}" data-formula="2d10 + {{systemData.characteristics.intelligence.modifier}} + {{systemData.characteristics.intelligence.tempModifier}} + {{systemData.characteristics.intelligence.tempValue}}">
+                        <a class="caracteristics-roll" data-label="{{systemData.characteristics.intelligence.label}}" data-formula="2d10 + @characteristics.intelligence.modifier + @characteristics.intelligence.tempModifier + @characteristics.intelligence.tempValue">
                             {{systemData.characteristics.intelligence.label}}
                         </a>
                     </td>
@@ -263,7 +263,7 @@
 
                 <tr>
                     <td>
-                        <a class="caracteristics-roll" data-label="{{systemData.characteristics.perception.label}}" data-formula="2d10 + {{systemData.characteristics.perception.modifier}} + {{systemData.characteristics.perception.tempModifier}} + {{systemData.characteristics.perception.tempValue}}">
+                        <a class="caracteristics-roll" data-label="{{systemData.characteristics.perception.label}}" data-formula="2d10 + @characteristics.perception.modifier + @characteristics.perception.tempModifier + @characteristics.perception.tempValue">
                             {{systemData.characteristics.perception.label}}
                         </a>
                     </td>
@@ -275,7 +275,7 @@
 
                 <tr>
                     <td>
-                        <a class="caracteristics-roll" data-label="{{systemData.characteristics.volonte.label}}" data-formula="2d10 + {{systemData.characteristics.volonte.modifier}} + {{systemData.characteristics.volonte.tempModifier}} + {{systemData.characteristics.volonte.tempValue}}">
+                        <a class="caracteristics-roll" data-label="{{systemData.characteristics.volonte.label}}" data-formula="2d10 + @characteristics.volonte.modifier + @characteristics.volonte.tempModifier + @characteristics.volonte.tempValue">
                             {{systemData.characteristics.volonte.label}}
                         </a>
                     </td>
@@ -287,7 +287,7 @@
 
                 <tr>
                     <td>
-                        <a class="caracteristics-roll" data-label="{{systemData.characteristics.charisme.label}}" data-formula="2d10 + {{systemData.characteristics.charisme.modifier}} + {{systemData.characteristics.charisme.tempModifier}} + {{systemData.characteristics.charisme.tempValue}}">
+                        <a class="caracteristics-roll" data-label="{{systemData.characteristics.charisme.label}}" data-formula="2d10 + @characteristics.charisme.modifier + @characteristics.charisme.tempModifier + @characteristics.charisme.tempValue">
                             {{systemData.characteristics.charisme.label}}
                         </a>
                     </td>
@@ -314,7 +314,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.contactWeapon.label}}" data-formula="2d10 + {{systemData.skills.contactWeapon.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.contactWeapon.label}}" data-formula="2d10 + @skills.contactWeapon.total">
                             {{systemData.skills.contactWeapon.label}}
                         </a>
                     </td>
@@ -326,7 +326,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.unarmedCombat.label}}" data-formula="2d10 + {{systemData.skills.unarmedCombat.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.unarmedCombat.label}}" data-formula="2d10 + @skills.unarmedCombat.total">
                             {{systemData.skills.unarmedCombat.label}}
                         </a>
                     </td>
@@ -338,7 +338,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.swimming.label}}" data-formula="2d10 + {{systemData.skills.swimming.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.swimming.label}}" data-formula="2d10 + @skills.swimming.total">
                             {{systemData.skills.swimming.label}}
                         </a>
                     </td>
@@ -350,7 +350,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.jumpAndClimb.label}}" data-formula="2d10 + {{systemData.skills.jumpAndClimb.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.jumpAndClimb.label}}" data-formula="2d10 + @skills.jumpAndClimb.total">
                             {{systemData.skills.jumpAndClimb.label}}
                         </a>
                     </td>
@@ -374,7 +374,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.rangedWeapon.label}}" data-formula="2d10 + {{systemData.skills.rangedWeapon.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.rangedWeapon.label}}" data-formula="2d10 + @skills.rangedWeapon.total">
                             {{systemData.skills.rangedWeapon.label}}
                         </a>
                     </td>
@@ -386,7 +386,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.dodge.label}}" data-formula="2d10 + {{systemData.skills.dodge.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.dodge.label}}" data-formula="2d10 + @skills.dodge.total">
                             {{systemData.skills.dodge.label}}
                         </a>
                     </td>
@@ -398,7 +398,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.acrobatics.label}}" data-formula="2d10 + {{systemData.skills.acrobatics.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.acrobatics.label}}" data-formula="2d10 + @skills.acrobatics.total">
                             {{systemData.skills.acrobatics.label}}
                         </a>
                     </td>
@@ -410,7 +410,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.stealth.label}}" data-formula="2d10 + {{systemData.skills.stealth.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.stealth.label}}" data-formula="2d10 + @skills.stealth.total">
                             {{systemData.skills.stealth.label}}
                         </a>
                     </td>
@@ -434,7 +434,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.vigor.label}}" data-formula="2d10 + {{systemData.skills.vigor.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.vigor.label}}" data-formula="2d10 + @skills.vigor.total">
                             {{systemData.skills.vigor.label}}
                         </a>
                     </td>
@@ -446,7 +446,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.endurance.label}}" data-formula="2d10 + {{systemData.skills.endurance.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.endurance.label}}" data-formula="2d10 + @skills.endurance.total">
                             {{systemData.skills.endurance.label}}
                         </a>
                     </td>
@@ -458,7 +458,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.recovery.label}}" data-formula="2d10 + {{systemData.skills.recovery.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.recovery.label}}" data-formula="2d10 + @skills.recovery.total">
                             {{systemData.skills.recovery.label}}
                         </a>
                     </td>
@@ -470,7 +470,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.immunity.label}}" data-formula="2d10 + {{systemData.skills.immunity.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.immunity.label}}" data-formula="2d10 + @skills.immunity.total">
                             {{systemData.skills.immunity.label}}
                         </a>
                     </td>
@@ -494,7 +494,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.piloting.label}}" data-formula="2d10 + {{systemData.skills.piloting.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.piloting.label}}" data-formula="2d10 + @skills.piloting.total">
                             {{systemData.skills.piloting.label}}
                         </a>
                     </td>
@@ -506,7 +506,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.sabotage.label}}" data-formula="2d10 + {{systemData.skills.sabotage.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.sabotage.label}}" data-formula="2d10 + @skills.sabotage.total">
                             {{systemData.skills.sabotage.label}}
                         </a>
                     </td>
@@ -518,7 +518,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.strategy.label}}" data-formula="2d10 + {{systemData.skills.strategy.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.strategy.label}}" data-formula="2d10 + @skills.strategy.total">
                             {{systemData.skills.strategy.label}}
                         </a>
                     </td>
@@ -530,7 +530,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.survival.label}}" data-formula="2d10 + {{systemData.skills.survival.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.survival.label}}" data-formula="2d10 + @skills.survival.total">
                             {{systemData.skills.survival.label}}
                         </a>
                     </td>
@@ -554,7 +554,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.archeology.label}}" data-formula="2d10 + {{systemData.skills.archeology.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.archeology.label}}" data-formula="2d10 + @skills.archeology.total">
                             {{systemData.skills.archeology.label}}
                         </a>
                     </td>
@@ -566,7 +566,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.science.label}}" data-formula="2d10 + {{systemData.skills.science.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.science.label}}" data-formula="2d10 + @skills.science.total">
                             {{systemData.skills.science.label}}
                         </a>
                     </td>
@@ -578,7 +578,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.medical.label}}" data-formula="2d10 + {{systemData.skills.medical.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.medical.label}}" data-formula="2d10 + @skills.medical.total">
                             {{systemData.skills.medical.label}}
                         </a>
                     </td>
@@ -590,7 +590,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.technologie.label}}" data-formula="2d10 + {{systemData.skills.technologie.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.technologie.label}}" data-formula="2d10 + @skills.technologie.total">
                             {{systemData.skills.technologie.label}}
                         </a>
                     </td>
@@ -614,7 +614,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.smell.label}}" data-formula="2d10 + {{systemData.skills.smell.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.smell.label}}" data-formula="2d10 + @skills.smell.total">
                             {{systemData.skills.smell.label}}
                         </a>
                     </td>
@@ -626,7 +626,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.hearing.label}}" data-formula="2d10 + {{systemData.skills.hearing.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.hearing.label}}" data-formula="2d10 + @skills.hearing.total">
                             {{systemData.skills.hearing.label}}
                         </a>
                     </td>
@@ -638,7 +638,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.touch.label}}" data-formula="2d10 + {{systemData.skills.touch.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.touch.label}}" data-formula="2d10 + @skills.touch.total">
                             {{systemData.skills.touch.label}}
                         </a>
                     </td>
@@ -650,7 +650,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.view.label}}" data-formula="2d10 + {{systemData.skills.view.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.view.label}}" data-formula="2d10 + @skills.view.total">
                             {{systemData.skills.view.label}}
                         </a>
                     </td>
@@ -674,7 +674,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.concentration.label}}" data-formula="2d10 + {{systemData.skills.concentration.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.concentration.label}}" data-formula="2d10 + @skills.concentration.total">
                             {{systemData.skills.concentration.label}}
                         </a>
                     </td>
@@ -686,7 +686,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.empathy.label}}" data-formula="2d10 + {{systemData.skills.empathy.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.empathy.label}}" data-formula="2d10 + @skills.empathy.total">
                             {{systemData.skills.empathy.label}}
                         </a>
                     </td>
@@ -698,7 +698,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.strongMinded.label}}" data-formula="2d10 + {{systemData.skills.strongMinded.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.strongMinded.label}}" data-formula="2d10 + @skills.strongMinded.total">
                             {{systemData.skills.strongMinded.label}}
                         </a>
                     </td>
@@ -710,7 +710,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.mentalToughness.label}}" data-formula="2d10 + {{systemData.skills.mentalToughness.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.mentalToughness.label}}" data-formula="2d10 + @skills.mentalToughness.total">
                             {{systemData.skills.mentalToughness.label}}
                         </a>
                     </td>
@@ -734,7 +734,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.bluff.label}}" data-formula="2d10 + {{systemData.skills.bluff.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.bluff.label}}" data-formula="2d10 + @skills.bluff.total">
                             {{systemData.skills.bluff.label}}
                         </a>
                     </td>
@@ -746,7 +746,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.intimidation.label}}" data-formula="2d10 + {{systemData.skills.intimidation.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.intimidation.label}}" data-formula="2d10 + @skills.intimidation.total">
                             {{systemData.skills.intimidation.label}}
                         </a>
                     </td>
@@ -758,7 +758,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.leadership.label}}" data-formula="2d10 + {{systemData.skills.leadership.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.leadership.label}}" data-formula="2d10 + @skills.leadership.total">
                             {{systemData.skills.leadership.label}}
                         </a>
                     </td>
@@ -770,7 +770,7 @@
 
                 <tr>
                     <td>
-                        <a class="skill-roll" data-label="{{systemData.skills.negotiation.label}}" data-formula="2d10 + {{systemData.skills.negotiation.total}}">
+                        <a class="skill-roll" data-label="{{systemData.skills.negotiation.label}}" data-formula="2d10 + @skills.negotiation.total">
                             {{systemData.skills.negotiation.label}}
                         </a>
                     </td>

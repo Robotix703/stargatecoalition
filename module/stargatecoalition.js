@@ -64,7 +64,7 @@ Hooks.once("init", async function() {
     hint: "SETTINGS.SimpleInitFormulaL",
     scope: "world",
     type: String,
-    default: "2d10 + {{system.characteristics.dexterite.modifier}} + {{system.characteristics.perception.modifier}}",
+    default: "2d10 + @characteristics.dexterite.modifier + @characteristics.perception.modifier",
     config: true,
     onChange: formula => _simpleUpdateInit(formula, true)
   });
