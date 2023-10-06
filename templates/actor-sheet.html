@@ -69,8 +69,8 @@
 
             <!--Race-->
             <div class="long-texte">
-                <h1 for="system.race.value" class="resource-label">Race</h1>
-                <div class="resource-content flexrow flex-center flex-between">
+                <h1>Race</h1>
+                <div class="flexrow flex-center flex-between">
                     <input type="text" name="system.race.value" value="{{systemData.race.value}}" placeholder="Race"/>
                 </div>
                 <h2>Spécificités</h2>
@@ -82,16 +82,16 @@
             <div style="display: flex;">
                 <!--First-->
                 <div style="width: 50%;">
-                    <label for="system.profession.value" class="resource-label">Profession</label>
-                    <div class="resource-content flexrow flex-center flex-between">
+                    <label>Profession</label>
+                    <div class="flexrow flex-center flex-between">
                         <input type="text" name="system.profession.value" value="{{systemData.profession.value}}" placeholder="Profession"/>
                     </div>
                 </div>
                 
                 <!--Second-->
                 <div style="width: 50%;">
-                    <label for="system.secondProfession.value" class="resource-label">Seconde profession</label>
-                    <div class="resource-content flexrow flex-center flex-between">
+                    <label>Seconde profession</label>
+                    <div class="flexrow flex-center flex-between">
                         <input type="text" name="system.secondProfession.value" value="{{systemData.secondProfession.value}}" placeholder="Seconde profession"/>
                     </div>
                 </div>
@@ -200,7 +200,7 @@
 
                 <tr>
                     <td>
-                        <a class="caracteristics-roll" data-label="{{systemData.characteristics.force.label}}" data-formula="2d10 + {{systemData.characteristics.force.modifier}} + {{systemData.characteristics.force.tempModifier}} + {{systemData.characteristics.force.tempValue}}">
+                        <a class="caracteristics-roll" data-label="{{systemData.characteristics.force.label}}" data-formula="2d10 + @characteristics.force.modifier + {{systemData.characteristics.force.tempModifier}} + {{systemData.characteristics.force.tempValue}}">
                             {{systemData.characteristics.force.label}}
                         </a>
                     </td>
@@ -781,6 +781,14 @@
 
         {{!-- Owned Items Tab --}}
         <div class="tab items" data-group="primary" data-tab="items">
+            <!--List-->
+
+            <!--Weapon-->
+
+            <!--Armor-->
+
+            <!--Equipment-->
+
             <ol class="item-list">
                 {{#each data.items as |item id|}}
                 <li class="item flexrow" data-item-id="{{item._id}}">
@@ -827,6 +835,7 @@
                 </li>
                 {{/each}}
             </ol>
+            <!--Create-->
             <p>
                 <a class="item-control" title="{{ localize "SIMPLE.ItemCreate" }}" data-action="create"><i class="fas fa-plus"></i> {{ localize "SIMPLE.ItemCreate" }}</a>
             </p>
