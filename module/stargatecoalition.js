@@ -27,7 +27,7 @@ Hooks.once("init", async function() {
    * @type {String}
    */
   CONFIG.Combat.initiative = {
-    formula: "2d10",
+    formula: "2d10 + {{system.characteristics.dexterite.modifier}} + @characteristics.perception.modifier",
     decimals: 2
   };
 

@@ -38,10 +38,7 @@
                 
                 <!--Race-->
                 <div class="ressource-element" style="width: 150px;">
-                    <label for="system.race.value" class="resource-label">Race</label>
-                    <div class="resource-content flexrow flex-center flex-between">
-                        <input type="text" name="system.race.value" readonly="readonly" value="{{systemData.race.value}}" placeholder="Race" />
-                    </div>
+                    <p>{{systemData.race.value}}</p>
                 </div>
             </div>
         </div>
@@ -206,7 +203,7 @@
 
                 <tr>
                     <td>
-                        <a class="caracteristics-roll" data-label="{{systemData.characteristics.force.label}}" data-formula="2d10 + {{system.characteristics.force.modifier}} + {{systemData.characteristics.force.tempModifier}} + {{systemData.characteristics.force.tempValue}}">
+                        <a class="caracteristics-roll" data-label="{{systemData.characteristics.force.label}}" data-formula="2d10 + {{systemData.characteristics.force.modifier}} + {{systemData.characteristics.force.tempModifier}} + {{systemData.characteristics.force.tempValue}}">
                             {{systemData.characteristics.force.label}}
                         </a>
                     </td>
