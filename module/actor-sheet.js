@@ -101,51 +101,51 @@ export class SimpleActorSheet extends ActorSheet {
     //Actual
     data["system.skillsLimits.force.actual"] =
       data["system.skills.contactWeapon.points"] 
-      + data["system.skills.unarmedCombat.total"]
-      + data["system.skills.swimming.total"]
-      + data["system.skills.jumpAndClimb.total"];
+      + data["system.skills.unarmedCombat.points"]
+      + data["system.skills.swimming.points"]
+      + data["system.skills.jumpAndClimb.points"];
 
     data["system.skillsLimits.dexterite.actual"] = 
       data["system.skills.rangedWeapon.points"] 
-      + data["system.skills.dodge.total"]
-      + data["system.skills.acrobatics.total"]
-      + data["system.skills.stealth.total"];
+      + data["system.skills.dodge.points"]
+      + data["system.skills.acrobatics.points"]
+      + data["system.skills.stealth.points"];
 
     data["system.skillsLimits.constitution.actual"] = 
       data["system.skills.vigor.points"] 
-      + data["system.skills.endurance.total"]
-      + data["system.skills.recovery.total"]
-      + data["system.skills.immunity.total"];
+      + data["system.skills.endurance.points"]
+      + data["system.skills.recovery.points"]
+      + data["system.skills.immunity.points"];
 
     data["system.skillsLimits.astuce.actual"] = 
       data["system.skills.piloting.points"] 
-      + data["system.skills.sabotage.total"]
-      + data["system.skills.strategy.total"]
-      + data["system.skills.survival.total"];
+      + data["system.skills.sabotage.points"]
+      + data["system.skills.strategy.points"]
+      + data["system.skills.survival.points"];
 
     data["system.skillsLimits.intelligence.actual"] = 
       data["system.skills.archeology.points"] 
-      + data["system.skills.science.total"]
-      + data["system.skills.medical.total"]
-      + data["system.skills.technologie.total"];
+      + data["system.skills.science.points"]
+      + data["system.skills.medical.points"]
+      + data["system.skills.technologie.points"];
 
     data["system.skillsLimits.perception.actual"] = 
       data["system.skills.smell.points"] 
-      + data["system.skills.hearing.total"]
-      + data["system.skills.touch.total"]
-      + data["system.skills.view.total"];
+      + data["system.skills.hearing.points"]
+      + data["system.skills.touch.points"]
+      + data["system.skills.view.points"];
 
     data["system.skillsLimits.volonte.actual"] = 
       data["system.skills.concentration.points"] 
-      + data["system.skills.empathy.total"]
-      + data["system.skills.strongMinded.total"]
-      + data["system.skills.mentalToughness.total"];
+      + data["system.skills.empathy.points"]
+      + data["system.skills.strongMinded.points"]
+      + data["system.skills.mentalToughness.points"];
 
     data["system.skillsLimits.charisme.actual"] = 
       data["system.skills.bluff.points"] 
-      + data["system.skills.intimidation.total"]
-      + data["system.skills.leadership.total"]
-      + data["system.skills.negotiation.total"];
+      + data["system.skills.intimidation.points"]
+      + data["system.skills.leadership.points"]
+      + data["system.skills.negotiation.points"];
 
     //max
     data["system.skillsLimits.force.max"] = data["system.characteristics.force.modifier"] * 1.5;
