@@ -40,8 +40,6 @@ export class SimpleActorSheet extends ActorSheet {
       secrets: this.document.isOwner,
       async: true
     });
-    this.computeModifiers(context.data.system);
-    this.computeSkills(context.data.system);
     return context;
   }
 
@@ -240,6 +238,8 @@ export class SimpleActorSheet extends ActorSheet {
   /** @inheritdoc */
   _getSubmitData(updateData) {
     let formData = super._getSubmitData(updateData);
+    this.computeModifiers(formData);
+    this.computeSkills(formData);
     formData = EntitySheetHelper.updateAttributes(formData, this.object);
     formData = EntitySheetHelper.updateGroups(formData, this.object);
     return formData;
