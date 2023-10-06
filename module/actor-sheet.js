@@ -46,14 +46,14 @@ export class SimpleActorSheet extends ActorSheet {
   /* -------------------------------------------- */
 
   computeModifiers(data){
-    data["characteristics.force.modifier"] = this.valueToModifier(parseInt(data["characteristics.force.value"]));
-    /*data.characteristics.dexterite.modifier = this.valueToModifier(data.characteristics.dexterite.value);
-    data.characteristics.constitution.modifier = this.valueToModifier(data.characteristics.constitution.value);
-    data.characteristics.astuce.modifier = this.valueToModifier(data.characteristics.astuce.value);
-    data.characteristics.intelligence.modifier = this.valueToModifier(data.characteristics.intelligence.value);
-    data.characteristics.perception.modifier = this.valueToModifier(data.characteristics.perception.value);
-    data.characteristics.volonte.modifier = this.valueToModifier(data.characteristics.volonte.value);
-    data.characteristics.charisme.modifier = this.valueToModifier(data.characteristics.charisme.value);*/
+    data["system.characteristics.force.modifier"] = this.valueToModifier(parseInt(data["system.characteristics.force.value"]));
+    data["system.characteristics.dexterite.modifier"] = this.valueToModifier(data["system.characteristics.dexterite.value"]);
+    data["system.characteristics.constitution.modifier"] = this.valueToModifier(data["system.characteristics.constitution.value"]);
+    data["system.characteristics.astuce.modifier"] = this.valueToModifier(data["system.characteristics.astuce.value"]);
+    data["system.characteristics.intelligence.modifier"] = this.valueToModifier(data["system.characteristics.intelligence.value"]);
+    data["system.characteristics.perception.modifier"] = this.valueToModifier(data["system.characteristics.perception.value"]);
+    data["system.characteristics.volonte.modifier"] = this.valueToModifier(data["system.characteristics.volonte.value"]);
+    data["system.characteristics.charisme.modifier"] = this.valueToModifier(data["system.characteristics.charisme.value"]);
   }
 
   computeSkills(data){
