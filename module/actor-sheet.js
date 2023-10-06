@@ -46,14 +46,14 @@ export class SimpleActorSheet extends ActorSheet {
   /* -------------------------------------------- */
 
   computeModifiers(data){
-    data.characteristics.force.modifier = this.valueToModifier(data.characteristics.force.value);
-    data.characteristics.dexterite.modifier = this.valueToModifier(data.characteristics.dexterite.value);
+    data["characteristics.force.modifier"] = this.valueToModifier(parseInt(data["characteristics.force.value"]));
+    /*data.characteristics.dexterite.modifier = this.valueToModifier(data.characteristics.dexterite.value);
     data.characteristics.constitution.modifier = this.valueToModifier(data.characteristics.constitution.value);
     data.characteristics.astuce.modifier = this.valueToModifier(data.characteristics.astuce.value);
     data.characteristics.intelligence.modifier = this.valueToModifier(data.characteristics.intelligence.value);
     data.characteristics.perception.modifier = this.valueToModifier(data.characteristics.perception.value);
     data.characteristics.volonte.modifier = this.valueToModifier(data.characteristics.volonte.value);
-    data.characteristics.charisme.modifier = this.valueToModifier(data.characteristics.charisme.value);
+    data.characteristics.charisme.modifier = this.valueToModifier(data.characteristics.charisme.value);*/
   }
 
   computeSkills(data){
@@ -239,7 +239,7 @@ export class SimpleActorSheet extends ActorSheet {
   _getSubmitData(updateData) {
     let formData = super._getSubmitData(updateData);
     this.computeModifiers(formData);
-    this.computeSkills(formData);
+    //this.computeSkills(formData);
     formData = EntitySheetHelper.updateAttributes(formData, this.object);
     formData = EntitySheetHelper.updateGroups(formData, this.object);
     return formData;
