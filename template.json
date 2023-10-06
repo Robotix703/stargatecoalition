@@ -5,7 +5,9 @@
 	  "character": {
 		"nom": "",
 		"profession": "",
+		"secondProfession": "",
 		"race": "",
+		"racialSpecificity": "",
 		"divinite": "",
 		"biographie": "",
 		"notes": "",

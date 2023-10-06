@@ -13,13 +13,13 @@
 
             <div class="resource">
                 <!--XP-->
-                <div class="ressource-element" style="width: 80px;">
+                <div class="ressource-element" style="width: 100px;">
                     <label for="system.xp.value" class="resource-label">XP</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="number" name="system.xp.value" value="{{systemData.xp.value}}"/>
                     </div>
                 </div>
-                <div class="ressource-element" style="width: 80px;">
+                <div class="ressource-element" style="width: 100px;">
                     <label for="system.spendXP.value" class="resource-label">XP dep.</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="number" name="system.spendXP.value" value="{{systemData.spendXP.value}}"/>
@@ -40,7 +40,7 @@
                 <div class="ressource-element" style="width: 150px;">
                     <label for="system.race.value" class="resource-label">Race</label>
                     <div class="resource-content flexrow flex-center flex-between">
-                        <input type="text" name="system.race.value" value="{{systemData.race.value}}" placeholder="Race" />
+                        <input type="text" name="system.race.value" readonly="readonly" value="{{systemData.race.value}}" placeholder="Race" />
                     </div>
                 </div>
             </div>
@@ -71,16 +71,29 @@
             <div class="long-texte">
                 <h1 for="system.race.value" class="resource-label">Race</h1>
                 <div class="resource-content flexrow flex-center flex-between">
-                    <input type="text" name="system.race.value" value="{{systemData.race.value}}" placeholder="Race" />
+                    <input type="text" name="system.race.value" value="{{systemData.race.value}}" placeholder="Race"/>
                 </div>
+                <h2>Spécificités</h2>
                 {{editor racialSpecificityHTML target="system.racialSpecificity" button=true editable=editable engine="prosemirror"}}
             </div>
 
             <!--Profession-->
-            <div>
-                <label for="system.profession.value" class="resource-label">Profession</label>
-                <div class="resource-content flexrow flex-center flex-between">
-                    <input type="text" name="system.profession.value" value="{{systemData.profession.value}}" placeholder="Profession" />
+            <h1>Profession</h1>
+            <div style="display: flex;">
+                <!--First-->
+                <div style="width: 50%;">
+                    <label for="system.profession.value" class="resource-label">Profession</label>
+                    <div class="resource-content flexrow flex-center flex-between">
+                        <input type="text" name="system.profession.value" value="{{systemData.profession.value}}" placeholder="Profession"/>
+                    </div>
+                </div>
+                
+                <!--Second-->
+                <div style="width: 50%;">
+                    <label for="system.secondProfession.value" class="resource-label">Seconde profession</label>
+                    <div class="resource-content flexrow flex-center flex-between">
+                        <input type="text" name="system.secondProfession.value" value="{{systemData.secondProfession.value}}" placeholder="Seconde profession"/>
+                    </div>
                 </div>
             </div>
 
@@ -768,7 +781,55 @@
 
         {{!-- Owned Items Tab --}}
         <div class="tab items" data-group="primary" data-tab="items">
-
+            <ol class="item-list">
+                {{#each data.items as |item id|}}
+                <li class="item flexrow" data-item-id="{{item._id}}">
+                    <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+                    <h4 class="item-name">{{item.name}}</h4>
+                    {{!-- Iterate through all attributes on the item and output buttons for any that are formula. --}}
+                    <div class="item-buttons">
+                        {{#each item.system.attributes as |itemAttr key|}}
+                        {{#if itemAttr.dtype}}
+                            {{#if itemAttr.isFormula}}
+                                {{!-- Use the items.name.key format for shorthand. --}}
+                                {{#if ../../shorthand}}
+                                <button class="item-button rollable" data-roll="@items.{{slugify item.name}}.{{key}}" data-label="{{ itemAttr.label }}"
+                                    title="{{itemAttr.value}}">{{itemAttr.label}}</button>
+                                {{!-- Use the items.name.attributes.key.value format otherwise. --}}
+                                {{else}}
+                                <button class="item-button rollable"
+                                    data-roll="@items.{{slugify item.name}}.attributes.{{key}}.value" data-label="{{ itemAttr.label }}"
+                                    title="{{itemAttr.value}}">{{itemAttr.label}}</button>
+                                {{/if}}
+                            {{/if}}
+                        {{else}}
+                            {{#each itemAttr as |itemGroupedAttr groupedKey|}}
+                                {{#if itemGroupedAttr.isFormula}}
+                                    {{!-- Use the items.name.key format for shorthand. --}}
+                                    {{#if ../../../shorthand}}
+                                    <button class="item-button rollable" data-roll="@items.{{slugify item.name}}.{{key}}.{{groupedKey}}" data-label="{{ itemGroupedAttr.label }}"
+                                        title="{{itemGroupedAttr.value}}">{{itemGroupedAttr.label}}</button>
+                                    {{!-- Use the items.name.attributes.key.value format otherwise. --}}
+                                    {{else}}
+                                    <button class="item-button rollable"
+                                        data-roll="@items.{{slugify item.name}}.attributes.{{key}}.{{groupedKey}}.value" data-label="{{ itemGroupedAttr.label }}"
+                                        title="{{itemGroupedAttr.value}}">{{itemGroupedAttr.label}}</button>
+                                    {{/if}}
+                                {{/if}}
+                            {{/each}}
+                        {{/if}}
+                        {{/each}}
+                    </div>
+                    <div class="item-controls">
+                        <a class="item-control" title="{{ localize "SIMPLE.ItemEdit" }}" data-action="edit"><i class="fas fa-edit"></i></a>
+                        <a class="item-control" title="{{ localize "SIMPLE.ItemDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
+                    </div>
+                </li>
+                {{/each}}
+            </ol>
+            <p>
+                <a class="item-control" title="{{ localize "SIMPLE.ItemCreate" }}" data-action="create"><i class="fas fa-plus"></i> {{ localize "SIMPLE.ItemCreate" }}</a>
+            </p>
         </div>
     </section>
 </form>
