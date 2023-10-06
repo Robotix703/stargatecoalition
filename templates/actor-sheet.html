@@ -62,24 +62,28 @@
         {{!-- Description Tab --}}
         <div class="tab description" data-group="primary" data-tab="description">
             <!--Biographie-->
-            <div class="long-texte">
-                <h1 for="system.biographie">Biographie</h1>
-                {{editor biographyHTML target="system.biographie" button=true editable=editable engine="prosemirror"}}
+            <div >
+                <h1>Biographie</h1>
+                <div class="long-texte">
+                    {{editor biographyHTML target="system.biographie" button=true editable=editable engine="prosemirror"}}
+                </div>
             </div>
 
             <!--Race-->
-            <div class="long-texte">
+            <div >
                 <h1>Race</h1>
-                <div class="flexrow flex-center flex-between">
+                <div style="width: 50%; text-align: center;">
                     <input type="text" name="system.race.value" value="{{systemData.race.value}}" placeholder="Race"/>
                 </div>
                 <h2>Spécificités</h2>
-                {{editor racialSpecificityHTML target="system.racialSpecificity" button=true editable=editable engine="prosemirror"}}
+                <div class="long-texte">
+                    {{editor racialSpecificityHTML target="system.racialSpecificity" button=true editable=editable engine="prosemirror"}}
+                </div>
             </div>
 
             <!--Profession-->
-            <h1>Profession</h1>
-            <div style="display: flex;">
+            <div>
+                <h1>Profession</h1>
                 <!--First-->
                 <div style="width: 50%;">
                     <label>Profession</label>
@@ -98,9 +102,11 @@
             </div>
 
             <!--Notes-->
-            <div class="long-texte">
+            <div>
                 <h1 for="system.notes">Notes</h1>
-                {{editor notesHTML target="system.notes" button=true editable=editable engine="prosemirror"}}
+                <div class="long-texte">
+                    {{editor notesHTML target="system.notes" button=true editable=editable engine="prosemirror"}}
+                </div>
             </div>
         </div>
 
@@ -200,7 +206,7 @@
 
                 <tr>
                     <td>
-                        <a class="caracteristics-roll" data-label="{{systemData.characteristics.force.label}}" data-formula="2d10 + @characteristics.force.modifier + {{systemData.characteristics.force.tempModifier}} + {{systemData.characteristics.force.tempValue}}">
+                        <a class="caracteristics-roll" data-label="{{systemData.characteristics.force.label}}" data-formula="2d10 + {{system.characteristics.force.modifier}} + {{systemData.characteristics.force.tempModifier}} + {{systemData.characteristics.force.tempValue}}">
                             {{systemData.characteristics.force.label}}
                         </a>
                     </td>
