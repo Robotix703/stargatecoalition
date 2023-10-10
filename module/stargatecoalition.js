@@ -6,8 +6,12 @@
 // Import Modules
 import { SimpleActor } from "./actor.js";
 import { SimpleItem } from "./item.js";
+import { ArmorItem } from "./armor.js";
+
 import { SimpleItemSheet } from "./item-sheet.js";
 import { SimpleActorSheet } from "./actor-sheet.js";
+import { ArmorItemSheet } from "./armor-sheet.js";
+
 import { preloadHandlebarsTemplates } from "./templates.js";
 import { createstargatecoalitionMacro } from "./macro.js";
 import { SimpleToken, SimpleTokenDocument } from "./token.js";
@@ -39,6 +43,7 @@ Hooks.once("init", async function() {
   // Define custom Document classes
   CONFIG.Actor.documentClass = SimpleActor;
   CONFIG.Item.documentClass = SimpleItem;
+  CONFIG.Armor.documentClass = ArmorItem;
   CONFIG.Token.documentClass = SimpleTokenDocument;
   CONFIG.Token.objectClass = SimpleToken;
 
@@ -47,6 +52,8 @@ Hooks.once("init", async function() {
   Actors.registerSheet("stargatecoalition", SimpleActorSheet, { makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("stargatecoalition", SimpleItemSheet, { makeDefault: true });
+  Items.unregisterSheet("core", ItemSheet);
+  Items.registerSheet("stargatecoalition", ArmorItemSheet, { makeDefault: false });
 
   // Register system settings
   game.settings.register("stargatecoalition", "macroShorthand", {

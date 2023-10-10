@@ -437,5 +437,16 @@
 		"attributes": {},
 		"groups": {}
 	  }
+	},
+	"Armor": {
+		"types": ["item"],
+		"htmlFields": ["description"],
+		"armor": {
+		  "description": "",
+		  "quantity": 1,
+		  "weight": 0,
+		  "attributes": {},
+		  "groups": {}
+		}
 	}
 }
