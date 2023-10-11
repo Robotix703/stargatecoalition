@@ -2,17 +2,20 @@
     <!--Header-->
     <header class="sheet-header">
         <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+
         <div class="header-fields">
+            <!--Nom-->
             <h1 class="charname">
-                <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
+                <input name="system.name.value" type="text" value="{{systemData.name.value}}" placeholder="Nom"/>
             </h1>
+            <!--Type-->
             <div class="resource">
-                <label>Quantity</label>
-                <input type="number" name="system.quantity" value="{{systemData.quantity}}"/>
-            </div>
-            <div class="resource">
-                <label>Weight</label>
-                <input type="number" name="system.weight" value="{{systemData.weight}}"/>
+                <label>Type</label>
+                <select  class="selecttype"  name="system.type.value" data-type="String">
+                    <option value="weapon">Arme</option>
+                    <option value="armor">Armure</option>
+                    <option value="equipment">Equipement</option>
+                </select>
             </div>
         </div>
     </header>
@@ -33,21 +36,14 @@
 
         {{!-- Attributes Tab --}}
         <div class="tab attributes" data-group="primary" data-tab="attributes">
-            <header class="attributes-header flexrow">
-                <span class="attribute-key">{{localize "SIMPLE.AttributeKey"}}</span>
-                <span class="attribute-value">{{localize "SIMPLE.AttributeValue"}}</span>
-                <span class="attribute-label">{{localize "SIMPLE.AttributeLabel"}}</span>
-                <span class="attribute-dtype">{{localize "SIMPLE.AttributeDtype"}}</span>
-            </header>            
+            <label>Bonus</label>
+            <input name="system.bonus.value" type="number" value="{{systemData.bonus.value}}" placeholder="Bonus"/>
 
-            {{!-- Render the grouped attributes partial and control. --}}
-            <div class="groups">
-                
-                <div class="group-controls flexrow">
-                    <input class="group-prefix" type="text" value=""/>
-                    <a class="button group-control" data-action="create-group"><i class="fas fa-plus"></i>Add Attribute Group</a>
-                </div>
-            </div>
+            <label>Dégâts</label>
+            <input name="system.damage.value" type="number" value="{{systemData.damage.value}}" placeholder="Dégâts"/>
+
+            <label>Protection</label>
+            <input name="system.protection.value" type="number" value="{{systemData.protection.value}}" placeholder="Protection"/>
         </div>
     </section>
 </form>
