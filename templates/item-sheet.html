@@ -1,4 +1,5 @@
 <form class="flexcol {{cssClass}}" autocomplete="off">
+    <!--Header-->
     <header class="sheet-header">
         <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
         <div class="header-fields">
@@ -19,7 +20,7 @@
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
         <a class="item" data-tab="description">Description</a>
-        <a class="item" data-tab="attributes">Attributes</a>
+        <a class="item" data-tab="attributes">Caractéristiques</a>
     </nav>
 
     {{!-- Sheet Body --}}
@@ -37,11 +38,7 @@
                 <span class="attribute-value">{{localize "SIMPLE.AttributeValue"}}</span>
                 <span class="attribute-label">{{localize "SIMPLE.AttributeLabel"}}</span>
                 <span class="attribute-dtype">{{localize "SIMPLE.AttributeDtype"}}</span>
-                <a class="attribute-control" data-action="create" data-group="{{group}}"><i class="fas fa-plus"></i></a>
-            </header>
-
-            {{!-- Render the attribute list partial. --}}
-            
+            </header>            
 
             {{!-- Render the grouped attributes partial and control. --}}
             <div class="groups">

@@ -431,11 +431,14 @@
 	  "types": ["item"],
 	  "htmlFields": ["description"],
 	  "item": {
+		"name": "",
+		"bonus": "",
+		"damage": "",
+		"protection": "",
+		"type": "",
 		"description": "",
 		"quantity": 1,
-		"weight": 0,
-		"attributes": {},
-		"groups": {}
+		"characteristics": {}
 	  }
 	}
 }
