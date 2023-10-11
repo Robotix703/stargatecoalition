@@ -6,16 +6,12 @@
         <div class="header-fields">
             <!--Nom-->
             <h1 class="charname">
-                <input name="system.name.value" type="text" value="{{systemData.name.value}}" placeholder="Nom"/>
+                <input name="name" type="text" value="{{data.name}}" placeholder="Nom"/>
             </h1>
             <!--Type-->
             <div class="resource">
                 <label>Type</label>
-                <select  class="selecttype"  name="system.type.value" data-type="String">
-                    <option value="weapon">Arme</option>
-                    <option value="armor">Armure</option>
-                    <option value="equipment">Equipement</option>
-                </select>
+                <input name="system.objectType.value" type="text" value="{{systemData.objectType.value}}" placeholder="Type"/>
             </div>
         </div>
     </header>

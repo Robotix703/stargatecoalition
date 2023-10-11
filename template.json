@@ -435,7 +435,7 @@
 		"bonus": "",
 		"damage": "",
 		"protection": "",
-		"type": "",
+		"objectType": "",
 		"description": "",
 		"quantity": 1,
 		"characteristics": {}
