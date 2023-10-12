@@ -47,11 +47,18 @@ export class SimpleItemSheet extends ItemSheet {
     
   }
 
+  handleCheckbox(data) {
+    data["system.isWeapon.value"] = (data["system.isWeapon.value"] != null ? true : null);
+    data["system.isArmor.value"] = (data["system.isArmor.value"] != null ? true : null);
+    data["system.isEquipment.value"] = (data["system.isEquipment.value"] != null ? true : null);
+  }
+
   /* -------------------------------------------- */
 
   /** @override */
   _getSubmitData(updateData) {
     let formData = super._getSubmitData(updateData);
+    this.handleCheckbox(formData);
     formData = EntitySheetHelper.updateAttributes(formData, this.object);
     formData = EntitySheetHelper.updateGroups(formData, this.object);
     return formData;
