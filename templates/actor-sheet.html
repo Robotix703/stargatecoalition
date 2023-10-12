@@ -793,7 +793,7 @@
             <ol class="item-list">
                 {{#each data.items as |item id|}}
                 <div>
-                    {{#if item.system.objectType.value == "weapon"}}
+                    {{#if item.system.isWeapon.value}}
                     <li class="item flexrow" data-item-id="{{item._id}}">
                         <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
                         <h4 class="item-name">{{item.name}}</h4>

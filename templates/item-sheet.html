@@ -11,7 +11,12 @@
             <!--Type-->
             <div class="resource">
                 <label>Type</label>
-                <input name="system.objectType.value" type="text" value="{{systemData.objectType.value}}" placeholder="Type"/>
+                <label>
+                    <input type="checkbox" class="radio" value="{{systemData.isWeapon.value}}" name="system.isWeapon" />Arme</label>
+                <label>
+                    <input type="checkbox" class="radio" value="{{systemData.isArmor.value}}" name="system.isArmor" />Armure</label>
+                <label>
+                    <input type="checkbox" class="radio" value="{{systemData.isEquipment.value}}" name="system.isEquipment" />Equipement</label>
             </div>
         </div>
     </header>

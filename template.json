@@ -435,7 +435,9 @@
 		"bonus": "",
 		"damage": "",
 		"protection": "",
-		"objectType": "",
+		"isWeapon": false,
+		"isArmor": false,
+		"isEquipment": true,
 		"description": "",
 		"quantity": 1,
 		"characteristics": {}
