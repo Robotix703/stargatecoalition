@@ -10,13 +10,12 @@
             </h1>
             <!--Type-->
             <div class="resource">
-                <label>Type</label>
                 <label>
-                    <input type="checkbox" class="radio" value="{{systemData.isWeapon.value}}" name="system.isWeapon.value"/>Arme</label>
+                    <input type="checkbox" name="system.isWeapon.value" {{checked systemData.isWeapon.value}}/>Arme</label>
                 <label>
-                    <input type="checkbox" class="radio" value="{{systemData.isArmor.value}}" name="system.isArmor.value"/>Armure</label>
+                    <input type="checkbox" name="system.isArmor.value" {{checked systemData.isArmor.value}}/>Armure</label>
                 <label>
-                    <input type="checkbox" class="radio" value="{{systemData.isEquipment.value}}" name="system.isEquipment.value"/>Equipement</label>
+                    <input type="checkbox" name="system.isEquipment.value" {{checked systemData.isEquipment.value}}/>Equipement</label>
             </div>
         </div>
     </header>
