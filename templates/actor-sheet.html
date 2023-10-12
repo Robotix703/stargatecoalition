@@ -793,7 +793,7 @@
             <ol class="item-list">
                 {{#each data.items as |item id|}}
                 <div>
-                    {{#if item.system.objectType.value}}
+                    {{#if item.system.objectType.value == "weapon"}}
                     <li class="item flexrow" data-item-id="{{item._id}}">
                         <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
                         <h4 class="item-name">{{item.name}}</h4>
@@ -806,9 +806,6 @@
                             <a class="item-control" title="{{ localize "SIMPLE.ItemDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
                         </div>
                     </li>
-                    {{/if}}
-                    {{#if item.system.name}}
-                    "TOTO"
                     {{/if}}
                 </div>
                 {{/each}}
