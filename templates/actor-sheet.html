@@ -797,10 +797,7 @@
                     <h4 class="item-name">{{item.name}}</h4>
                     {{!-- Iterate through all attributes on the item and output buttons for any that are formula. --}}
                     <div class="item-buttons">
-                        <button class="item-button rollable"
-                            data-roll="@items.{{slugify item.name}}.attributes.{{key}}.value" data-label="{{ itemAttr.label }}"
-                            title="{{itemAttr.value}}">{{itemAttr.label}}
-                        </button>
+                        <button class="item-button rollable" data-roll="2d6 + @items.{{slugify item.name}}.bonus.value">Attaque</button>
                     </div>
                     <div class="item-controls">
                         <a class="item-control" title="{{ localize "SIMPLE.ItemEdit" }}" data-action="edit"><i class="fas fa-edit"></i></a>
