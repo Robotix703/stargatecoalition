@@ -58,7 +58,7 @@ export class SimpleItemSheet extends ItemSheet {
   /** @override */
   _getSubmitData(updateData) {
     let formData = super._getSubmitData(updateData);
-    this.handleCheckbox(formData);
+    //this.handleCheckbox(formData);
     formData = EntitySheetHelper.updateAttributes(formData, this.object);
     formData = EntitySheetHelper.updateGroups(formData, this.object);
     return formData;
