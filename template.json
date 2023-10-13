@@ -23,6 +23,14 @@
 		  "value": 0,
 		  "min": 0
 		},
+		"physicalArmor": {
+			"value": 0,
+			"min": 0
+		},
+		"energeticArmor" : {
+			"value": 0,
+			"min": 0
+		},
 		"characteristics": {
 			"force": {
 			  "value": 10,
@@ -434,7 +442,11 @@
 		"name": "",
 		"bonus": "",
 		"damage": "",
-		"protection": "",
+		"armor": {
+			"isPhysicalArmor": true,
+			"isEnergetic": false,
+			"protection": 0
+		},
 		"isWeapon": false,
 		"isArmor": false,
 		"isEquipment": true,

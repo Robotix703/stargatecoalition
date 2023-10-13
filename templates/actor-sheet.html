@@ -36,9 +36,18 @@
                     </div>
                 </div>
                 
-                <!--Race-->
-                <div class="ressource-element" style="width: 150px;">
-                    <p>{{systemData.race.value}}</p>
+                <!--Armor-->
+                <div class="ressource-element" style="width: 100px;">
+                    <label for="system.physicalArmor.value" class="resource-label">Armure Physique</label>
+                    <div class="resource-content flexrow flex-center flex-between">
+                        <input type="number" name="system.physicalArmor.value" value="{{systemData.physicalArmor.value}}"/>
+                    </div>
+                </div>
+                <div class="ressource-element" style="width: 100px;">
+                    <label for="system.energeticArmor.value" class="resource-label">Armure Energetique</label>
+                    <div class="resource-content flexrow flex-center flex-between">
+                        <input type="number" name="system.energeticArmor.value" value="{{systemData.energeticArmor.value}}"/>
+                    </div>
                 </div>
             </div>
         </div>

@@ -39,11 +39,34 @@
             <label>Bonus</label>
             <input name="system.bonus.value" type="number" value="{{systemData.bonus.value}}" placeholder="Bonus"/>
 
-            <label>Dégâts</label>
-            <input name="system.damage.value" type="number" value="{{systemData.damage.value}}" placeholder="Dégâts"/>
+            <!--Weapon-->
+            {{#if item.system.isWeapon.value}}
+            <div>
+                <label>Dégâts</label>
+                <input name="system.damage.value" type="number" value="{{systemData.damage.value}}" placeholder="Dégâts"/>
+            </div>
+            {{/if}}
 
-            <label>Protection</label>
-            <input name="system.protection.value" type="number" value="{{systemData.protection.value}}" placeholder="Protection"/>
+            <!--Armor-->
+            {{#if item.system.isArmor.value}}
+            <div>
+                <!--Type-->
+                <div>
+                    <label>
+                        <input type="checkbox" name="system.armor.isPhysicalArmor" {{checked systemData.armor.isPhysicalArmor}}/>Physique
+                    </label>
+                    <label>
+                        <input type="checkbox" name="system.armor.isEnergetic" {{checked systemData.armor.isEnergetic}}/>Energétique
+                    </label>
+                </div>
+
+                <!--Protection-->
+                <div>
+                    <label>Protection</label>
+                    <input name="system.armor.protection" type="number" value="{{systemData.armor.protection}}" placeholder="Protection"/>
+                </div>
+            </div>
+            {{/if}}
         </div>
     </section>
 </form>

@@ -238,6 +238,8 @@ export class SimpleActorSheet extends ActorSheet {
     let button = $(event.currentTarget);
     const li = button.parents(".item");
     const item = this.actor.items.get(li.data("itemId"));
+    //this.actor.update();
+    //this.actor.items.getName("test").update();
   }
 
   /* -------------------------------------------- */
