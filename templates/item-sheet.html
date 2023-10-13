@@ -37,6 +37,7 @@
         {{!-- Attributes Tab --}}
         <div class="tab attributes" data-group="primary" data-tab="attributes">
             <!--Main-->
+            <h2>Principale</h2>
             <div>
                 <!--Search Index-->
                 <div>
@@ -58,6 +59,7 @@
 
             <!--Weapon-->
             {{#if item.system.objectType.isWeapon}}
+            <h2>Armes</h2>
             <div>
                 <!--Damage-->
                 <label>Dégâts</label>
@@ -67,10 +69,10 @@
                 <label>
                     <input type="checkbox" name="system.weapon.isImproved" {{checked systemData.weapon.isImproved}}/>Améliorée
                 </label>
-
+                
                 <!--Stun-->
                 <label>Dégâts d'étourdissement</label>
-                <input name="system.weapon.stun" type="number" value="{{systemData.weapon.stun}}" placeholder="Etourdissement"/>
+                <input name="system.weapon.stun" type="text" value="{{systemData.weapon.stun}}" placeholder="Etourdissement"/>
 
                 <!--Type-->
                 <div>
@@ -102,6 +104,7 @@
 
                 <!--Melee Penalty-->
                 <div>
+                    <label>Pénalité de corps à corps</label>
                     {{systemData.weapon.meleePenalty}}
                 </div>
             </div>

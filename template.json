@@ -23,14 +23,8 @@
 		  "value": 0,
 		  "min": 0
 		},
-		"physicalArmor": {
-			"value": 0,
-			"min": 0
-		},
-		"energeticArmor" : {
-			"value": 0,
-			"min": 0
-		},
+		"physicalArmor": 0,
+		"energeticArmor" : 0,
 		"characteristics": {
 			"force": {
 			  "value": 10,
@@ -448,7 +442,7 @@
 			"isPhysicalArmor": true,
 			"isEnergetic": false,
 			"protection": 0,
-			"isEquip": true
+			"isEquip": false
 		},
 		"weapon": {
 			"damage": 0,
@@ -461,7 +455,7 @@
 			"isMelee": false,
 			"isOther": false,
 			"isImproved": false,
-			"stun": 0,
+			"stun": "",
 			"meleePenalty": 0
 		},
 		"objectType": {

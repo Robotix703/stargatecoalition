@@ -238,8 +238,29 @@ export class SimpleActorSheet extends ActorSheet {
     let button = $(event.currentTarget);
     const li = button.parents(".item");
     const item = this.actor.items.get(li.data("itemId"));
-    //this.actor.update();
-    //this.actor.items.getName("test").update();
+
+    //Update armor
+    if(item.system.armor.isPhysicalArmor) {
+      if(button[0].checked) {
+        let newArmorValue = this.actor.system.physicalArmor + item.system.armor.protection;
+        this.actor.update({"system.physicalArmor": newArmorValue});
+      } else {
+        let newArmorValue = this.actor.system.physicalArmor - item.system.armor.protection;
+        this.actor.update({"system.physicalArmor": (newArmorValue >= 0) ? newArmorValue : 0});
+      }
+    }
+    if(item.system.armor.isEnergetic) {
+      if(button[0].checked) {
+        let newArmorValue = this.actor.system.energeticArmor + item.system.armor.protection;
+        this.actor.update({"system.energeticArmor": newArmorValue});
+      } else {
+        let newArmorValue = this.actor.system.energeticArmor - item.system.armor.protection;
+        this.actor.update({"system.energeticArmor": (newArmorValue >= 0) ? newArmorValue : 0});
+      }
+    }
+
+    //Update Item
+    this.actor.items.getName(item.name).update({"system.armor.isEquip": button[0].checked});
   }
 
   /* -------------------------------------------- */
