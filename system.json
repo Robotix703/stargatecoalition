@@ -2,7 +2,7 @@
 	"id": "stargatecoalition",
 	"title": "Stargate Coalition System",
 	"description": "Stargate Coalition System",
-	"version": "1.0.78",
+	"version": "1.0.79",
 	"compatibility":{
 		"minimum": 10,
 		"verified": 10,

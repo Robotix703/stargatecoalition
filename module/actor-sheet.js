@@ -187,6 +187,7 @@ export class SimpleActorSheet extends ActorSheet {
     // Item Controls
     html.find(".item-control").click(this._onItemControl.bind(this));
     html.find(".items .rollable").on("click", this._onItemRoll.bind(this));
+    html.find(".items .equipped").on("click", this._onItemEquipped.bind(this));
   }
   /* -------------------------------------------- */
 
@@ -231,6 +232,12 @@ export class SimpleActorSheet extends ActorSheet {
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
       flavor: `<h2>${item.name}</h2><h3>${button.text()}</h3>`
     });
+  }
+
+  _onItemEquipped(event) {
+    let button = $(event.currentTarget);
+    const li = button.parents(".item");
+    const item = this.actor.items.get(li.data("itemId"));
   }
 
   /* -------------------------------------------- */

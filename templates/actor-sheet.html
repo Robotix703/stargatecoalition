@@ -819,7 +819,7 @@
                         {{!-- Iterate through all attributes on the item and output buttons for any that are formula. --}}
                         <h4>{{item.system.protection.value}}</h4>
                         <div class="item-buttons">
-                            <input type="checkbox" name="system.isEquip.value" {{checked systemData.isEquip.value}}/>Equipé</label>
+                            <input class="equipped" type="checkbox" name="{{slugify item.name}}"/>Equipé</label>
                         </div>
                         <div class="item-controls">
                             <a class="item-control" title="{{ localize "SIMPLE.ItemEdit" }}" data-action="edit"><i class="fas fa-edit"></i></a>
