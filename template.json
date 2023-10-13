@@ -438,6 +438,7 @@
 		"isWeapon": false,
 		"isArmor": false,
 		"isEquipment": true,
+		"isEquip": false,
 		"description": "",
 		"quantity": 1,
 		"characteristics": {}

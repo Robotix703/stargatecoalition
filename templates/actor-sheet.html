@@ -808,7 +808,7 @@
             </ol>
 
             <!--Armor-->
-            <h2>Armure</h2>
+            <h1>Armure</h1>
             <ol class="item-list">
                 {{#each data.items as |item id|}}
                 <div>
@@ -817,7 +817,10 @@
                         <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
                         <h4 class="item-name">{{item.name}}</h4>
                         {{!-- Iterate through all attributes on the item and output buttons for any that are formula. --}}
-                        <h4>{{item.system.protection}}</h4>
+                        <h4>{{item.system.protection.value}}</h4>
+                        <div class="item-buttons">
+                            <input type="checkbox" name="system.isEquip.value" {{checked systemData.isEquip.value}}/>Equipé</label>
+                        </div>
                         <div class="item-controls">
                             <a class="item-control" title="{{ localize "SIMPLE.ItemEdit" }}" data-action="edit"><i class="fas fa-edit"></i></a>
                             <a class="item-control" title="{{ localize "SIMPLE.ItemDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
@@ -829,7 +832,7 @@
             </ol>
 
             <!--Equipment-->
-            <h2>Equipement</h2>
+            <h1>Equipement</h1>
             <ol class="item-list">
                 {{#each data.items as |item id|}}
                 <div>
