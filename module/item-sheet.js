@@ -31,6 +31,10 @@ export class SimpleItemSheet extends ItemSheet {
       secrets: this.document.isOwner,
       async: true
     });
+    context.additionalRuleHTML = await TextEditor.enrichHTML(context.systemData.additionalRule, {
+      secrets: this.document.isOwner,
+      async: true
+    });
     return context;
   }
 

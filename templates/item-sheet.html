@@ -11,11 +11,11 @@
             <!--Type-->
             <div class="resource">
                 <label>
-                    <input type="checkbox" name="system.isWeapon.value" {{checked systemData.isWeapon.value}}/>Arme</label>
+                    <input type="checkbox" name="system.objectType.isWeapon" {{checked systemData.objectType.isWeapon}}/>Arme</label>
                 <label>
-                    <input type="checkbox" name="system.isArmor.value" {{checked systemData.isArmor.value}}/>Armure</label>
+                    <input type="checkbox" name="system.objectType.isArmor" {{checked systemData.objectType.isArmor}}/>Armure</label>
                 <label>
-                    <input type="checkbox" name="system.isEquipment.value" {{checked systemData.isEquipment.value}}/>Equipement</label>
+                    <input type="checkbox" name="system.objectType.isEquipment" {{checked systemData.objectType.isEquipment}}/>Equipement</label>
             </div>
         </div>
     </header>
@@ -36,19 +36,80 @@
 
         {{!-- Attributes Tab --}}
         <div class="tab attributes" data-group="primary" data-tab="attributes">
-            <label>Bonus</label>
-            <input name="system.bonus.value" type="number" value="{{systemData.bonus.value}}" placeholder="Bonus"/>
+            <!--Main-->
+            <div>
+                <!--Search Index-->
+                <div>
+                    <label>Indice de recherche</label>
+                    <input name="system.searchIndex" type="number" value="{{systemData.searchIndex}}" placeholder="Indice de recherche"/>
+                </div>
+
+                <!--Additionnal Rule-->
+                <div>
+                    {{editor additionalRuleHTML target="system.additionalRule" button=true editable=editable engine="prosemirror"}}
+                </div>
+
+                <!--Quantity-->
+                <div>
+                    <label>Quantité</label>
+                    <input name="system.quantity" type="number" value="{{systemData.quantity}}" placeholder="Quantité"/>
+                </div>
+            </div>
 
             <!--Weapon-->
-            {{#if item.system.isWeapon.value}}
+            {{#if item.system.objectType.isWeapon}}
             <div>
+                <!--Damage-->
                 <label>Dégâts</label>
-                <input name="system.damage.value" type="number" value="{{systemData.damage.value}}" placeholder="Dégâts"/>
+                <input name="system.weapon.damage" type="number" value="{{systemData.weapon.damage}}" placeholder="Dégâts"/>
+
+                <!--Improved-->
+                <label>
+                    <input type="checkbox" name="system.weapon.isImproved" {{checked systemData.weapon.isImproved}}/>Améliorée
+                </label>
+
+                <!--Stun-->
+                <label>Dégâts d'étourdissement</label>
+                <input name="system.weapon.stun" type="number" value="{{systemData.weapon.stun}}" placeholder="Etourdissement"/>
+
+                <!--Type-->
+                <div>
+                    <label>
+                        <input type="checkbox" name="system.weapon.isPistol" {{checked systemData.weapon.isPistol}}/>Pistolet
+                    </label>
+                    <label>
+                        <input type="checkbox" name="system.weapon.isRifle" {{checked systemData.weapon.isRifle}}/>Fusil
+                    </label>
+                    <label>
+                        <input type="checkbox" name="system.weapon.isColdSteel" {{checked systemData.weapon.isColdSteel}}/>Arme blanche
+                    </label>
+                    <label>
+                        <input type="checkbox" name="system.weapon.isExplosive" {{checked systemData.weapon.isExplosive}}/>Explosif
+                    </label>
+                    <label>
+                        <input type="checkbox" name="system.weapon.isEnergetic" {{checked systemData.weapon.isEnergetic}}/>Energétique
+                    </label>
+                    <label>
+                        <input type="checkbox" name="system.weapon.isStic" {{checked systemData.weapon.isStic}}/>Bâton
+                    </label>
+                    <label>
+                        <input type="checkbox" name="system.weapon.isMelee" {{checked systemData.weapon.isMelee}}/>Arme de mêlée
+                    </label>
+                    <label>
+                        <input type="checkbox" name="system.weapon.isOther" {{checked systemData.weapon.isOther}}/>Autres
+                    </label>
+                </div>
+
+                <!--Melee Penalty-->
+                <div>
+                    {{systemData.weapon.meleePenalty}}
+                </div>
             </div>
             {{/if}}
 
             <!--Armor-->
-            {{#if item.system.isArmor.value}}
+            {{#if item.system.objectType.isArmor}}
+            <h2>Armure</h2>
             <div>
                 <!--Type-->
                 <div>
