@@ -53,6 +53,7 @@ export class SimpleItemSheet extends ItemSheet {
 
   handleWeaponType(data){
     if(data["system.objectType.isWeapon"]) {
+      data["system.weapon.meleePenalty"] = 0;
       if(data["system.weapon.isStic"]) data["system.weapon.meleePenalty"] = 0;
       if(data["system.weapon.isColdSteel"]) data["system.weapon.meleePenalty"] = 1;
       if(data["system.weapon.isMelee"]) data["system.weapon.meleePenalty"] = 2;
