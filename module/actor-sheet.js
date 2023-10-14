@@ -186,7 +186,7 @@ export class SimpleActorSheet extends ActorSheet {
 
     // Item Controls
     html.find(".item-control").click(this._onItemControl.bind(this));
-    html.find(".items .rollable").on("click", this._onItemRoll.bind(this));
+    html.find(".items .rollable").on("click", this._onAttackRoll.bind(this));
     html.find(".items .equipped").on("click", this._onItemEquipped.bind(this));
   }
   /* -------------------------------------------- */
@@ -222,15 +222,16 @@ export class SimpleActorSheet extends ActorSheet {
    * Listen for roll buttons on items.
    * @param {MouseEvent} event    The originating left click event
    */
-  _onItemRoll(event) {
+  _onAttackRoll(event) {
     let button = $(event.currentTarget);
     const li = button.parents(".item");
     const item = this.actor.items.get(li.data("itemId"));
+    const damage = item.weapon.damage + (item.weapon.isImproved ? 1 : 0);
     let r = new Roll(button[0].getAttribute('data-roll'), this.actor.getRollData());
     return r.toMessage({
       user: game.user.id,
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      flavor: `<h2>${item.name}</h2><h3>${button.text()}</h3>`
+      flavor: `<h2>${item.name}</h2><h3>${button.text()}</h3><h3>${damage}</h3>`
     });
   }
 

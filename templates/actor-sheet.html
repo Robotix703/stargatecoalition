@@ -811,11 +811,8 @@
                         <!--Damage-->
                         <div>
                             <label>
-                                {{item.system.weapon.damage}}
+                                Dégâts : {{item.system.weapon.damage}}
                             </label>
-                            {{#if item.system.weapon.stun}}
-                            <button class="item-button rollable" data-roll={{item.system.weapon.stun}}>Etourdissement</button>
-                            {{/if}}
                         </div>
                         
                         <!--Attacks-->
@@ -824,6 +821,10 @@
                             <button class="item-button rollable" data-roll="2d10 + @skills.contactWeapon.total">Attaque au corps à corps</button>
                             {{else}}
                             <button class="item-button rollable" data-roll="2d10 + @skills.rangedWeapon.total">Attaque à distance</button>
+                            {{/if}}
+
+                            {{#if item.system.weapon.stun}}
+                            <button class="item-button rollable" data-roll="{{item.system.weapon.stun}}">Etourdissement</button>
                             {{/if}}
                         </div>
 
@@ -834,7 +835,6 @@
 
                         <!--Buttons-->
                         <div class="item-controls">
-                            
                             <a class="item-control" title="{{ localize "SIMPLE.ItemDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
                         </div>
                     </li>
@@ -902,9 +902,7 @@
                         </a>
 
                         <!--Description-->
-                        <p>
-                            {{item.system.description}}
-                        </p>
+                        {{item.system.description}}
 
                         <!--Buttons-->
                         <div class="item-controls">
