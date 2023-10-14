@@ -38,74 +38,97 @@
         <div class="tab attributes" data-group="primary" data-tab="attributes">
             <!--Main-->
             <h2>Principale</h2>
-            <div>
-                <!--Search Index-->
-                <div>
-                    <label>Indice de recherche</label>
-                    <input name="system.searchIndex" type="number" value="{{systemData.searchIndex}}" placeholder="Indice de recherche"/>
+            <div style="margin-bottom: 1rem;">
+                <div class="row">
+                    <!--Search Index-->
+                    <div style="width: 50%;">
+                        <label>Indice de recherche</label>
+                        <input name="system.searchIndex" type="number" value="{{systemData.searchIndex}}" placeholder="Indice de recherche"/>
+                    </div>
+    
+                    <!--Quantity-->
+                    <div>
+                        <label>Quantité</label>
+                        <input name="system.quantity" type="number" value="{{systemData.quantity}}" placeholder="Quantité"/>
+                    </div>
                 </div>
-
+            
                 <!--Additionnal Rule-->
                 <div>
+                    <h3>Règles additionnelles</h3>
                     {{editor additionalRuleHTML target="system.additionalRule" button=true editable=editable engine="prosemirror"}}
-                </div>
-
-                <!--Quantity-->
-                <div>
-                    <label>Quantité</label>
-                    <input name="system.quantity" type="number" value="{{systemData.quantity}}" placeholder="Quantité"/>
                 </div>
             </div>
 
             <!--Weapon-->
             {{#if item.system.objectType.isWeapon}}
             <h2>Armes</h2>
-            <div>
-                <!--Damage-->
-                <label>Dégâts</label>
-                <input name="system.weapon.damage" type="number" value="{{systemData.weapon.damage}}" placeholder="Dégâts"/>
+            <div style="margin-bottom: 1rem;">
+                <div class="row">
+                    <!--Damage-->
+                    <div style="width: 30%;">
+                        <label>Dégâts</label>
+                        <input name="system.weapon.damage" type="number" value="{{systemData.weapon.damage}}" placeholder="Dégâts"/>
+                    </div>
 
-                <!--Improved-->
-                <label>
-                    <input type="checkbox" name="system.weapon.isImproved" {{checked systemData.weapon.isImproved}}/>Améliorée
-                </label>
-                
-                <!--Stun-->
-                <label>Dégâts d'étourdissement</label>
-                <input name="system.weapon.stun" type="text" value="{{systemData.weapon.stun}}" placeholder="Etourdissement"/>
-
-                <!--Type-->
-                <div>
-                    <label>
-                        <input type="checkbox" name="system.weapon.isPistol" {{checked systemData.weapon.isPistol}}/>Pistolet
-                    </label>
-                    <label>
-                        <input type="checkbox" name="system.weapon.isRifle" {{checked systemData.weapon.isRifle}}/>Fusil
-                    </label>
-                    <label>
-                        <input type="checkbox" name="system.weapon.isColdSteel" {{checked systemData.weapon.isColdSteel}}/>Arme blanche
-                    </label>
-                    <label>
-                        <input type="checkbox" name="system.weapon.isExplosive" {{checked systemData.weapon.isExplosive}}/>Explosif
-                    </label>
-                    <label>
-                        <input type="checkbox" name="system.weapon.isEnergetic" {{checked systemData.weapon.isEnergetic}}/>Energétique
-                    </label>
-                    <label>
-                        <input type="checkbox" name="system.weapon.isStic" {{checked systemData.weapon.isStic}}/>Bâton
-                    </label>
-                    <label>
-                        <input type="checkbox" name="system.weapon.isMelee" {{checked systemData.weapon.isMelee}}/>Arme de mêlée
-                    </label>
-                    <label>
-                        <input type="checkbox" name="system.weapon.isOther" {{checked systemData.weapon.isOther}}/>Autres
+                    <!--Stun-->
+                    <div style="width: 30%;">
+                        <label>Dégâts d'étourdissement</label>
+                        <input name="system.weapon.stun" type="text" value="{{systemData.weapon.stun}}" placeholder="Etourdissement"/>
+                    </div>
+                    
+                    <!--Improved-->
+                    <label style="width: 20%;">
+                        <input type="checkbox" name="system.weapon.isImproved" {{checked systemData.weapon.isImproved}}/>Améliorée
                     </label>
                 </div>
 
-                <!--Melee Penalty-->
-                <div>
-                    <label>Pénalité de corps à corps</label>
-                    {{systemData.weapon.meleePenalty}}
+                <!--Type-->
+                <div class="row">
+                    <div style="width: 50%;">
+                        <label>
+                            <input type="checkbox" name="system.weapon.isPistol" {{checked systemData.weapon.isPistol}}/>Pistolet
+                        </label>
+                        <label>
+                            <input type="checkbox" name="system.weapon.isRifle" {{checked systemData.weapon.isRifle}}/>Fusil
+                        </label>
+                        <label>
+                            <input type="checkbox" name="system.weapon.isColdSteel" {{checked systemData.weapon.isColdSteel}}/>Arme blanche
+                        </label>
+                        <label>
+                            <input type="checkbox" name="system.weapon.isExplosive" {{checked systemData.weapon.isExplosive}}/>Explosif
+                        </label>
+                    </div>
+                    <div style="width: 50%;">
+                        <label>
+                            <input type="checkbox" name="system.weapon.isEnergetic" {{checked systemData.weapon.isEnergetic}}/>Energétique
+                        </label>
+                        <label>
+                            <input type="checkbox" name="system.weapon.isStic" {{checked systemData.weapon.isStic}}/>Bâton
+                        </label>
+                        <label>
+                            <input type="checkbox" name="system.weapon.isMelee" {{checked systemData.weapon.isMelee}}/>Arme de mêlée
+                        </label>
+                        <label>
+                            <input type="checkbox" name="system.weapon.isOther" {{checked systemData.weapon.isOther}}/>Autres
+                        </label>
+                    </div>
+                </div>
+
+                
+                <div class="row">
+                    <!--Melee Penalty-->
+                    <div style="width: 50%;">
+                        <h3>Pénalité de corps à corps</h3>
+                        {{systemData.weapon.meleePenalty}}
+                    </div>
+
+                    <!--Is Contact weapon-->
+                    <div style="width: 50%;">
+                        <label>
+                            <input type="checkbox" name="system.weapon.isContact" {{checked systemData.weapon.isContact}}/>Arme de corps à corps
+                        </label>
+                    </div>
                 </div>
             </div>
             {{/if}}
@@ -113,7 +136,7 @@
             <!--Armor-->
             {{#if item.system.objectType.isArmor}}
             <h2>Armure</h2>
-            <div>
+            <div style="margin-bottom: 1rem;">
                 <!--Type-->
                 <div>
                     <label>
@@ -125,7 +148,7 @@
                 </div>
 
                 <!--Protection-->
-                <div>
+                <div style="width: 30%;">
                     <label>Protection</label>
                     <input name="system.armor.protection" type="number" value="{{systemData.armor.protection}}" placeholder="Protection"/>
                 </div>

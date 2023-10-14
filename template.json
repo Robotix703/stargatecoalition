@@ -456,7 +456,8 @@
 			"isOther": false,
 			"isImproved": false,
 			"stun": "",
-			"meleePenalty": 0
+			"meleePenalty": 0,
+			"isContact": false
 		},
 		"objectType": {
 			"isWeapon": false,
