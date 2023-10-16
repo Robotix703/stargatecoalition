@@ -226,7 +226,7 @@ export class SimpleActorSheet extends ActorSheet {
     let button = $(event.currentTarget);
     const li = button.parents(".item");
     const item = this.actor.items.get(li.data("itemId"));
-    const damage = item.weapon.damage + (item.weapon.isImproved ? 1 : 0);
+    const damage = item.system.weapon.damage + (item.system.weapon.isImproved ? 1 : 0);
     let r = new Roll(button[0].getAttribute('data-roll'), this.actor.getRollData());
     return r.toMessage({
       user: game.user.id,
