@@ -5,13 +5,13 @@ import {ATTRIBUTE_TYPES} from "./constants.js";
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
  */
-export class SimpleItemSheet extends ItemSheet {
+export class ArmorSheet extends ItemSheet {
 
   /** @inheritdoc */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["stargatecoalition", "sheet", "item"],
-      template: "systems/stargatecoalition/templates/item-sheet.html",
+      classes: ["stargatecoalition", "sheet", "Armure"],
+      template: "systems/stargatecoalition/templates/armor-sheet.html",
       width: 520,
       height: 480,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],

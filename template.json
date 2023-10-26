@@ -430,9 +430,9 @@
 	  }
 	},
 	"Item": {
-	  "types": ["item", "Arme"],
+	  "types": ["Equipement", "Arme", "Armure"],
 	  "htmlFields": ["description", "additionalRule"],
-	  "item": {
+	  "Equipement": {
 		"name": "",
 		"description": "",
 		"searchIndex": 0,
@@ -466,6 +466,39 @@
 		}
 	  },
 	  "Arme": {
+		"name": "",
+		"description": "",
+		"searchIndex": 0,
+		"additionalRule": "",
+		"quantity": 1,
+		"armor": {
+			"isPhysicalArmor": true,
+			"isEnergetic": false,
+			"protection": 0,
+			"isEquip": false
+		},
+		"weapon": {
+			"damage": 0,
+			"isPistol": false,
+			"isRifle": false,
+			"isColdSteel": false,
+			"isExplosive": false,
+			"isEnergetic": false,
+			"isStic": false,
+			"isMelee": false,
+			"isOther": false,
+			"isImproved": false,
+			"stun": "",
+			"meleePenalty": 0,
+			"isContact": false
+		},
+		"objectType": {
+			"isWeapon": false,
+			"isArmor": false,
+			"isEquipment": true
+		}
+	  },
+	  "Armure": {
 		"name": "",
 		"description": "",
 		"searchIndex": 0,

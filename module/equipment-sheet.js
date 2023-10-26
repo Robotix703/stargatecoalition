@@ -5,13 +5,13 @@ import {ATTRIBUTE_TYPES} from "./constants.js";
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
  */
-export class WeaponSheet extends ItemSheet {
+export class EquipmentSheet extends ItemSheet {
 
   /** @inheritdoc */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["stargatecoalition", "sheet", "Arme"],
-      template: "systems/stargatecoalition/templates/weapon-sheet.html",
+      classes: ["stargatecoalition", "sheet", "Equipement"],
+      template: "systems/stargatecoalition/templates/equipment-sheet.html",
       width: 520,
       height: 480,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
@@ -46,6 +46,9 @@ export class WeaponSheet extends ItemSheet {
 
     // Everything below here is only needed if the sheet is editable
     if ( !this.isEditable ) return;
+
+    // Attribute Management
+    
   }
 
   handleWeaponType(data){
