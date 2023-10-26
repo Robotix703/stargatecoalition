@@ -6,9 +6,9 @@
 // Import Modules
 import { SimpleActor } from "./actor.js";
 import { SimpleItem } from "./item.js";
+import { WeaponSheet } from "./weapon-sheet.js";
 import { SimpleItemSheet } from "./item-sheet.js";
 import { SimpleActorSheet } from "./actor-sheet.js";
-import { preloadHandlebarsTemplates } from "./templates.js";
 import { createstargatecoalitionMacro } from "./macro.js";
 import { SimpleToken, SimpleTokenDocument } from "./token.js";
 
@@ -45,8 +45,10 @@ Hooks.once("init", async function() {
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("stargatecoalition", SimpleActorSheet, { makeDefault: true });
+
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("stargatecoalition", SimpleItemSheet, { makeDefault: true });
+  Items.registerSheet("stargatecoalition", SimpleItemSheet, { types: ["Item"], label: "Item", makeDefault: true });
+  Items.registerSheet("stargatecoalition", WeaponSheet, { types: ["Arme"], label: "Arme", makeDefault: true });
 
   // Register system settings
   game.settings.register("stargatecoalition", "macroShorthand", {
@@ -93,80 +95,9 @@ Hooks.once("init", async function() {
   Handlebars.registerHelper('slugify', function(value) {
     return value.slugify({strict: true});
   });
-
-  // Preload template partials
-  await preloadHandlebarsTemplates();
 });
 
 /**
  * Macrobar hook.
  */
 Hooks.on("hotbarDrop", (bar, data, slot) => createstargatecoalitionMacro(data, slot));
-
-/**
- * Adds the actor template context menu.
- */
-Hooks.on("getActorDirectoryEntryContext", (html, options) => {
-
-  // Define an actor as a template.
-  options.push({
-    name: game.i18n.localize("SIMPLE.DefineTemplate"),
-    icon: '<i class="fas fa-stamp"></i>',
-    condition: li => {
-      const actor = game.actors.get(li.data("documentId"));
-      return !actor.isTemplate;
-    },
-    callback: li => {
-      const actor = game.actors.get(li.data("documentId"));
-      actor.setFlag("stargatecoalition", "isTemplate", true);
-    }
-  });
-
-  // Undefine an actor as a template.
-  options.push({
-    name: game.i18n.localize("SIMPLE.UnsetTemplate"),
-    icon: '<i class="fas fa-times"></i>',
-    condition: li => {
-      const actor = game.actors.get(li.data("documentId"));
-      return actor.isTemplate;
-    },
-    callback: li => {
-      const actor = game.actors.get(li.data("documentId"));
-      actor.setFlag("stargatecoalition", "isTemplate", false);
-    }
-  });
-});
-
-/**
- * Adds the item template context menu.
- */
-Hooks.on("getItemDirectoryEntryContext", (html, options) => {
-
-  // Define an item as a template.
-  options.push({
-    name: game.i18n.localize("SIMPLE.DefineTemplate"),
-    icon: '<i class="fas fa-stamp"></i>',
-    condition: li => {
-      const item = game.items.get(li.data("documentId"));
-      return !item.isTemplate;
-    },
-    callback: li => {
-      const item = game.items.get(li.data("documentId"));
-      item.setFlag("stargatecoalition", "isTemplate", true);
-    }
-  });
-
-  // Undefine an item as a template.
-  options.push({
-    name: game.i18n.localize("SIMPLE.UnsetTemplate"),
-    icon: '<i class="fas fa-times"></i>',
-    condition: li => {
-      const item = game.items.get(li.data("documentId"));
-      return item.isTemplate;
-    },
-    callback: li => {
-      const item = game.items.get(li.data("documentId"));
-      item.setFlag("stargatecoalition", "isTemplate", false);
-    }
-  });
-});

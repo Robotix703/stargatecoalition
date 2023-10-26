@@ -1,7 +1,7 @@
 import { EntitySheetHelper } from "./helper.js";
 
 /**
- * Extend the base Actor document to support attributes and groups with a custom template creation dialog.
+ * Extend the base Actor document to support attributes
  * @extends {Actor}
  */
 export class SimpleActor extends Actor {
@@ -15,21 +15,6 @@ export class SimpleActor extends Actor {
   }
 
   /* -------------------------------------------- */
-
-  /** @override */
-  static async createDialog(data={}, options={}) {
-    return EntitySheetHelper.createDialog.call(this, data, options);
-  }
-
-  /* -------------------------------------------- */
-
-  /**
-   * Is this Actor used as a template for other Actors?
-   * @type {boolean}
-   */
-  get isTemplate() {
-    return !!this.getFlag("stargatecoalition", "isTemplate");
-  }
 
   /* -------------------------------------------- */
   /*  Roll Data Preparation                       */
