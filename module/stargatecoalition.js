@@ -6,10 +6,15 @@
 // Import Modules
 import { SimpleActor } from "./actor.js";
 import { SimpleItem } from "./item.js";
+
 import { WeaponSheet } from "./weapon-sheet.js";
 import { ArmorSheet } from "./armor-sheet.js";
 import { EquipmentSheet } from "./equipment-sheet.js";
-import { SimpleActorSheet } from "./actor-sheet.js";
+
+import { PlayerSheet } from "./player-sheet.js";
+import { NPCSheet } from "./npc-sheet.js";
+import { ShipSheet } from "./ship-sheet.js";
+
 import { createstargatecoalitionMacro } from "./macro.js";
 import { SimpleToken, SimpleTokenDocument } from "./token.js";
 
@@ -45,7 +50,9 @@ Hooks.once("init", async function() {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("stargatecoalition", SimpleActorSheet, { makeDefault: true });
+  Actors.registerSheet("stargatecoalition", PlayerSheet, { types: ["Joueur"], label: "Joueur", makeDefault: true });
+  Actors.registerSheet("stargatecoalition", NPCSheet, { types: ["PNJ"], label: "PNJ", makeDefault: true });
+  Actors.registerSheet("stargatecoalition", ShipSheet, { types: ["Vaisseau"], label: "Vaisseau", makeDefault: true });
 
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("stargatecoalition", EquipmentSheet, { types: ["Equipement"], label: "Equipement", makeDefault: true });

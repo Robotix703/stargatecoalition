@@ -5,13 +5,13 @@ import {ATTRIBUTE_TYPES} from "./constants.js";
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-export class SimpleActorSheet extends ActorSheet {
+export class ShipSheet extends ActorSheet {
 
   /** @inheritdoc */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["stargatecoalition", "sheet", "actor"],
-      template: "systems/stargatecoalition/templates/actor-sheet.html",
+      classes: ["stargatecoalition", "sheet", "Vaisseau"],
+      template: "systems/stargatecoalition/templates/ship-sheet.html",
       width: 700,
       height: 750,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
