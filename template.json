@@ -430,7 +430,7 @@
 	  }
 	},
 	"Item": {
-	  "types": ["item"],
+	  "types": ["item", "Arme"],
 	  "htmlFields": ["description", "additionalRule"],
 	  "item": {
 		"name": "",
