@@ -2,11 +2,11 @@
 	"id": "stargatecoalition",
 	"title": "Stargate Coalition System",
 	"description": "Stargate Coalition System",
-	"version": "1.0.89",
+	"version": "1.0.90",
 	"compatibility":{
 		"minimum": 10,
-		"verified": 10,
-		"maximum": 10
+		"verified": 11.313,
+		"maximum": 11
 	},
   	"esmodules": [
 		"module/stargatecoalition.js"
@@ -15,13 +15,6 @@
 		"styles/stargatecoalition.css"
 	],
 	"packs": [],
-	"languages": [
-		{
-		"lang": "en",
-		"name": "English",
-		"path": "lang/en.json"
-		}
-	],
 	"authors": [
 		{
 			"name": "Robotix703",
