@@ -2,12 +2,13 @@
 	"id": "stargatecoalition",
 	"title": "Stargate Coalition System",
 	"description": "Stargate Coalition System",
-	"version": "1.0.90",
+	"version": "1.0.91",
 	"compatibility":{
 		"minimum": 10,
 		"verified": 11.313,
 		"maximum": 11
 	},
+	"background": "systems/stargatecoalition/img/stargatecoalition.jpg",
   	"esmodules": [
 		"module/stargatecoalition.js"
 	],

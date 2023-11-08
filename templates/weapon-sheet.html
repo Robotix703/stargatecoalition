@@ -5,18 +5,9 @@
 
         <div class="header-fields">
             <!--Nom-->
-            <h1 class="charname">
+            <h1 class="itemName">
                 <input name="name" type="text" value="{{data.name}}" placeholder="Nom"/>
             </h1>
-            <!--Type-->
-            <div class="resource">
-                <label>
-                    <input type="checkbox" name="system.objectType.isWeapon" {{checked systemData.objectType.isWeapon}}/>Arme OK</label>
-                <label>
-                    <input type="checkbox" name="system.objectType.isArmor" {{checked systemData.objectType.isArmor}}/>Armure</label>
-                <label>
-                    <input type="checkbox" name="system.objectType.isEquipment" {{checked systemData.objectType.isEquipment}}/>Equipement</label>
-            </div>
         </div>
     </header>
 
@@ -54,16 +45,13 @@
                 </div>
             
                 <!--Additionnal Rule-->
-                {{#if system.additionalRule}}
                 <div style="height: 200px;">
                     <h3>Règles additionnelles</h3>
                     {{editor additionalRuleHTML target="system.additionalRule" button=true editable=editable engine="prosemirror"}}
                 </div>
-                {{/if}}
             </div>
 
             <!--Weapon-->
-            {{#if item.system.objectType.isWeapon}}
             <h2>Armes</h2>
             <div style="margin-bottom: 1rem;">
                 <div class="row">
@@ -145,29 +133,6 @@
                     </div>
                 </div>
             </div>
-            {{/if}}
-
-            <!--Armor-->
-            {{#if item.system.objectType.isArmor}}
-            <h2>Armure</h2>
-            <div style="margin-bottom: 1rem;" class="row">
-                <!--Type-->
-                <div style="width: 50%; float: left;">
-                    <label>
-                        <input type="checkbox" name="system.armor.isPhysicalArmor" {{checked systemData.armor.isPhysicalArmor}}/>Physique
-                    </label>
-                    <label>
-                        <input type="checkbox" name="system.armor.isEnergetic" {{checked systemData.armor.isEnergetic}}/>Energétique
-                    </label>
-                </div>
-
-                <!--Protection-->
-                <div style="width: 30%; float: left;">
-                    <label>Protection</label>
-                    <input name="system.armor.protection" type="number" value="{{systemData.armor.protection}}" placeholder="Protection"/>
-                </div>
-            </div>
-            {{/if}}
         </div>
     </section>
 </form>

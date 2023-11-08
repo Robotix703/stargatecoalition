@@ -46,28 +46,12 @@ export class ArmorSheet extends ItemSheet {
 
     // Everything below here is only needed if the sheet is editable
     if ( !this.isEditable ) return;
-
-    // Attribute Management
-    
-  }
-
-  handleWeaponType(data){
-    if(data["system.objectType.isWeapon"]) {
-      data["system.weapon.meleePenalty"] = 0;
-      if(data["system.weapon.isStic"]) data["system.weapon.meleePenalty"] = 0;
-      if(data["system.weapon.isColdSteel"]) data["system.weapon.meleePenalty"] = 1;
-      if(data["system.weapon.isMelee"]) data["system.weapon.meleePenalty"] = 2;
-      if(data["system.weapon.isPistol"]) data["system.weapon.meleePenalty"] = 3;
-      if(data["system.weapon.isRifle"]) data["system.weapon.meleePenalty"] = 5;
-      if(data["system.weapon.isExplosive"]) data["system.weapon.meleePenalty"] = 8;
-    }
   }
   /* -------------------------------------------- */
 
   /** @override */
   _getSubmitData(updateData) {
     let formData = super._getSubmitData(updateData);
-    this.handleWeaponType(formData);
     formData = EntitySheetHelper.updateAttributes(formData, this.object);
     formData = EntitySheetHelper.updateGroups(formData, this.object);
     return formData;

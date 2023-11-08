@@ -1289,33 +1289,7 @@
 		"description": "",
 		"searchIndex": 0,
 		"additionalRule": "",
-		"quantity": 1,
-		"armor": {
-			"isPhysicalArmor": true,
-			"isEnergetic": false,
-			"protection": 0,
-			"isEquip": false
-		},
-		"weapon": {
-			"damage": 0,
-			"isPistol": false,
-			"isRifle": false,
-			"isColdSteel": false,
-			"isExplosive": false,
-			"isEnergetic": false,
-			"isStic": false,
-			"isMelee": false,
-			"isOther": false,
-			"isImproved": false,
-			"stun": "",
-			"meleePenalty": 0,
-			"isContact": false
-		},
-		"objectType": {
-			"isWeapon": false,
-			"isArmor": false,
-			"isEquipment": true
-		}
+		"quantity": 1
 	  },
 	  "Arme": {
 		"name": "",
@@ -1323,12 +1297,6 @@
 		"searchIndex": 0,
 		"additionalRule": "",
 		"quantity": 1,
-		"armor": {
-			"isPhysicalArmor": true,
-			"isEnergetic": false,
-			"protection": 0,
-			"isEquip": false
-		},
 		"weapon": {
 			"damage": 0,
 			"isPistol": false,
@@ -1343,11 +1311,6 @@
 			"stun": "",
 			"meleePenalty": 0,
 			"isContact": false
-		},
-		"objectType": {
-			"isWeapon": false,
-			"isArmor": false,
-			"isEquipment": true
 		}
 	  },
 	  "Armure": {
@@ -1361,26 +1324,6 @@
 			"isEnergetic": false,
 			"protection": 0,
 			"isEquip": false
-		},
-		"weapon": {
-			"damage": 0,
-			"isPistol": false,
-			"isRifle": false,
-			"isColdSteel": false,
-			"isExplosive": false,
-			"isEnergetic": false,
-			"isStic": false,
-			"isMelee": false,
-			"isOther": false,
-			"isImproved": false,
-			"stun": "",
-			"meleePenalty": 0,
-			"isContact": false
-		},
-		"objectType": {
-			"isWeapon": false,
-			"isArmor": false,
-			"isEquipment": true
 		}
 	  }
 	}
