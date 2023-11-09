@@ -13,7 +13,7 @@ export class EquipmentSheet extends ItemSheet {
       classes: ["stargatecoalition", "sheet", "Equipement"],
       template: "systems/stargatecoalition/templates/equipment-sheet.html",
       width: 520,
-      height: 480,
+      height: 600,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
       scrollY: [".attributes"],
     });
