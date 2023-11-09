@@ -3,7 +3,7 @@
 	  "types": ["Joueur", "PNJ", "Vaisseau"],
 	  "htmlFields": ["biographie", "notes", "racialSpecificity"],
 	  "Joueur": {
-		"nom": "",
+		"name": "",
 		"profession": "",
 		"secondProfession": "",
 		"race": "",
@@ -429,7 +429,7 @@
 		}
 	  },
 	  "PNJ": {
-		"nom": "",
+		"name": "",
 		"profession": "",
 		"secondProfession": "",
 		"race": "",
@@ -855,7 +855,7 @@
 		}
 	  },
 	  "Vaisseau": {
-		"nom": "",
+		"name": "",
 		"profession": "",
 		"secondProfession": "",
 		"race": "",
@@ -1289,7 +1289,8 @@
 		"description": "",
 		"searchIndex": 0,
 		"additionalRule": "",
-		"quantity": 1
+		"quantity": 1,
+		"isEquipment": true
 	  },
 	  "Arme": {
 		"name": "",
@@ -1311,7 +1312,8 @@
 			"stun": "",
 			"meleePenalty": 0,
 			"isContact": false
-		}
+		},
+		"isWeapon": true
 	  },
 	  "Armure": {
 		"name": "",
@@ -1324,7 +1326,8 @@
 			"isEnergetic": false,
 			"protection": 0,
 			"isEquip": false
-		}
+		},
+		"isArmor": true
 	  }
 	}
 }
