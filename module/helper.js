@@ -218,7 +218,7 @@ export class EntitySheetHelper {
     const isPhysicalArmor = button?.getAttribute("isPhysicalArmor");
 
     const rollData = this.actor.getRollData();
-    let formula = ((isPhysicalArmor) ? this.actor.system.physicalArmor : this.actor.system.energeticArmor) + "d6 + " + this.action.system.characteristics.constitution.modifier + "d6";
+    let formula = ((isPhysicalArmor) ? this.actor.system.physicalArmor : this.actor.system.energeticArmor) + "d6 + " + this.actor.system.characteristics.constitution.modifier + "d6";
 
     let r = new Roll(formula, rollData);
       return r.toMessage({
