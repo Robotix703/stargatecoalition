@@ -911,7 +911,7 @@
 	},
 	"Item": {
 	  "types": ["Equipement", "Arme", "Armure"],
-	  "htmlFields": ["description", "additionalRule"],
+	  "htmlFields": ["description"],
 	  "Equipement": {
 		"name": "",
 		"description": "",

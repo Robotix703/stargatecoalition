@@ -12,8 +12,8 @@ export class ArmorSheet extends ItemSheet {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["stargatecoalition", "sheet", "Armure"],
       template: "systems/stargatecoalition/templates/armor-sheet.html",
-      width: 520,
-      height: 480,
+      width: 600,
+      height: 700,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
       scrollY: [".attributes"],
     });
@@ -28,10 +28,6 @@ export class ArmorSheet extends ItemSheet {
     context.systemData = context.data.system;
     context.dtypes = ATTRIBUTE_TYPES;
     context.descriptionHTML = await TextEditor.enrichHTML(context.systemData.description, {
-      secrets: this.document.isOwner,
-      async: true
-    });
-    context.additionalRuleHTML = await TextEditor.enrichHTML(context.systemData.additionalRule, {
       secrets: this.document.isOwner,
       async: true
     });
