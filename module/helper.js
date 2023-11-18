@@ -212,6 +212,72 @@ export class EntitySheetHelper {
     });
   }
 
+  static onDamageRoll(event) {
+    event.preventDefault();
+    const button = event.currentTarget;
+    const isPhysicalArmor = button?.getAttribute("isPhysicalArmor");
+
+    const rollData = this.actor.getRollData();
+    let formula = ((isPhysicalArmor) ? this.actor.system.physicalArmor : this.actor.system.energeticArmor) + "d6 + " + this.action.system.characteristics.constitution.modifier + "d6";
+
+    let r = new Roll(formula, rollData);
+      return r.toMessage({
+        user: game.user.id,
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        flavor: `Absorption de dégats`
+    });
+  }
+
+  static async onLocationRoll(event) {
+    let r = new Roll("2d6", this.actor.getRollData());
+    await r.evaluate();
+
+    let localisation = this.getLocalisation(r.total);
+
+    return r.toMessage({
+      user: game.user.id,
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      flavor: `<h2>Localisation</h2><h3>${localisation}</h3>`
+    });
+  }
+
+  static getLocalisation(localisationScore){
+    switch (localisationScore) {
+      case 2:
+        return "Tête";
+    
+      case 3:
+        return "Main directrice";
+
+      case 4:
+        return "Bras droit";
+      
+      case 5:
+        return "Main gauche";
+
+      case 6:
+        return "Bras gauche";
+
+      case 7:
+        return "Jambe droite";
+
+      case 8:
+        return "Jambe gauche";
+
+      case 9:
+        return "Ventre gauche";
+
+      case 10:
+        return "Ventre droit";
+
+      case 11:
+        return "Torse droit";
+
+      case 12:
+        return "Coeur";
+    }
+  }
+
   static onSkillRoll(event) {
     event.preventDefault();
     const button = event.currentTarget;

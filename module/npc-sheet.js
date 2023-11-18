@@ -183,11 +183,13 @@ export class NPCSheet extends ActorSheet {
     html.find(".attributes").on("click", "a.caracteristics-roll", EntitySheetHelper.onAttributeRoll.bind(this));
     html.find(".resource").on("click", "a.resource-roll", EntitySheetHelper.onRessourceRoll.bind(this));
     html.find(".skills").on("click", "a.skill-roll", EntitySheetHelper.onSkillRoll.bind(this));
+    html.find(".resource").on("click", "a.resource-takeDamage", EntitySheetHelper.onDamageRoll.bind(this));
 
     // Item Controls
     html.find(".item-control").click(this._onItemControl.bind(this));
     html.find(".items .rollable").on("click", this._onAttackRoll.bind(this));
     html.find(".items .equipped").on("click", this._onItemEquipped.bind(this));
+    html.find(".items .location").on("click", EntitySheetHelper.onLocationRoll.bind(this));
   }
   /* -------------------------------------------- */
 
@@ -218,10 +220,6 @@ export class NPCSheet extends ActorSheet {
 
   /* -------------------------------------------- */
 
-  /**
-   * Listen for roll buttons on items.
-   * @param {MouseEvent} event    The originating left click event
-   */
   _onAttackRoll(event) {
     let button = $(event.currentTarget);
     const li = button.parents(".item");
@@ -231,7 +229,7 @@ export class NPCSheet extends ActorSheet {
     return r.toMessage({
       user: game.user.id,
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      flavor: `<h2>${item.name}</h2><h3>${button.text()}</h3><h3>${damage}</h3>`
+      flavor: `<h2>${item.name}</h2><h3>${button.text()}</h3><h3>Dégats : ${damage}</h3>`
     });
   }
 
