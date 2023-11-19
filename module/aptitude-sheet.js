@@ -31,6 +31,10 @@ export class AptitudeSheet extends ItemSheet {
       secrets: this.document.isOwner,
       async: true
     });
+    context.requirementsHTML = await TextEditor.enrichHTML(context.systemData.requirements, {
+      secrets: this.document.isOwner,
+      async: true
+    });
     return context;
   }
 

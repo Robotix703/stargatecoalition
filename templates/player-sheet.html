@@ -103,7 +103,9 @@
                             </a>
 
                             <!--Button-->
-                            <a class="item-control" title="{{ localize "SIMPLE.ItemDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
+                            <div class="item-controls">
+                                <a class="item-control" title="{{ localize "SIMPLE.ItemDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
+                            </div>
                         </li>
                         {{/if}}
                     </div>
@@ -127,8 +129,43 @@
                                 <h4 class="item-name">{{item.name}}</h4>
                             </a>
 
+                            <!--Cost-->
+                            {{item.system.cost}} XP
+
                             <!--Button-->
-                            <a class="item-control" title="{{ localize "SIMPLE.ItemDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
+                            <div class="item-controls">
+                                <a class="item-control" title="{{ localize "SIMPLE.ItemDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
+                            </div>
+                        </li>
+                        {{/if}}
+                    </div>
+                    {{/each}}
+                </ol>
+            </div>
+
+            <!--Aptitude-->
+            <div>
+                <h1>Aptitudes</h1>
+                <ol class="item-list">
+                    {{#each data.items as |item id|}}
+                    <div>
+                        {{#if item.system.isSkill}}
+                        <li class="item flexrow" data-item-id="{{item._id}}">
+                            <!--Image-->
+                            <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+    
+                            <!--Title-->
+                            <a class="item-control" title="{{ localize "SIMPLE.ItemEdit" }}" data-action="edit">
+                                <h4 class="item-name">{{item.name}}</h4>
+                            </a>
+
+                            <!--Cost-->
+                            {{item.system.cost}} XP
+
+                            <!--Button-->
+                            <div class="item-controls">
+                                <a class="item-control" title="{{ localize "SIMPLE.ItemDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
+                            </div>
                         </li>
                         {{/if}}
                     </div>

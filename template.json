@@ -952,7 +952,7 @@
 	},
 	"Item": {
 	  "types": ["Equipement", "Arme", "Armure", "Metier", "Race", "Aptitude"],
-	  "htmlFields": ["description", "advantages", "disadvantages"],
+	  "htmlFields": ["description", "advantages", "disadvantages", "requirements"],
 	  "Equipement": {
 		"description": "",
 		"searchIndex": 0,
@@ -962,10 +962,13 @@
 	  },
 	  "Metier": {
 		"description": "",
+		"cost": 0,
 		"isProfession": true
 	  },
 	  "Aptitude": {
 		"description": "",
+		"requirements": "",
+		"cost": 0,
 		"isSkill": true
 	  },
 	  "Race": {

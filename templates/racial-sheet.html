@@ -29,12 +29,16 @@
         <div class="tab" data-group="primary" data-tab="caracteristics">
             <div>
                 <h1>Avantages</h1>
-                {{editor advantagesHTML target="system.advantages" button=true editable=editable engine="prosemirror"}}
+                <div class="long-texte">
+                    {{editor advantagesHTML target="system.advantages" button=true editable=editable engine="prosemirror"}}
+                </div>
             </div>
-            
+
             <div>
                 <h1>Inconvénients</h1>
-                {{editor disadvantagesHTML target="system.disadvantages" button=true editable=editable engine="prosemirror"}}
+                <div class="long-texte">
+                    {{editor disadvantagesHTML target="system.disadvantages" button=true editable=editable engine="prosemirror"}}
+                </div>
             </div>
         </div>
     </section>

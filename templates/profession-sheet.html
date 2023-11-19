@@ -21,7 +21,16 @@
 
         {{!-- Description Tab --}}
         <div class="tab" data-group="primary" data-tab="description">
-            {{editor descriptionHTML target="system.description" button=true editable=editable engine="prosemirror"}}
+            <!--Description-->
+            <div>
+                <h1>Description</h1>
+                <div class="long-texte">
+                    {{editor descriptionHTML target="system.description" button=true editable=editable engine="prosemirror"}}
+                </div>
+            </div>
+
+            <!--Cost-->
+            <input type="number" name="system.cost" value="{{systemData.cost}}" />
         </div>
     </section>
 </form>
