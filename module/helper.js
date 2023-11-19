@@ -530,6 +530,20 @@ export class EntitySheetHelper {
     });
   }
 
+  static async onStunRoll(event){
+    let r = new Roll("2d6 + @characteristics.volonte.modifier + @characteristics.constitution.modifier", this.actor.getRollData());
+    await r.evaluate();
+
+    let stun = this.actor.system.stun.value;
+    let status = (r.total >= stun) ? "Reste conscient" : "Tombe inconscient";
+
+    return r.toMessage({
+      user: game.user.id,
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      flavor: `<h2>${status}</h2>`
+    });
+  }
+
   static async onLocationRoll(event) {
     let r = new Roll("2d6", this.actor.getRollData());
     await r.evaluate();

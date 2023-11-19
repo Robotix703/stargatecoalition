@@ -272,10 +272,10 @@
 
             <!--Defence-->
             <h1>Défense</h1>
-            <div>
+            <div class="defence">
                 <!--Etourdissement-->
-                <div class="ressource-element" style="width: 100px;">
-                    <a class="resource-roll" data-label="Etourdissement" data-formula="2d6 + @characteristics.volonte.modifier + @characteristics.constitution.modifier">
+                <div class="ressource-element" style="width: 100px; margin-bottom: 20px;">
+                    <a class="defence-stun">
                         <label for="system.stun.value" class="resource-label">Etourdissement</label>
                     </a>
                     <div class="resource-content flexrow flex-center flex-between">
@@ -284,17 +284,17 @@
                 </div>
 
                 <!--Armor-->
-                <div class="ressource-element" style="width: 100px;">
-                    <a class="resource-takeDamage" isPhysicalArmor="true">
-                        <label for="system.physicalArmor" class="resource-label">Armure P</label>
+                <div class="ressource-element" style="width: 100px; margin-bottom: 20px;">
+                    <a class="defence-takeDamage" isPhysicalArmor="true">
+                        <label for="system.physicalArmor" class="resource-label">Armure Physique</label>
                     </a>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="number" name="system.physicalArmor" value="{{systemData.physicalArmor}}"/>
                     </div>
                 </div>
-                <div class="ressource-element" style="width: 100px;">
-                    <a class="resource-takeDamage" isPhysicalArmor="false">
-                        <label for="system.energeticArmor" class="resource-label">Armure E</label>
+                <div class="ressource-element" style="width: 100px; margin-bottom: 20px;">
+                    <a class="defence-takeDamage" isPhysicalArmor="false">
+                        <label for="system.energeticArmor" class="resource-label">Armure Energétique</label>
                     </a>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="number" name="system.energeticArmor" value="{{systemData.energeticArmor}}"/>
@@ -302,6 +302,7 @@
                 </div>
 
                 <!-- Armor utility -->
+                <h2>Utilisation de l'armure pour : Eviter l'attaque / Absorber les dégâts</h2>
                 <label class="switch">
                     <input type="checkbox">
                     <span class="slider round"></span>
