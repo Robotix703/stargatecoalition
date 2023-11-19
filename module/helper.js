@@ -196,6 +196,199 @@ export class EntitySheetHelper {
     }
   }
 
+  static damageLevelFunction(level, isSensitive = false){
+    switch (level) {
+      case 0:
+        return "";
+
+      case 1:
+        return isSensitive ? "Douleur Intense" : "";
+    
+      case 2:
+        return isSensitive ? "Plaie Ouverte" : "Douleur Intense";
+
+      case 3:
+        return isSensitive ? "Hémorragie" : "Plaie Ouverte";
+
+      case 4:
+        return isSensitive ? "Hors d'usage" : "Hémorragie";
+
+      case 5:
+        return "Hors d'usage";
+
+      case 6:
+        return "Séquelle Ultérieures";
+
+      case 7:
+        return "Membre Arraché";
+    }
+  }
+
+  static malusFunction(level, isSensitive){
+    switch (level) {
+      case 0:
+        return 0;
+
+      case 1:
+        return isSensitive ? -1 : 0;
+    
+      case 2:
+        return isSensitive ? -2 : -1;
+
+      case 3:
+        return isSensitive ? -3 : -2;
+
+      case 4:
+        return isSensitive ? -Infinity : -3;
+
+      case 5:
+      case 6:
+      case 7:
+        return -Infinity;
+    }
+  }
+
+  static computeHealth(formData, damageLevelFunction, malusFunction) {
+    //Status
+    formData["system.health.head.status"] = damageLevelFunction(formData["system.health.head.value"], true);
+    formData["system.health.guidingHand.status"] = damageLevelFunction(formData["system.health.guidingHand.value"]);
+    formData["system.health.rightArm.status"] = damageLevelFunction(formData["system.health.rightArm.value"]);
+    formData["system.health.leftHand.status"] = damageLevelFunction(formData["system.health.leftHand.value"]);
+    formData["system.health.leftArm.status"] = damageLevelFunction(formData["system.health.leftArm.value"]);
+    formData["system.health.rightLeg.status"] = damageLevelFunction(formData["system.health.rightLeg.value"]);
+    formData["system.health.leftLeg.status"] = damageLevelFunction(formData["system.health.leftLeg.value"]);
+    formData["system.health.leftBelly.status"] = damageLevelFunction(formData["system.health.leftBelly.value"]);
+    formData["system.health.rightBelly.status"] = damageLevelFunction(formData["system.health.rightBelly.value"]);
+    formData["system.health.rightChest.status"] = damageLevelFunction(formData["system.health.rightChest.value"]);
+    formData["system.health.heart.status"] = damageLevelFunction(formData["system.health.heart.value"], true);
+
+    //Malus
+    formData["system.health.head.malus"] = malusFunction(formData["system.health.head.value"], true);
+    formData["system.health.guidingHand.malus"] = malusFunction(formData["system.health.guidingHand.value"]);
+    formData["system.health.rightArm.malus"] = malusFunction(formData["system.health.rightArm.value"]);
+    formData["system.health.leftHand.malus"] = malusFunction(formData["system.health.leftHand.value"]);
+    formData["system.health.leftArm.malus"] = malusFunction(formData["system.health.leftArm.value"]);
+    formData["system.health.rightLeg.malus"] = malusFunction(formData["system.health.rightLeg.value"]);
+    formData["system.health.leftLeg.malus"] = malusFunction(formData["system.health.leftLeg.value"]);
+    formData["system.health.leftBelly.malus"] = malusFunction(formData["system.health.leftBelly.value"]);
+    formData["system.health.rightBelly.malus"] = malusFunction(formData["system.health.rightBelly.value"]);
+    formData["system.health.rightChest.malus"] = malusFunction(formData["system.health.rightChest.value"]);
+    formData["system.health.heart.malus"] = malusFunction(formData["system.health.heart.value"], true);
+  }
+
+  static computeSkills(formData){
+    //Total
+    formData["system.skills.contactWeapon.total"] = formData["system.skills.contactWeapon.points"] + formData["system.skills.contactWeapon.temp"];
+    formData["system.skills.unarmedCombat.total"] = formData["system.skills.unarmedCombat.points"] + formData["system.skills.unarmedCombat.temp"];
+    formData["system.skills.swimming.total"] = formData["system.skills.swimming.points"] + formData["system.skills.swimming.temp"];
+    formData["system.skills.jumpAndClimb.total"] = formData["system.skills.jumpAndClimb.points"] + formData["system.skills.jumpAndClimb.temp"];
+
+    formData["system.skills.rangedWeapon.total"] = formData["system.skills.rangedWeapon.points"] + formData["system.skills.rangedWeapon.temp"];
+    formData["system.skills.dodge.total"] = formData["system.skills.dodge.points"] + formData["system.skills.dodge.temp"];
+    formData["system.skills.acrobatics.total"] = formData["system.skills.acrobatics.points"] + formData["system.skills.acrobatics.temp"];
+    formData["system.skills.stealth.total"] = formData["system.skills.stealth.points"] + formData["system.skills.stealth.temp"];
+
+    formData["system.skills.vigor.total"] = formData["system.skills.vigor.points"] + formData["system.skills.vigor.temp"];
+    formData["system.skills.endurance.total"] = formData["system.skills.endurance.points"] + formData["system.skills.endurance.temp"];
+    formData["system.skills.recovery.total"] = formData["system.skills.recovery.points"] + formData["system.skills.recovery.temp"];
+    formData["system.skills.immunity.total"] = formData["system.skills.immunity.points"] + formData["system.skills.immunity.temp"];
+
+    formData["system.skills.piloting.total"] = formData["system.skills.piloting.points"] + formData["system.skills.piloting.temp"];
+    formData["system.skills.sabotage.total"] = formData["system.skills.sabotage.points"] + formData["system.skills.sabotage.temp"];
+    formData["system.skills.strategy.total"] = formData["system.skills.strategy.points"] + formData["system.skills.strategy.temp"];
+    formData["system.skills.survival.total"] = formData["system.skills.survival.points"] + formData["system.skills.survival.temp"];
+
+    formData["system.skills.archeology.total"] = formData["system.skills.archeology.points"] + formData["system.skills.archeology.temp"];
+    formData["system.skills.science.total"] = formData["system.skills.science.points"] + formData["system.skills.science.temp"];
+    formData["system.skills.medical.total"] = formData["system.skills.medical.points"] + formData["system.skills.medical.temp"];
+    formData["system.skills.technologie.total"] = formData["system.skills.technologie.points"] + formData["system.skills.technologie.temp"];
+
+    formData["system.skills.smell.total"] = formData["system.skills.smell.points"] + formData["system.skills.smell.temp"];
+    formData["system.skills.hearing.total"] = formData["system.skills.hearing.points"] + formData["system.skills.hearing.temp"];
+    formData["system.skills.touch.total"] = formData["system.skills.touch.points"] + formData["system.skills.touch.temp"];
+    formData["system.skills.view.total"] = formData["system.skills.view.points"] + formData["system.skills.view.temp"];
+
+    formData["system.skills.concentration.total"] = formData["system.skills.concentration.points"] + formData["system.skills.concentration.temp"];
+    formData["system.skills.empathy.total"] = formData["system.skills.empathy.points"] + formData["system.skills.empathy.temp"];
+    formData["system.skills.strongMinded.total"] = formData["system.skills.strongMinded.points"] + formData["system.skills.strongMinded.temp"];
+    formData["system.skills.mentalToughness.total"] = formData["system.skills.mentalToughness.points"] + formData["system.skills.mentalToughness.temp"];
+
+    formData["system.skills.bluff.total"] = formData["system.skills.bluff.points"] + formData["system.skills.bluff.temp"];
+    formData["system.skills.intimidation.total"] = formData["system.skills.intimidation.points"] + formData["system.skills.intimidation.temp"];
+    formData["system.skills.leadership.total"] = formData["system.skills.leadership.points"] + formData["system.skills.leadership.temp"];
+    formData["system.skills.negotiation.total"] = formData["system.skills.negotiation.points"] + formData["system.skills.negotiation.temp"];
+
+    //Actual
+    formData["system.skillsLimits.force.actual"] =
+      formData["system.skills.contactWeapon.points"] 
+      + formData["system.skills.unarmedCombat.points"]
+      + formData["system.skills.swimming.points"]
+      + formData["system.skills.jumpAndClimb.points"];
+
+    formData["system.skillsLimits.dexterite.actual"] = 
+      formData["system.skills.rangedWeapon.points"] 
+      + formData["system.skills.dodge.points"]
+      + formData["system.skills.acrobatics.points"]
+      + formData["system.skills.stealth.points"];
+
+    formData["system.skillsLimits.constitution.actual"] = 
+      formData["system.skills.vigor.points"] 
+      + formData["system.skills.endurance.points"]
+      + formData["system.skills.recovery.points"]
+      + formData["system.skills.immunity.points"];
+
+    formData["system.skillsLimits.astuce.actual"] = 
+      formData["system.skills.piloting.points"] 
+      + formData["system.skills.sabotage.points"]
+      + formData["system.skills.strategy.points"]
+      + formData["system.skills.survival.points"];
+
+    formData["system.skillsLimits.intelligence.actual"] = 
+      formData["system.skills.archeology.points"] 
+      + formData["system.skills.science.points"]
+      + formData["system.skills.medical.points"]
+      + formData["system.skills.technologie.points"];
+
+    formData["system.skillsLimits.perception.actual"] = 
+      formData["system.skills.smell.points"] 
+      + formData["system.skills.hearing.points"]
+      + formData["system.skills.touch.points"]
+      + formData["system.skills.view.points"];
+
+    formData["system.skillsLimits.volonte.actual"] = 
+      formData["system.skills.concentration.points"] 
+      + formData["system.skills.empathy.points"]
+      + formData["system.skills.strongMinded.points"]
+      + formData["system.skills.mentalToughness.points"];
+
+    formData["system.skillsLimits.charisme.actual"] = 
+      formData["system.skills.bluff.points"] 
+      + formData["system.skills.intimidation.points"]
+      + formData["system.skills.leadership.points"]
+      + formData["system.skills.negotiation.points"];
+
+    //max
+    formData["system.skillsLimits.force.max"] = Math.floor(formData["system.characteristics.force.modifier"] * 1.5);
+    formData["system.skillsLimits.dexterite.max"] = Math.floor(formData["system.characteristics.dexterite.modifier"] * 1.5);
+    formData["system.skillsLimits.constitution.max"] = Math.floor(formData["system.characteristics.constitution.modifier"] * 1.5);
+    formData["system.skillsLimits.astuce.max"] = Math.floor(formData["system.characteristics.astuce.modifier"] * 1.5);
+    formData["system.skillsLimits.intelligence.max"] = Math.floor(formData["system.characteristics.intelligence.modifier"] * 1.5);
+    formData["system.skillsLimits.perception.max"] = Math.floor(formData["system.characteristics.perception.modifier"] * 1.5);
+    formData["system.skillsLimits.volonte.max"] = Math.floor(formData["system.characteristics.volonte.modifier"] * 1.5);
+    formData["system.skillsLimits.charisme.max"] = Math.floor(formData["system.characteristics.charisme.modifier"] * 1.5);
+
+    //maxSet
+    formData["system.skillsLimits.force.maxSet"] = formData["system.characteristics.force.modifier"] * 3;
+    formData["system.skillsLimits.dexterite.maxSet"] = formData["system.characteristics.dexterite.modifier"] * 3;
+    formData["system.skillsLimits.constitution.maxSet"] = formData["system.characteristics.constitution.modifier"] * 3;
+    formData["system.skillsLimits.astuce.maxSet"] = formData["system.characteristics.astuce.modifier"] * 3;
+    formData["system.skillsLimits.intelligence.maxSet"] = formData["system.characteristics.intelligence.modifier"] * 3;
+    formData["system.skillsLimits.perception.maxSet"] = formData["system.characteristics.perception.modifier"] * 3;
+    formData["system.skillsLimits.volonte.maxSet"] = formData["system.characteristics.volonte.modifier"] * 3;
+    formData["system.skillsLimits.charisme.maxSet"] = formData["system.characteristics.charisme.modifier"] * 3;
+    return formData;
+  }
+
   static computeModifiers(formData){
     formData["system.characteristics.force.modifier"] = Math.floor(formData["system.characteristics.force.value"]/2) - 5;
     formData["system.characteristics.dexterite.modifier"] = Math.floor(formData["system.characteristics.dexterite.value"]/2) - 5;

@@ -43,119 +43,6 @@ export class PlayerSheet extends ActorSheet {
     return context;
   }
 
-  /* -------------------------------------------- */
-  computeSkills(data){
-    //Total
-    data["system.skills.contactWeapon.total"] = data["system.skills.contactWeapon.points"] + data["system.skills.contactWeapon.temp"];
-    data["system.skills.unarmedCombat.total"] = data["system.skills.unarmedCombat.points"] + data["system.skills.unarmedCombat.temp"];
-    data["system.skills.swimming.total"] = data["system.skills.swimming.points"] + data["system.skills.swimming.temp"];
-    data["system.skills.jumpAndClimb.total"] = data["system.skills.jumpAndClimb.points"] + data["system.skills.jumpAndClimb.temp"];
-
-    data["system.skills.rangedWeapon.total"] = data["system.skills.rangedWeapon.points"] + data["system.skills.rangedWeapon.temp"];
-    data["system.skills.dodge.total"] = data["system.skills.dodge.points"] + data["system.skills.dodge.temp"];
-    data["system.skills.acrobatics.total"] = data["system.skills.acrobatics.points"] + data["system.skills.acrobatics.temp"];
-    data["system.skills.stealth.total"] = data["system.skills.stealth.points"] + data["system.skills.stealth.temp"];
-
-    data["system.skills.vigor.total"] = data["system.skills.vigor.points"] + data["system.skills.vigor.temp"];
-    data["system.skills.endurance.total"] = data["system.skills.endurance.points"] + data["system.skills.endurance.temp"];
-    data["system.skills.recovery.total"] = data["system.skills.recovery.points"] + data["system.skills.recovery.temp"];
-    data["system.skills.immunity.total"] = data["system.skills.immunity.points"] + data["system.skills.immunity.temp"];
-
-    data["system.skills.piloting.total"] = data["system.skills.piloting.points"] + data["system.skills.piloting.temp"];
-    data["system.skills.sabotage.total"] = data["system.skills.sabotage.points"] + data["system.skills.sabotage.temp"];
-    data["system.skills.strategy.total"] = data["system.skills.strategy.points"] + data["system.skills.strategy.temp"];
-    data["system.skills.survival.total"] = data["system.skills.survival.points"] + data["system.skills.survival.temp"];
-
-    data["system.skills.archeology.total"] = data["system.skills.archeology.points"] + data["system.skills.archeology.temp"];
-    data["system.skills.science.total"] = data["system.skills.science.points"] + data["system.skills.science.temp"];
-    data["system.skills.medical.total"] = data["system.skills.medical.points"] + data["system.skills.medical.temp"];
-    data["system.skills.technologie.total"] = data["system.skills.technologie.points"] + data["system.skills.technologie.temp"];
-
-    data["system.skills.smell.total"] = data["system.skills.smell.points"] + data["system.skills.smell.temp"];
-    data["system.skills.hearing.total"] = data["system.skills.hearing.points"] + data["system.skills.hearing.temp"];
-    data["system.skills.touch.total"] = data["system.skills.touch.points"] + data["system.skills.touch.temp"];
-    data["system.skills.view.total"] = data["system.skills.view.points"] + data["system.skills.view.temp"];
-
-    data["system.skills.concentration.total"] = data["system.skills.concentration.points"] + data["system.skills.concentration.temp"];
-    data["system.skills.empathy.total"] = data["system.skills.empathy.points"] + data["system.skills.empathy.temp"];
-    data["system.skills.strongMinded.total"] = data["system.skills.strongMinded.points"] + data["system.skills.strongMinded.temp"];
-    data["system.skills.mentalToughness.total"] = data["system.skills.mentalToughness.points"] + data["system.skills.mentalToughness.temp"];
-
-    data["system.skills.bluff.total"] = data["system.skills.bluff.points"] + data["system.skills.bluff.temp"];
-    data["system.skills.intimidation.total"] = data["system.skills.intimidation.points"] + data["system.skills.intimidation.temp"];
-    data["system.skills.leadership.total"] = data["system.skills.leadership.points"] + data["system.skills.leadership.temp"];
-    data["system.skills.negotiation.total"] = data["system.skills.negotiation.points"] + data["system.skills.negotiation.temp"];
-
-    //Actual
-    data["system.skillsLimits.force.actual"] =
-      data["system.skills.contactWeapon.points"] 
-      + data["system.skills.unarmedCombat.points"]
-      + data["system.skills.swimming.points"]
-      + data["system.skills.jumpAndClimb.points"];
-
-    data["system.skillsLimits.dexterite.actual"] = 
-      data["system.skills.rangedWeapon.points"] 
-      + data["system.skills.dodge.points"]
-      + data["system.skills.acrobatics.points"]
-      + data["system.skills.stealth.points"];
-
-    data["system.skillsLimits.constitution.actual"] = 
-      data["system.skills.vigor.points"] 
-      + data["system.skills.endurance.points"]
-      + data["system.skills.recovery.points"]
-      + data["system.skills.immunity.points"];
-
-    data["system.skillsLimits.astuce.actual"] = 
-      data["system.skills.piloting.points"] 
-      + data["system.skills.sabotage.points"]
-      + data["system.skills.strategy.points"]
-      + data["system.skills.survival.points"];
-
-    data["system.skillsLimits.intelligence.actual"] = 
-      data["system.skills.archeology.points"] 
-      + data["system.skills.science.points"]
-      + data["system.skills.medical.points"]
-      + data["system.skills.technologie.points"];
-
-    data["system.skillsLimits.perception.actual"] = 
-      data["system.skills.smell.points"] 
-      + data["system.skills.hearing.points"]
-      + data["system.skills.touch.points"]
-      + data["system.skills.view.points"];
-
-    data["system.skillsLimits.volonte.actual"] = 
-      data["system.skills.concentration.points"] 
-      + data["system.skills.empathy.points"]
-      + data["system.skills.strongMinded.points"]
-      + data["system.skills.mentalToughness.points"];
-
-    data["system.skillsLimits.charisme.actual"] = 
-      data["system.skills.bluff.points"] 
-      + data["system.skills.intimidation.points"]
-      + data["system.skills.leadership.points"]
-      + data["system.skills.negotiation.points"];
-
-    //max
-    data["system.skillsLimits.force.max"] = Math.floor(data["system.characteristics.force.modifier"] * 1.5);
-    data["system.skillsLimits.dexterite.max"] = Math.floor(data["system.characteristics.dexterite.modifier"] * 1.5);
-    data["system.skillsLimits.constitution.max"] = Math.floor(data["system.characteristics.constitution.modifier"] * 1.5);
-    data["system.skillsLimits.astuce.max"] = Math.floor(data["system.characteristics.astuce.modifier"] * 1.5);
-    data["system.skillsLimits.intelligence.max"] = Math.floor(data["system.characteristics.intelligence.modifier"] * 1.5);
-    data["system.skillsLimits.perception.max"] = Math.floor(data["system.characteristics.perception.modifier"] * 1.5);
-    data["system.skillsLimits.volonte.max"] = Math.floor(data["system.characteristics.volonte.modifier"] * 1.5);
-    data["system.skillsLimits.charisme.max"] = Math.floor(data["system.characteristics.charisme.modifier"] * 1.5);
-
-    //maxSet
-    data["system.skillsLimits.force.maxSet"] = data["system.characteristics.force.modifier"] * 3;
-    data["system.skillsLimits.dexterite.maxSet"] = data["system.characteristics.dexterite.modifier"] * 3;
-    data["system.skillsLimits.constitution.maxSet"] = data["system.characteristics.constitution.modifier"] * 3;
-    data["system.skillsLimits.astuce.maxSet"] = data["system.characteristics.astuce.modifier"] * 3;
-    data["system.skillsLimits.intelligence.maxSet"] = data["system.characteristics.intelligence.modifier"] * 3;
-    data["system.skillsLimits.perception.maxSet"] = data["system.characteristics.perception.modifier"] * 3;
-    data["system.skillsLimits.volonte.maxSet"] = data["system.characteristics.volonte.modifier"] * 3;
-    data["system.skillsLimits.charisme.maxSet"] = data["system.characteristics.charisme.modifier"] * 3;
-  }
-
   /** @inheritdoc */
   activateListeners(html) {
     super.activateListeners(html);
@@ -252,8 +139,9 @@ export class PlayerSheet extends ActorSheet {
   _getSubmitData(updateData) {
     let formData = super._getSubmitData(updateData);
     formData = EntitySheetHelper.computeModifiers(formData);
-    this.computeSkills(formData);
+    formData = EntitySheetHelper.computeSkills(formData);
     formData = EntitySheetHelper.updateAttributes(formData, this.object);
+    formData = EntitySheetHelper.computeHealth(formData, EntitySheetHelper.damageLevelFunction, EntitySheetHelper.malusFunction);
     formData = EntitySheetHelper.updateGroups(formData, this.object);
     return formData;
   }
