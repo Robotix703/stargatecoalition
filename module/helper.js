@@ -215,7 +215,7 @@ export class EntitySheetHelper {
   static onDamageRoll(event) {
     event.preventDefault();
     const button = event.currentTarget;
-    const isPhysicalArmor = button?.getAttribute("isPhysicalArmor");
+    const isPhysicalArmor = (button?.getAttribute("isPhysicalArmor") === "true");
 
     const rollData = this.actor.getRollData();
     let formula = ((isPhysicalArmor) ? this.actor.system.physicalArmor : this.actor.system.energeticArmor) + "d6 + " + this.actor.system.characteristics.constitution.modifier + "d6";
@@ -228,48 +228,45 @@ export class EntitySheetHelper {
     });
   }
 
-  static getLocalisation(localisationScore){
-    switch (localisationScore) {
-      case 2:
-        return "Tête";
-    
-      case 3:
-        return "Main directrice";
-
-      case 4:
-        return "Bras droit";
-      
-      case 5:
-        return "Main gauche";
-
-      case 6:
-        return "Bras gauche";
-
-      case 7:
-        return "Jambe droite";
-
-      case 8:
-        return "Jambe gauche";
-
-      case 9:
-        return "Ventre gauche";
-
-      case 10:
-        return "Ventre droit";
-
-      case 11:
-        return "Torse droit";
-
-      case 12:
-        return "Coeur";
-    }
-  }
-
   static async onLocationRoll(event) {
     let r = new Roll("2d6", this.actor.getRollData());
     await r.evaluate();
 
-    let localisation = this.getLocalisation(r.total);
+    let localisation = "";
+    switch (r.total) {
+      case 2:
+        localisation = "Tête";
+    
+      case 3:
+        localisation = "Main directrice";
+
+      case 4:
+        localisation = "Bras droit";
+      
+      case 5:
+        localisation = "Main gauche";
+
+      case 6:
+        localisation = "Bras gauche";
+
+      case 7:
+        localisation = "Jambe droite";
+
+      case 8:
+        localisation = "Jambe gauche";
+
+      case 9:
+        localisation = "Ventre gauche";
+
+      case 10:
+        localisation = "Ventre droit";
+
+      case 11:
+        localisation = "Torse droit";
+
+      case 12:
+        localisation = "Coeur";
+    }
 
     return r.toMessage({
       user: game.user.id,
