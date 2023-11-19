@@ -274,6 +274,7 @@ export class EntitySheetHelper {
     formData["system.health.rightBelly.malus"] = malusFunction(formData["system.health.rightBelly.value"]);
     formData["system.health.rightChest.malus"] = malusFunction(formData["system.health.rightChest.value"]);
     formData["system.health.heart.malus"] = malusFunction(formData["system.health.heart.value"], true);
+    return formData;
   }
 
   static computeSkills(formData){
