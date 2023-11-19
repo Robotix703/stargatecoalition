@@ -540,6 +540,7 @@
 			}
 		},
 		"health": {
+			"status": "",
 			"head": {
 				"value": 0,
 				"min": 0,

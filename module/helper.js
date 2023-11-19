@@ -274,6 +274,22 @@ export class EntitySheetHelper {
     formData["system.health.rightBelly.malus"] = malusFunction(formData["system.health.rightBelly.value"]);
     formData["system.health.rightChest.malus"] = malusFunction(formData["system.health.rightChest.value"]);
     formData["system.health.heart.malus"] = malusFunction(formData["system.health.heart.value"], true);
+
+    //Global status
+    let dying = 0;
+    if(formData["system.health.guidingHand.value"] >= 4) dying++;
+    if(formData["system.health.rightArm.value"] >= 4) dying++;
+    if(formData["system.health.leftHand.value"] >= 4) dying++;
+    if(formData["system.health.leftArm.value"] >= 4) dying++;
+    if(formData["system.health.rightLeg.value"] >= 4) dying++;
+    if(formData["system.health.leftLeg.value"] >= 4) dying++;
+    if(formData["system.health.leftBelly.value"] >= 4) dying++;
+    if(formData["system.health.rightBelly.value"] >= 4) dying++;
+    if(formData["system.health.rightChest.value"] >= 4) dying++;
+    if(dying > 5) formData["system.health.status"] = "Mourant";
+
+    if(formData["system.health.head.value"] == 4 || formData["system.health.heart.value"] == 4) formData["system.health.status"] = "Mort";
+
     return formData;
   }
 
@@ -434,6 +450,19 @@ export class EntitySheetHelper {
         user: game.user.id,
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
         flavor: `Absorption de dégats`
+    });
+  }
+
+  static async onSurviveRoll(event){
+    let r = new Roll("2d10 + @characteristics.constitution.modifier + @characteristics.constitution.tempModifier + @characteristics.constitution.tempValue", this.actor.getRollData());
+    await r.evaluate();
+
+    let status = (r.total >= 18) ? "Survie" : "Mort";
+
+    return r.toMessage({
+      user: game.user.id,
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      flavor: `<h2>${status}</h2>`
     });
   }
 

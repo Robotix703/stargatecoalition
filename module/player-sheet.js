@@ -55,6 +55,7 @@ export class PlayerSheet extends ActorSheet {
     html.find(".resource").on("click", "a.resource-roll", EntitySheetHelper.onRessourceRoll.bind(this));
     html.find(".skills").on("click", "a.skill-roll", EntitySheetHelper.onSkillRoll.bind(this));
     html.find(".resource").on("click", "a.resource-takeDamage", EntitySheetHelper.onDamageRoll.bind(this));
+    html.find(".resource").on("click", "a.resource-globalStatus", EntitySheetHelper.onSurviveRoll.bind(this));
 
     // Item Controls
     html.find(".item-control").click(this._onItemControl.bind(this));
