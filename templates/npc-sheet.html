@@ -101,21 +101,23 @@
             <!--Profession-->
             <div>
                 <h1>Profession</h1>
-                <!--First-->
-                <div style="width: 50%;">
-                    <label>Profession</label>
-                    <div class="flexrow flex-center flex-between">
-                        <input type="text" name="system.profession.value" value="{{systemData.profession.value}}" placeholder="Profession"/>
+                <ol class="item-list">
+                    {{#each data.items as |item id|}}
+                    <div>
+                        {{#if item.system.isProfession}}
+                        <li class="item flexrow" data-item-id="{{item._id}}">
+                            <!--Image-->
+                            <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+    
+                            <!--Title-->
+                            <a class="item-control" title="{{ localize "SIMPLE.ItemEdit" }}" data-action="edit">
+                                <h4 class="item-name">{{item.name}}</h4>
+                            </a>
+                        </li>
+                        {{/if}}
                     </div>
-                </div>
-                
-                <!--Second-->
-                <div style="width: 50%;">
-                    <label>Seconde profession</label>
-                    <div class="flexrow flex-center flex-between">
-                        <input type="text" name="system.secondProfession.value" value="{{systemData.secondProfession.value}}" placeholder="Seconde profession"/>
-                    </div>
-                </div>
+                    {{/each}}
+                </ol>
             </div>
 
             <!--Notes-->

@@ -4,8 +4,6 @@
 	  "htmlFields": ["biographie", "notes", "racialSpecificity"],
 	  "Joueur": {
 		"name": "",
-		"profession": "",
-		"secondProfession": "",
 		"race": "",
 		"racialSpecificity": "",
 		"divinite": "",
@@ -955,7 +953,7 @@
 	  }
 	},
 	"Item": {
-	  "types": ["Equipement", "Arme", "Armure"],
+	  "types": ["Equipement", "Arme", "Armure", "Metier"],
 	  "htmlFields": ["description"],
 	  "Equipement": {
 		"name": "",
@@ -964,6 +962,11 @@
 		"additionalRule": "",
 		"quantity": 1,
 		"isEquipment": true
+	  },
+	  "Profession": {
+		"name": "",
+		"description": "",
+		"isProfession": true
 	  },
 	  "Arme": {
 		"name": "",
