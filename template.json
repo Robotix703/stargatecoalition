@@ -26,7 +26,7 @@
 		"energeticArmor" : 0,
 		"armorUsedFor": {
 			"deflect": false,
-			"status": "",
+			"status": "Absorbe les dégâts",
 			"DDBonus": 0
 		},
 		"characteristics": {

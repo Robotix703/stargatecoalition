@@ -512,11 +512,12 @@ export class EntitySheetHelper {
     event.preventDefault();
     const button = event.currentTarget;
     const isPhysicalArmor = (button?.getAttribute("isPhysicalArmor") === "true");
+    const useArmor = (this.actor.system.armorUsedFor.deflect === false);
     const armor = (isPhysicalArmor) ? this.actor.system.physicalArmor : this.actor.system.energeticArmor;
 
     const rollData = this.actor.getRollData();
     let formula = "";
-    if(armor != 0) formula = armor + "d6 + " + this.actor.system.characteristics.constitution.modifier + "d6";
+    if(armor != 0 && useArmor) formula = armor + "d6 + " + this.actor.system.characteristics.constitution.modifier + "d6";
     else formula = this.actor.system.characteristics.constitution.modifier + "d6";
 
     let r = new Roll(formula, rollData);
