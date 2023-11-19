@@ -12,8 +12,8 @@ export class PlayerSheet extends ActorSheet {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["stargatecoalition", "sheet", "Joueur"],
       template: "systems/stargatecoalition/templates/player-sheet.html",
-      width: 700,
-      height: 750,
+      width: 800,
+      height: 1000,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
       scrollY: [".biographie", ".items", ".attributes"],
       dragDrop: [{dragSelector: ".item-list .item", dropSelector: null}]
@@ -44,18 +44,6 @@ export class PlayerSheet extends ActorSheet {
   }
 
   /* -------------------------------------------- */
-
-  computeModifiers(data){
-    data["system.characteristics.force.modifier"] = this.valueToModifier(data["system.characteristics.force.value"]);
-    data["system.characteristics.dexterite.modifier"] = this.valueToModifier(data["system.characteristics.dexterite.value"]);
-    data["system.characteristics.constitution.modifier"] = this.valueToModifier(data["system.characteristics.constitution.value"]);
-    data["system.characteristics.astuce.modifier"] = this.valueToModifier(data["system.characteristics.astuce.value"]);
-    data["system.characteristics.intelligence.modifier"] = this.valueToModifier(data["system.characteristics.intelligence.value"]);
-    data["system.characteristics.perception.modifier"] = this.valueToModifier(data["system.characteristics.perception.value"]);
-    data["system.characteristics.volonte.modifier"] = this.valueToModifier(data["system.characteristics.volonte.value"]);
-    data["system.characteristics.charisme.modifier"] = this.valueToModifier(data["system.characteristics.charisme.value"]);
-  }
-
   computeSkills(data){
     //Total
     data["system.skills.contactWeapon.total"] = data["system.skills.contactWeapon.points"] + data["system.skills.contactWeapon.temp"];
@@ -148,14 +136,14 @@ export class PlayerSheet extends ActorSheet {
       + data["system.skills.negotiation.points"];
 
     //max
-    data["system.skillsLimits.force.max"] = data["system.characteristics.force.modifier"] * 1.5;
-    data["system.skillsLimits.dexterite.max"] = data["system.characteristics.dexterite.modifier"] * 1.5;
-    data["system.skillsLimits.constitution.max"] = data["system.characteristics.constitution.modifier"] * 1.5;
-    data["system.skillsLimits.astuce.max"] = data["system.characteristics.astuce.modifier"] * 1.5;
-    data["system.skillsLimits.intelligence.max"] = data["system.characteristics.intelligence.modifier"] * 1.5;
-    data["system.skillsLimits.perception.max"] = data["system.characteristics.perception.modifier"] * 1.5;
-    data["system.skillsLimits.volonte.max"] = data["system.characteristics.volonte.modifier"] * 1.5;
-    data["system.skillsLimits.charisme.max"] = data["system.characteristics.charisme.modifier"] * 1.5;
+    data["system.skillsLimits.force.max"] = Math.floor(data["system.characteristics.force.modifier"] * 1.5);
+    data["system.skillsLimits.dexterite.max"] = Math.floor(data["system.characteristics.dexterite.modifier"] * 1.5);
+    data["system.skillsLimits.constitution.max"] = Math.floor(data["system.characteristics.constitution.modifier"] * 1.5);
+    data["system.skillsLimits.astuce.max"] = Math.floor(data["system.characteristics.astuce.modifier"] * 1.5);
+    data["system.skillsLimits.intelligence.max"] = Math.floor(data["system.characteristics.intelligence.modifier"] * 1.5);
+    data["system.skillsLimits.perception.max"] = Math.floor(data["system.characteristics.perception.modifier"] * 1.5);
+    data["system.skillsLimits.volonte.max"] = Math.floor(data["system.characteristics.volonte.modifier"] * 1.5);
+    data["system.skillsLimits.charisme.max"] = Math.floor(data["system.characteristics.charisme.modifier"] * 1.5);
 
     //maxSet
     data["system.skillsLimits.force.maxSet"] = data["system.characteristics.force.modifier"] * 3;
@@ -166,10 +154,6 @@ export class PlayerSheet extends ActorSheet {
     data["system.skillsLimits.perception.maxSet"] = data["system.characteristics.perception.modifier"] * 3;
     data["system.skillsLimits.volonte.maxSet"] = data["system.characteristics.volonte.modifier"] * 3;
     data["system.skillsLimits.charisme.maxSet"] = data["system.characteristics.charisme.modifier"] * 3;
-  }
-
-  valueToModifier(value) {
-    return Math.floor(value/2) - 5
   }
 
   /** @inheritdoc */
@@ -267,7 +251,7 @@ export class PlayerSheet extends ActorSheet {
   /** @inheritdoc */
   _getSubmitData(updateData) {
     let formData = super._getSubmitData(updateData);
-    this.computeModifiers(formData);
+    formData = EntitySheetHelper.computeModifiers(formData);
     this.computeSkills(formData);
     formData = EntitySheetHelper.updateAttributes(formData, this.object);
     formData = EntitySheetHelper.updateGroups(formData, this.object);

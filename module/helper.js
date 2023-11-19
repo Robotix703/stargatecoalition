@@ -196,6 +196,18 @@ export class EntitySheetHelper {
     }
   }
 
+  static computeModifiers(formData){
+    formData["system.characteristics.force.modifier"] = Math.floor(formData["system.characteristics.force.value"]/2) - 5;
+    formData["system.characteristics.dexterite.modifier"] = Math.floor(formData["system.characteristics.dexterite.value"]/2) - 5;
+    formData["system.characteristics.constitution.modifier"] = Math.floor(formData["system.characteristics.constitution.value"]/2) - 5;
+    formData["system.characteristics.astuce.modifier"] = Math.floor(formData["system.characteristics.astuce.value"]/2) - 5;
+    formData["system.characteristics.intelligence.modifier"] = Math.floor(formData["system.characteristics.intelligence.value"]/2) - 5;
+    formData["system.characteristics.perception.modifier"] = Math.floor(formData["system.characteristics.perception.value"]/2) - 5;
+    formData["system.characteristics.volonte.modifier"] = Math.floor(formData["system.characteristics.volonte.value"]/2) - 5;
+    formData["system.characteristics.charisme.modifier"] = Math.floor(formData["system.characteristics.charisme.value"]/2) - 5;
+    return formData;
+  }
+
   static onRessourceRoll(event) {
     event.preventDefault();
     const button = event.currentTarget;
@@ -216,9 +228,12 @@ export class EntitySheetHelper {
     event.preventDefault();
     const button = event.currentTarget;
     const isPhysicalArmor = (button?.getAttribute("isPhysicalArmor") === "true");
+    const armor = (isPhysicalArmor) ? this.actor.system.physicalArmor : this.actor.system.energeticArmor;
 
     const rollData = this.actor.getRollData();
-    let formula = ((isPhysicalArmor) ? this.actor.system.physicalArmor : this.actor.system.energeticArmor) + "d6 + " + this.actor.system.characteristics.constitution.modifier + "d6";
+    let formula = "";
+    if(armor != 0) formula = armor + "d6 + " + this.actor.system.characteristics.constitution.modifier + "d6";
+    else formula = this.actor.system.characteristics.constitution.modifier + "d6";
 
     let r = new Roll(formula, rollData);
       return r.toMessage({
@@ -236,36 +251,47 @@ export class EntitySheetHelper {
     switch (r.total) {
       case 2:
         localisation = "Tête";
+        break;
     
       case 3:
         localisation = "Main directrice";
+        break;
 
       case 4:
         localisation = "Bras droit";
+        break;
       
       case 5:
         localisation = "Main gauche";
+        break;
 
       case 6:
         localisation = "Bras gauche";
+        break;
 
       case 7:
         localisation = "Jambe droite";
+        break;
 
       case 8:
         localisation = "Jambe gauche";
+        break;
 
       case 9:
         localisation = "Ventre gauche";
+        break;
 
       case 10:
         localisation = "Ventre droit";
+        break;
 
       case 11:
         localisation = "Torse droit";
+        break;
 
       case 12:
         localisation = "Coeur";
+        break;
     }
 
     return r.toMessage({

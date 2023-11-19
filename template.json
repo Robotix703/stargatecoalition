@@ -95,67 +95,89 @@
 			"head": {
 				"value": 0,
 				"min": 0,
-				"max": 6,
+				"max": 4,
+				"status": "",
+				"malus": 0,
 				"label": "Tête"
 			},
 			"guidingHand": {
 				"value": 0,
 				"min": 0,
-				"max": 6,
+				"max": 7,
+				"status": "",
+				"malus": 0,
 				"label": "Main directrice"
 			},
 			"rightArm": {
 				"value": 0,
 				"min": 0,
-				"max": 6,
+				"max": 7,
+				"status": "",
+				"malus": 0,
 				"label": "Bras droit"
 			},
 			"leftHand": {
 				"value": 0,
 				"min": 0,
-				"max": 6,
+				"max": 7,
+				"status": "",
+				"malus": 0,
 				"label": "Main gauche"
 			},
 			"leftArm": {
 				"value": 0,
 				"min": 0,
-				"max": 6,
+				"max": 7,
+				"status": "",
+				"malus": 0,
 				"label": "Bras gauche"
 			},
 			"rightLeg": {
 				"value": 0,
 				"min": 0,
-				"max": 6,
+				"max": 7,
+				"status": "",
+				"malus": 0,
 				"label": "Jambe droite"
 			},
 			"leftLeg": {
 				"value": 0,
 				"min": 0,
-				"max": 6,
+				"max": 7,
+				"status": "",
+				"malus": 0,
 				"label": "Jambe gauche"
 			},
 			"leftBelly": {
 				"value": 0,
 				"min": 0,
-				"max": 6,
+				"max": 7,
+				"status": "",
+				"malus": 0,
 				"label": "Ventre gauche"
 			},
 			"rightBelly": {
 				"value": 0,
 				"min": 0,
-				"max": 6,
+				"max": 7,
+				"status": "",
+				"malus": 0,
 				"label": "Ventre droit"
 			},
 			"rightChest": {
 				"value": 0,
 				"min": 0,
-				"max": 6,
+				"max": 7,
+				"status": "",
+				"malus": 0,
 				"label": "Torse droit"
 			},
 			"heart": {
 				"value": 0,
 				"min": 0,
-				"max": 6,
+				"max": 4,
+				"status": "",
+				"malus": 0,
 				"label": "Coeur"
 			}
 		},
@@ -521,67 +543,89 @@
 			"head": {
 				"value": 0,
 				"min": 0,
-				"max": 6,
+				"max": 4,
+				"status": "",
+				"malus": 0,
 				"label": "Tête"
 			},
 			"guidingHand": {
 				"value": 0,
 				"min": 0,
-				"max": 6,
+				"max": 7,
+				"status": "",
+				"malus": 0,
 				"label": "Main directrice"
 			},
 			"rightArm": {
 				"value": 0,
 				"min": 0,
-				"max": 6,
+				"max": 7,
+				"status": "",
+				"malus": 0,
 				"label": "Bras droit"
 			},
 			"leftHand": {
 				"value": 0,
 				"min": 0,
-				"max": 6,
+				"max": 7,
+				"status": "",
+				"malus": 0,
 				"label": "Main gauche"
 			},
 			"leftArm": {
 				"value": 0,
 				"min": 0,
-				"max": 6,
+				"max": 7,
+				"status": "",
+				"malus": 0,
 				"label": "Bras gauche"
 			},
 			"rightLeg": {
 				"value": 0,
 				"min": 0,
-				"max": 6,
+				"max": 7,
+				"status": "",
+				"malus": 0,
 				"label": "Jambe droite"
 			},
 			"leftLeg": {
 				"value": 0,
 				"min": 0,
-				"max": 6,
+				"max": 7,
+				"status": "",
+				"malus": 0,
 				"label": "Jambe gauche"
 			},
 			"leftBelly": {
 				"value": 0,
 				"min": 0,
-				"max": 6,
+				"max": 7,
+				"status": "",
+				"malus": 0,
 				"label": "Ventre gauche"
 			},
 			"rightBelly": {
 				"value": 0,
 				"min": 0,
-				"max": 6,
+				"max": 7,
+				"status": "",
+				"malus": 0,
 				"label": "Ventre droit"
 			},
 			"rightChest": {
 				"value": 0,
 				"min": 0,
-				"max": 6,
+				"max": 7,
+				"status": "",
+				"malus": 0,
 				"label": "Torse droit"
 			},
 			"heart": {
 				"value": 0,
 				"min": 0,
-				"max": 6,
+				"max": 4,
+				"status": "",
+				"malus": 0,
 				"label": "Coeur"
 			}
 		},
