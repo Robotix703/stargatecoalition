@@ -276,6 +276,8 @@ export class EntitySheetHelper {
     formData["system.health.heart.malus"] = malusFunction(formData["system.health.heart.value"], true);
 
     //Global status
+    formData["system.health.status"] = "";
+
     let dying = 0;
     if(formData["system.health.guidingHand.value"] >= 4) dying++;
     if(formData["system.health.rightArm.value"] >= 4) dying++;
@@ -416,6 +418,68 @@ export class EntitySheetHelper {
     formData["system.characteristics.volonte.modifier"] = Math.floor(formData["system.characteristics.volonte.value"]/2) - 5;
     formData["system.characteristics.charisme.modifier"] = Math.floor(formData["system.characteristics.charisme.value"]/2) - 5;
     return formData;
+  }
+
+  static onItemEquipped(event) {
+    let button = $(event.currentTarget);
+    const li = button.parents(".item");
+    const item = this.actor.items.get(li.data("itemId"));
+
+    //Update armor
+    if(item.system.armor.isPhysicalArmor) {
+      if(button[0].checked) {
+        let newArmorValue = this.actor.system.physicalArmor + item.system.armor.protection;
+        this.actor.update({"system.physicalArmor": newArmorValue});
+      } else {
+        let newArmorValue = this.actor.system.physicalArmor - item.system.armor.protection;
+        this.actor.update({"system.physicalArmor": (newArmorValue >= 0) ? newArmorValue : 0});
+      }
+    }
+    if(item.system.armor.isEnergetic) {
+      if(button[0].checked) {
+        let newArmorValue = this.actor.system.energeticArmor + item.system.armor.protection;
+        this.actor.update({"system.energeticArmor": newArmorValue});
+      } else {
+        let newArmorValue = this.actor.system.energeticArmor - item.system.armor.protection;
+        this.actor.update({"system.energeticArmor": (newArmorValue >= 0) ? newArmorValue : 0});
+      }
+    }
+
+    //Update Item
+    this.actor.items.getName(item.name).update({"system.armor.isEquip": button[0].checked});
+  }
+
+  static onAttackRoll(event) {
+    let button = $(event.currentTarget);
+    const li = button.parents(".item");
+    const item = this.actor.items.get(li.data("itemId"));
+    const damage = item.system.weapon.damage + (item.system.weapon.isImproved ? 1 : 0);
+    let r = new Roll(button[0].getAttribute('data-roll'), this.actor.getRollData());
+    return r.toMessage({
+      user: game.user.id,
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      flavor: `<h2>${item.name}</h2><h3>${button.text()}</h3><h3>Dégats : ${damage}</h3>`
+    });
+  }
+
+  static onItemControl(event) {
+    event.preventDefault();
+
+    // Obtain event data
+    const button = event.currentTarget;
+    const li = button.closest(".item");
+    const item = this.actor.items.get(li?.dataset.itemId);
+
+    // Handle different actions
+    switch ( button.dataset.action ) {
+      case "create":
+        const cls = getDocumentClass("Item");
+        return cls.create({name: game.i18n.localize("SIMPLE.ItemNew"), type: "item"}, {parent: this.actor});
+      case "edit":
+        return item.sheet.render(true);
+      case "delete":
+        return item.delete();
+    }
   }
 
   static onRessourceRoll(event) {
