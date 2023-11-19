@@ -24,6 +24,11 @@
 		},
 		"physicalArmor": 0,
 		"energeticArmor" : 0,
+		"armorUsedFor": {
+			"deflect": false,
+			"status": "",
+			"DDBonus": 0
+		},
 		"characteristics": {
 			"force": {
 			  "value": 10,
@@ -471,6 +476,11 @@
 		},
 		"physicalArmor": 0,
 		"energeticArmor" : 0,
+		"armorUsedFor": {
+			"deflect": false,
+			"status": "",
+			"DDBonus": 0
+		},
 		"characteristics": {
 			"force": {
 			  "value": 10,
