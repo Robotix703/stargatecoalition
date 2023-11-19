@@ -418,6 +418,13 @@ export class EntitySheetHelper {
     return formData;
   }
 
+  static computeXP(formData) {
+
+    formData["system.xpLeft.value"] = formData["system.xp.value"] - formData["system.spendXP.value"];
+
+    return formData;
+  }
+
   static computeModifiers(formData){
     formData["system.characteristics.force.modifier"] = Math.floor(formData["system.characteristics.force.value"]/2) - 5;
     formData["system.characteristics.dexterite.modifier"] = Math.floor(formData["system.characteristics.dexterite.value"]/2) - 5;

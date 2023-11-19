@@ -65,6 +65,7 @@ export class NPCSheet extends ActorSheet {
     let formData = super._getSubmitData(updateData);
     formData = EntitySheetHelper.computeModifiers(formData);
     formData = EntitySheetHelper.computeSkills(formData);
+    formData = EntitySheetHelper.computeXP(formData);
     formData = EntitySheetHelper.computeHealth(formData, EntitySheetHelper.damageLevelFunction, EntitySheetHelper.malusFunction);
     formData = EntitySheetHelper.updateAttributes(formData, this.object);
     formData = EntitySheetHelper.updateGroups(formData, this.object);
