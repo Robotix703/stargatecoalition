@@ -5,13 +5,13 @@ import {ATTRIBUTE_TYPES} from "./constants.js";
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
  */
-export class RacialSheet extends ItemSheet {
+export class AptitudeSheet extends ItemSheet {
 
   /** @inheritdoc */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["stargatecoalition", "sheet", "Race"],
-      template: "systems/stargatecoalition/templates/racial-sheet.html",
+      classes: ["stargatecoalition", "sheet", "Aptitude"],
+      template: "systems/stargatecoalition/templates/aptitude-sheet.html",
       width: 600,
       height: 700,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
@@ -28,14 +28,6 @@ export class RacialSheet extends ItemSheet {
     context.systemData = context.data.system;
     context.dtypes = ATTRIBUTE_TYPES;
     context.descriptionHTML = await TextEditor.enrichHTML(context.systemData.description, {
-      secrets: this.document.isOwner,
-      async: true
-    });
-    context.advantagesHTML = await TextEditor.enrichHTML(context.systemData.advantages, {
-      secrets: this.document.isOwner,
-      async: true
-    });
-    context.disadvantagesHTML = await TextEditor.enrichHTML(context.systemData.disadvantages, {
       secrets: this.document.isOwner,
       async: true
     });

@@ -89,9 +89,26 @@
             <!--Race-->
             <div >
                 <h1>Race</h1>
-                <div style="width: 50%; text-align: center;">
-                    <input type="text" name="system.race.value" value="{{systemData.race.value}}" placeholder="Race"/>
-                </div>
+                <ol class="item-list">
+                    {{#each data.items as |item id|}}
+                    <div>
+                        {{#if item.system.isRace}}
+                        <li class="item flexrow" data-item-id="{{item._id}}">
+                            <!--Image-->
+                            <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+    
+                            <!--Title-->
+                            <a class="item-control" title="{{ localize "SIMPLE.ItemEdit" }}" data-action="edit">
+                                <h4 class="item-name">{{item.name}}</h4>
+                            </a>
+
+                            <!--Button-->
+                            <a class="item-control" title="{{ localize "SIMPLE.ItemDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
+                        </li>
+                        {{/if}}
+                    </div>
+                    {{/each}}
+                </ol>
             </div>
 
             <!--Profession-->
@@ -109,6 +126,9 @@
                             <a class="item-control" title="{{ localize "SIMPLE.ItemEdit" }}" data-action="edit">
                                 <h4 class="item-name">{{item.name}}</h4>
                             </a>
+
+                            <!--Button-->
+                            <a class="item-control" title="{{ localize "SIMPLE.ItemDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
                         </li>
                         {{/if}}
                     </div>

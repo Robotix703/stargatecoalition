@@ -14,7 +14,6 @@
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
         <a class="item" data-tab="description">Description</a>
-        <a class="item" data-tab="caracteristics">Caractéristiques</a>
     </nav>
 
     {{!-- Sheet Body --}}
@@ -23,19 +22,6 @@
         {{!-- Description Tab --}}
         <div class="tab" data-group="primary" data-tab="description">
             {{editor descriptionHTML target="system.description" button=true editable=editable engine="prosemirror"}}
-        </div>
-
-        {{!-- Caracteristics Tab --}}
-        <div class="tab" data-group="primary" data-tab="caracteristics">
-            <div>
-                <h1>Avantages</h1>
-                {{editor advantagesHTML target="system.advantages" button=true editable=editable engine="prosemirror"}}
-            </div>
-            
-            <div>
-                <h1>Inconvénients</h1>
-                {{editor disadvantagesHTML target="system.disadvantages" button=true editable=editable engine="prosemirror"}}
-            </div>
         </div>
     </section>
 </form>

@@ -4,7 +4,6 @@
 	  "htmlFields": ["biographie", "notes"],
 	  "Joueur": {
 		"name": "",
-		"race": "",
 		"divinite": "",
 		"biographie": "",
 		"notes": "",
@@ -952,8 +951,8 @@
 	  }
 	},
 	"Item": {
-	  "types": ["Equipement", "Arme", "Armure", "Metier", "Race"],
-	  "htmlFields": ["description"],
+	  "types": ["Equipement", "Arme", "Armure", "Metier", "Race", "Aptitude"],
+	  "htmlFields": ["description", "advantages", "disadvantages"],
 	  "Equipement": {
 		"description": "",
 		"searchIndex": 0,
@@ -965,6 +964,10 @@
 		"description": "",
 		"isProfession": true
 	  },
+	  "Aptitude": {
+		"description": "",
+		"isSkill": true
+	  },
 	  "Race": {
 		"description": "",
 		"advantages": "",
@@ -972,7 +975,6 @@
 		"isRace": true
 	  },
 	  "Arme": {
-		"name": "",
 		"description": "",
 		"searchIndex": 0,
 		"additionalRule": "",
@@ -995,7 +997,6 @@
 		"isWeapon": true
 	  },
 	  "Armure": {
-		"name": "",
 		"description": "",
 		"searchIndex": 0,
 		"additionalRule": "",
