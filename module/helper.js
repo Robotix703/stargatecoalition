@@ -292,6 +292,16 @@ export class EntitySheetHelper {
 
     if(formData["system.health.head.value"] == 4 || formData["system.health.heart.value"] == 4) formData["system.health.status"] = "Mort";
 
+    //Armor used
+    if(formData["system.armorUsedFor.deflect"] === true) {
+      formData["system.armorUsedFor.status"] = "Dévier les tirs";
+      formData["system.armorUsedFor.DDBonus"] = Math.max(formData["system.physicalArmor"], formData["system.energeticArmor"]);
+    }
+    else {
+      formData["system.armorUsedFor.status"] = "Absorbe les dégâts";
+      formData["system.armorUsedFor.DDBonus"] = 0;
+    }
+
     return formData;
   }
 
