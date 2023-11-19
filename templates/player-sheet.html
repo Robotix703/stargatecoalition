@@ -28,7 +28,7 @@
                 <div class="ressource-element" style="width: 100px;">
                     <label for="system.xpLeft.value" class="resource-label">XP Restante</label>
                     <div class="resource-content flexrow flex-center flex-between">
-                        <input type="number" name="system.xpLeft.value" value="{{systemData.xpLeft.value}}"/>
+                        <input type="number" readonly name="system.xpLeft.value" value="{{systemData.xpLeft.value}}"/>
                     </div>
                 </div>
 
@@ -293,7 +293,7 @@
                     </div>
                 </div>
                 <!--Etourdissement-->
-                <div class="ressource-element" style="margin-bottom: 10px;">
+                <div class="ressource-element" style="margin-bottom: 10px; width: 200px;">
                     <a class="defence-stun">
                         <label for="system.stun.value" class="resource-label">Etourdissement</label>
                     </a>
@@ -307,10 +307,10 @@
                 <div>
                     <!--Used for-->
                     <div style="margin-bottom: 10px;">
-                        <input type="checkbox" name="system.armorUsedFor.deflect" {{checked system.armorUsedFor.deflect}}/>{{system.armorUsedFor.status}}</label>
+                        <input type="checkbox" name="system.armorUsedFor.deflect" {{checked systemData.armorUsedFor.deflect}}/>{{systemData.armorUsedFor.status}}</label>
                     </div>
 
-                    DD : {{system.armorUsedFor.DDBonus}}
+                    DD : {{systemData.armorUsedFor.DDBonus}}
                 </div>
                 
             </div>
