@@ -228,19 +228,6 @@ export class EntitySheetHelper {
     });
   }
 
-  static async onLocationRoll(event) {
-    let r = new Roll("2d6", this.actor.getRollData());
-    await r.evaluate();
-
-    let localisation = this.getLocalisation(r.total);
-
-    return r.toMessage({
-      user: game.user.id,
-      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      flavor: `<h2>Localisation</h2><h3>${localisation}</h3>`
-    });
-  }
-
   static getLocalisation(localisationScore){
     switch (localisationScore) {
       case 2:
@@ -276,6 +263,19 @@ export class EntitySheetHelper {
       case 12:
         return "Coeur";
     }
+  }
+
+  static async onLocationRoll(event) {
+    let r = new Roll("2d6", this.actor.getRollData());
+    await r.evaluate();
+
+    let localisation = this.getLocalisation(r.total);
+
+    return r.toMessage({
+      user: game.user.id,
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      flavor: `<h2>Localisation</h2><h3>${localisation}</h3>`
+    });
   }
 
   static onSkillRoll(event) {
