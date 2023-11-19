@@ -239,12 +239,12 @@ export class EntitySheetHelper {
         return isSensitive ? -3 : -2;
 
       case 4:
-        return isSensitive ? -Infinity : -3;
+        return isSensitive ? -20 : -3;
 
       case 5:
       case 6:
       case 7:
-        return -Infinity;
+        return -20;
     }
   }
 

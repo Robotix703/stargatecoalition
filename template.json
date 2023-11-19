@@ -3,7 +3,6 @@
 	  "types": ["Joueur", "PNJ", "Vaisseau"],
 	  "htmlFields": ["biographie", "notes"],
 	  "Joueur": {
-		"name": "",
 		"divinite": "",
 		"biographie": "",
 		"notes": "",
@@ -12,6 +11,10 @@
 			"min": 0
 		},
 		"spendXP": {
+			"value": 0,
+			"min": 0
+		},
+		"xpLeft": {
 			"value": 0,
 			"min": 0
 		},
@@ -447,11 +450,6 @@
 		}
 	  },
 	  "PNJ": {
-		"name": "",
-		"profession": "",
-		"secondProfession": "",
-		"race": "",
-		"racialSpecificity": "",
 		"divinite": "",
 		"biographie": "",
 		"notes": "",
@@ -460,6 +458,10 @@
 			"min": 0
 		},
 		"spendXP": {
+			"value": 0,
+			"min": 0
+		},
+		"xpLeft": {
 			"value": 0,
 			"min": 0
 		},

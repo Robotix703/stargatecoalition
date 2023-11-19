@@ -20,37 +20,15 @@
                     </div>
                 </div>
                 <div class="ressource-element" style="width: 100px;">
-                    <label for="system.spendXP.value" class="resource-label">XP dep.</label>
+                    <label for="system.spendXP.value" class="resource-label">XP dépensé</label>
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="number" name="system.spendXP.value" value="{{systemData.spendXP.value}}"/>
                     </div>
                 </div>
-                
-                <!--Etourdissement-->
                 <div class="ressource-element" style="width: 100px;">
-                    <a class="resource-roll" data-label="Etourdissement" data-formula="2d6 + @characteristics.volonte.modifier + @characteristics.constitution.modifier">
-                        <label for="system.stun.value" class="resource-label">Etourdissement</label>
-                    </a>
+                    <label for="system.xpLeft.value" class="resource-label">XP Restante</label>
                     <div class="resource-content flexrow flex-center flex-between">
-                        <input type="number" name="system.stun.value" value="{{systemData.stun.value}}"/>
-                    </div>
-                </div>
-                
-                <!--Armor-->
-                <div class="ressource-element" style="width: 100px;">
-                    <a class="resource-takeDamage" isPhysicalArmor="true">
-                        <label for="system.physicalArmor" class="resource-label">Armure P</label>
-                    </a>
-                    <div class="resource-content flexrow flex-center flex-between">
-                        <input type="number" name="system.physicalArmor" value="{{systemData.physicalArmor}}"/>
-                    </div>
-                </div>
-                <div class="ressource-element" style="width: 100px;">
-                    <a class="resource-takeDamage" isPhysicalArmor="false">
-                        <label for="system.energeticArmor" class="resource-label">Armure E</label>
-                    </a>
-                    <div class="resource-content flexrow flex-center flex-between">
-                        <input type="number" name="system.energeticArmor" value="{{systemData.energeticArmor}}"/>
+                        <input type="number" name="system.xpLeft.value" value="{{systemData.xpLeft.value}}"/>
                     </div>
                 </div>
 
@@ -67,7 +45,7 @@
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
         <a class="item" data-tab="description">Description</a>
-        <a class="item" data-tab="health">Points de vie</a>
+        <a class="item" data-tab="health">Défense</a>
         <a class="item" data-tab="attributes">Caractéristiques</a>
         <a class="item" data-tab="skills">Compétences</a>
         <a class="item" data-tab="items">Objets</a>
@@ -78,14 +56,6 @@
 
         {{!-- Description Tab --}}
         <div class="tab description" data-group="primary" data-tab="description">
-            <!--Biographie-->
-            <div >
-                <h1>Biographie</h1>
-                <div class="long-texte">
-                    {{editor biographyHTML target="system.biographie" button=true editable=editable engine="prosemirror"}}
-                </div>
-            </div>
-
             <!--Race-->
             <div >
                 <h1>Race</h1>
@@ -175,6 +145,14 @@
                     </div>
                     {{/each}}
                 </ol>
+            </div>
+
+            <!--Biographie-->
+            <div >
+                <h1>Biographie</h1>
+                <div class="long-texte">
+                    {{editor biographyHTML target="system.biographie" button=true editable=editable engine="prosemirror"}}
+                </div>
             </div>
 
             <!--Notes-->
@@ -291,6 +269,44 @@
                     </tr>
                 </table>
             </div>
+
+            <!--Defence-->
+            <h1>Défense</h1>
+            <div>
+                <!--Etourdissement-->
+                <div class="ressource-element" style="width: 100px;">
+                    <a class="resource-roll" data-label="Etourdissement" data-formula="2d6 + @characteristics.volonte.modifier + @characteristics.constitution.modifier">
+                        <label for="system.stun.value" class="resource-label">Etourdissement</label>
+                    </a>
+                    <div class="resource-content flexrow flex-center flex-between">
+                        <input type="number" name="system.stun.value" value="{{systemData.stun.value}}"/>
+                    </div>
+                </div>
+
+                <!--Armor-->
+                <div class="ressource-element" style="width: 100px;">
+                    <a class="resource-takeDamage" isPhysicalArmor="true">
+                        <label for="system.physicalArmor" class="resource-label">Armure P</label>
+                    </a>
+                    <div class="resource-content flexrow flex-center flex-between">
+                        <input type="number" name="system.physicalArmor" value="{{systemData.physicalArmor}}"/>
+                    </div>
+                </div>
+                <div class="ressource-element" style="width: 100px;">
+                    <a class="resource-takeDamage" isPhysicalArmor="false">
+                        <label for="system.energeticArmor" class="resource-label">Armure E</label>
+                    </a>
+                    <div class="resource-content flexrow flex-center flex-between">
+                        <input type="number" name="system.energeticArmor" value="{{systemData.energeticArmor}}"/>
+                    </div>
+                </div>
+
+                <!-- Armor utility -->
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
         </div>
 
         {{!-- Attributes Tab --}}
@@ -405,7 +421,7 @@
         {{!-- Skills Tab --}}
         <div class="tab skills" data-group="primary" data-tab="skills">
             <!--Force-->
-            <h1>{{systemData.characteristics.force.label}} - {{systemData.skillsLimits.force.actual}} / {{systemData.skillsLimits.force.maxSet}} - MAX: {{systemData.skillsLimits.force.max}}</h1>
+            <h1>{{systemData.characteristics.force.label}} {{systemData.skillsLimits.force.actual}} / {{systemData.skillsLimits.force.maxSet}} MAX: {{systemData.skillsLimits.force.max}}</h1>
             <table class="skills-table">
                 <tr>
                     <th>Nom</th>
@@ -465,7 +481,7 @@
             </table>
 
             <!--Dexterity-->
-            <h1>{{systemData.characteristics.dexterite.label}} - {{systemData.skillsLimits.dexterite.actual}} / {{systemData.skillsLimits.dexterite.maxSet}} - MAX: {{systemData.skillsLimits.dexterite.max}}</h1>
+            <h1>{{systemData.characteristics.dexterite.label}} {{systemData.skillsLimits.dexterite.actual}} / {{systemData.skillsLimits.dexterite.maxSet}} MAX: {{systemData.skillsLimits.dexterite.max}}</h1>
             <table class="skills-table">
                 <tr>
                     <th>Nom</th>
@@ -525,7 +541,7 @@
             </table>
 
             <!--Constitution-->
-            <h1>{{systemData.characteristics.constitution.label}} - {{systemData.skillsLimits.constitution.actual}} / {{systemData.skillsLimits.constitution.maxSet}} - MAX: {{systemData.skillsLimits.constitution.max}}</h1>
+            <h1>{{systemData.characteristics.constitution.label}} {{systemData.skillsLimits.constitution.actual}} / {{systemData.skillsLimits.constitution.maxSet}} MAX: {{systemData.skillsLimits.constitution.max}}</h1>
             <table class="skills-table">
                 <tr>
                     <th>Nom</th>
@@ -585,7 +601,7 @@
             </table>
 
             <!--Astuce-->
-            <h1>{{systemData.characteristics.astuce.label}} - {{systemData.skillsLimits.astuce.actual}} / {{systemData.skillsLimits.astuce.maxSet}} - MAX: {{systemData.skillsLimits.astuce.max}}</h1>
+            <h1>{{systemData.characteristics.astuce.label}} {{systemData.skillsLimits.astuce.actual}} / {{systemData.skillsLimits.astuce.maxSet}} MAX: {{systemData.skillsLimits.astuce.max}}</h1>
             <table class="skills-table">
                 <tr>
                     <th>Nom</th>
@@ -645,7 +661,7 @@
             </table>
 
             <!--Intelligence-->
-            <h1>{{systemData.characteristics.intelligence.label}} - {{systemData.skillsLimits.intelligence.actual}} / {{systemData.skillsLimits.intelligence.maxSet}} - MAX: {{systemData.skillsLimits.intelligence.max}}</h1>
+            <h1>{{systemData.characteristics.intelligence.label}} {{systemData.skillsLimits.intelligence.actual}} / {{systemData.skillsLimits.intelligence.maxSet}} MAX: {{systemData.skillsLimits.intelligence.max}}</h1>
             <table class="skills-table">
                 <tr>
                     <th>Nom</th>
@@ -705,7 +721,7 @@
             </table>
 
             <!--Perception-->
-            <h1>{{systemData.characteristics.perception.label}} - {{systemData.skillsLimits.perception.actual}} / {{systemData.skillsLimits.perception.maxSet}} - MAX: {{systemData.skillsLimits.perception.max}}</h1>
+            <h1>{{systemData.characteristics.perception.label}} {{systemData.skillsLimits.perception.actual}} / {{systemData.skillsLimits.perception.maxSet}} MAX: {{systemData.skillsLimits.perception.max}}</h1>
             <table class="skills-table">
                 <tr>
                     <th>Nom</th>
@@ -765,7 +781,7 @@
             </table>
 
             <!--Volonte-->
-            <h1>{{systemData.characteristics.volonte.label}} - {{systemData.skillsLimits.volonte.actual}} / {{systemData.skillsLimits.volonte.maxSet}} - MAX: {{systemData.skillsLimits.volonte.max}}</h1>
+            <h1>{{systemData.characteristics.volonte.label}} {{systemData.skillsLimits.volonte.actual}} / {{systemData.skillsLimits.volonte.maxSet}} MAX: {{systemData.skillsLimits.volonte.max}}</h1>
             <table class="skills-table">
                 <tr>
                     <th>Nom</th>
@@ -825,7 +841,7 @@
             </table>
 
             <!--Charisme-->
-            <h1>{{systemData.characteristics.charisme.label}} - {{systemData.skillsLimits.charisme.actual}} / {{systemData.skillsLimits.charisme.maxSet}} - MAX: {{systemData.skillsLimits.charisme.max}}</h1>
+            <h1>{{systemData.characteristics.charisme.label}} {{systemData.skillsLimits.charisme.actual}} / {{systemData.skillsLimits.charisme.maxSet}} MAX: {{systemData.skillsLimits.charisme.max}}</h1>
             <table class="skills-table">
                 <tr>
                     <th>Nom</th>
