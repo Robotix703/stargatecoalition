@@ -1,11 +1,10 @@
 {
 	"Actor": {
 	  "types": ["Joueur", "PNJ", "Vaisseau"],
-	  "htmlFields": ["biographie", "notes", "racialSpecificity"],
+	  "htmlFields": ["biographie", "notes"],
 	  "Joueur": {
 		"name": "",
 		"race": "",
-		"racialSpecificity": "",
 		"divinite": "",
 		"biographie": "",
 		"notes": "",
@@ -953,20 +952,24 @@
 	  }
 	},
 	"Item": {
-	  "types": ["Equipement", "Arme", "Armure", "Metier"],
+	  "types": ["Equipement", "Arme", "Armure", "Metier", "Race"],
 	  "htmlFields": ["description"],
 	  "Equipement": {
-		"name": "",
 		"description": "",
 		"searchIndex": 0,
 		"additionalRule": "",
 		"quantity": 1,
 		"isEquipment": true
 	  },
-	  "Profession": {
-		"name": "",
+	  "Metier": {
 		"description": "",
 		"isProfession": true
+	  },
+	  "Race": {
+		"description": "",
+		"advantages": "",
+		"disadvantages": "",
+		"isRace": true
 	  },
 	  "Arme": {
 		"name": "",

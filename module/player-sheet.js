@@ -36,10 +36,6 @@ export class PlayerSheet extends ActorSheet {
       secrets: this.document.isOwner,
       async: true
     });
-    context.racialSpecificityHTML = await TextEditor.enrichHTML(context.systemData.racialSpecificity, {
-      secrets: this.document.isOwner,
-      async: true
-    });
     return context;
   }
 

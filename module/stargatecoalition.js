@@ -10,6 +10,7 @@ import { SimpleItem } from "./item.js";
 import { WeaponSheet } from "./weapon-sheet.js";
 import { ArmorSheet } from "./armor-sheet.js";
 import { EquipmentSheet } from "./equipment-sheet.js";
+import { ProfessionSheet } from "./profession-sheet.js";
 
 import { PlayerSheet } from "./player-sheet.js";
 import { NPCSheet } from "./npc-sheet.js";
@@ -17,6 +18,7 @@ import { ShipSheet } from "./ship-sheet.js";
 
 import { createstargatecoalitionMacro } from "./macro.js";
 import { SimpleToken, SimpleTokenDocument } from "./token.js";
+import { RacialSheet } from "./racial-sheet.js";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -58,6 +60,8 @@ Hooks.once("init", async function() {
   Items.registerSheet("stargatecoalition", EquipmentSheet, { types: ["Equipement"], label: "Equipement", makeDefault: true });
   Items.registerSheet("stargatecoalition", WeaponSheet, { types: ["Arme"], label: "Arme", makeDefault: true });
   Items.registerSheet("stargatecoalition", ArmorSheet, { types: ["Armure"], label: "Armure", makeDefault: true });
+  Items.registerSheet("stargatecoalition", ProfessionSheet, { types: ["Metier"], label: "Métier", makeDefault: true });
+  Items.registerSheet("stargatecoalition", RacialSheet, { types: ["Race"], label: "Race", makeDefault: true });
 
   // Register system settings
   game.settings.register("stargatecoalition", "macroShorthand", {
