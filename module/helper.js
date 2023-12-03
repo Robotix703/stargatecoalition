@@ -535,6 +535,32 @@ export class EntitySheetHelper {
     });
   }
 
+  static onInitRoll(event){
+    event.preventDefault();
+
+    const rollData = this.actor.getRollData();
+
+    let r = new Roll("2d10 + @characteristics.dexterite.modifier + @characteristics.perception.modifier", rollData);
+      return r.toMessage({
+        user: game.user.id,
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        flavor: `Initiative`
+    });
+  }
+
+  static onDivineRoll(event){
+    event.preventDefault();
+
+    const rollData = this.actor.getRollData();
+
+    let r = new Roll("3d10 + 10", rollData);
+      return r.toMessage({
+        user: game.user.id,
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        flavor: `Coût de la Faveur Divine`
+    });
+  }
+
   static async onSurviveRoll(event){
     let r = new Roll("2d10 + @characteristics.constitution.modifier + @characteristics.constitution.tempModifier + @characteristics.constitution.tempValue", this.actor.getRollData());
     await r.evaluate();
