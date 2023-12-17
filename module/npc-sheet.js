@@ -50,8 +50,9 @@ export class NPCSheet extends ActorSheet {
     html.find(".attributes").on("click", "a.caracteristics-roll", EntitySheetHelper.onAttributeRoll.bind(this));
     html.find(".resource").on("click", "a.resource-roll", EntitySheetHelper.onRessourceRoll.bind(this));
     html.find(".skills").on("click", "a.skill-roll", EntitySheetHelper.onSkillRoll.bind(this));
-    html.find(".resource").on("click", "a.resource-takeDamage", EntitySheetHelper.onDamageRoll.bind(this));
     html.find(".resource").on("click", "a.resource-globalStatus", EntitySheetHelper.onSurviveRoll.bind(this));
+    html.find(".defence").on("click", "a.defence-takeDamage", EntitySheetHelper.onDamageRoll.bind(this));
+    html.find(".defence").on("click", "a.defence-stun", EntitySheetHelper.onStunRoll.bind(this));
 
     // Item Controls
     html.find(".item-control").click(EntitySheetHelper.onItemControl.bind(this));

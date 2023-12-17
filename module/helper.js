@@ -538,14 +538,7 @@ export class EntitySheetHelper {
   static onInitRoll(event){
     event.preventDefault();
 
-    const rollData = this.actor.getRollData();
-
-    let r = new Roll("2d10 + @characteristics.dexterite.modifier + @characteristics.perception.modifier", rollData);
-      return r.toMessage({
-        user: game.user.id,
-        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: `Initiative`
-    });
+    this.actor.rollInitiative();
   }
 
   static onDivineRoll(event){
